@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens */
+:root{
+  --primary-navy:#0A2540;
+  --primary-blue:#1E40AF;
+  --accent-orange:#F97316;
+  --light-blue:#DBEAFE;
+}
+
+/* Base */
+html, body { margin:0; padding:0; height:100%; }
+body { color: rgb(15 23 42); }                /* text-slate-900 */
+
+/* Helpers riutilizzabili (CSS normale, niente @apply) */
+.card {
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgb(226 232 240);         /* slate-200 */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(2,6,23,.06);
+}
+
+.muted { color: rgb(100 116 139); }           /* slate-500 */
