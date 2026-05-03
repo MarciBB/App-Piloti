@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /img/
+
+Sitemap: http://www.cipollagroup.it/sitemap.xml
+Sitemap: http://www.cipollagroup.it/sitemap_italia_belgio.xml
+Sitemap: http://www.cipollagroup.it/sitemap_belgio_italia.xml
+Sitemap: http://www.cipollagroup.it/sitemap_austria_italia.xml
+Sitemap: http://www.cipollagroup.it/sitemap_italia_austria.xml
+Sitemap: http://www.cipollagroup.it/sitemap_svizzera_italia.xml
+Sitemap: http://www.cipollagroup.it/sitemap_italia_svizzera.xml
+Sitemap: http://www.cipollagroup.it/sitemap_italia_francia.xml
+Sitemap: http://www.cipollagroup.it/sitemap_francia_italia.xml
+Sitemap: http://www.cipollagroup.it/sitemap_germania_italia.xml
+Sitemap: http://www.cipollagroup.it/sitemap_italia_germania.xml

@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.brain_top{display: none;} /*non stampa il top*/
+
+input.noprint{display: none;}
+
+#loading_big_loading, #loading_big_ok, .notifica, #layer_nero, #tooltip, .brain_oscura, #ui-datepicker-div, #brain_loading{
+	display: none;
+}
+
+td {
+    padding: 5px !important;
+    text-align: left !important;
+	font-size:9px !important;
+	border-top:none !important;
+	border-left:none !important;
+	border-right:none !important;
+	border-bottom:1px solid #ccc !important;
+}
+table {
+    width: 900px !important;
+}
+tbody  {
+    width: 900px !important;
+}
+h4 {
+    margin-left: 0px !important;
+}
+
+.footer { display: none; }
+

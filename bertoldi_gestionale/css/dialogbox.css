@@ -1,0 +1,140 @@
+/* Dialogbox CSS */
+
+.brain_oscura{
+	background: url('/images/bgOpacity.png') top left repeat;
+	float: left;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	display:none;
+	z-index: 1000;
+}
+
+.brain_oscura_pre{
+	background: url('/images/bgOpacity.png') top left repeat;
+	float: left;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	display:none;
+	z-index: 1000;
+}
+
+#brain_loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 40px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #416a94;
+	text-align: center;
+	color: #FFF;
+	font-size: 14px;
+	background-color: #7ab9fa;
+	border-radius: 6px;
+	z-index:10001;
+	display: none;
+}
+
+
+#brain_boxCentrato{
+	width:auto;
+	margin:5% auto;
+	float: left;
+	border:1px solid #a9a9a9;
+	padding: 0 12px;
+	/*float:left; */
+	background:url('/images/bg-box-dialog.png') top left repeat-x #ffffff;
+}
+
+
+.brain_dialogbox {
+	float:left;
+	width:100%;
+	padding-bottom:23px;
+	/*border:3px dashed red;*/
+}
+#brain_listaSelezione .brain_titoloPagina{
+	display: none;
+}
+
+.brain_dialogbox  span.brain_titleBox,
+.brain_dialogbox #brain_page-content span.brain_titleBox{
+	float:left;
+	width:100%;
+	padding: 0;
+	padding-top:6px;
+	display: block;
+	padding-bottom:
+}
+
+.brain_dialogbox #brain_page-content span.brain_titleBox{
+	padding-bottom:20px;
+}
+
+span.brain_titleBox h1{
+	font-size:12px;
+	font-weight:bold;
+	/*width:50%;*/
+	float:left;
+	color:#ffffff;
+}
+
+a.brain_buttonChiudi{
+	color:#ffffff;
+	font-size:12px;
+	text-decoration:underline;
+	float:right;
+}
+
+
+.brain_dialogbox .dataTables_wrapper {/*float:left*/}
+
+
+.brain_dialogbox #brain_page-content {
+	padding: 0;
+	width: 100%;
+}
+
+.brain_dialogbox table.display td {
+	padding: 0px 4px;
+	line-height: 2.2em;
+}
+
+.brain_dialogbox table.display td a, .brain_dialogbox table.display td a:visited{
+	color: #004080;
+}
+
+.brain_dialogbox  #brain_mediazioneformcenter{
+	float:left;
+	width:100%;
+	margin-top:20px;
+}
+
+.brain_dialogbox #brain_mediazioneformcenter .brain_divSubmit_versione_fatti {
+    clear: both;
+    float: left;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.brain_dialogbox   .brain_formModifica {
+    width: 96%;
+}
+.brain_dialogbox  #brain_mediazioneformcenter .brain_formModifica .wizart .brain_campoForm label{
+	width:100%;
+	float:left;
+	clear:both;
+}
+select#MediazioneSoggettoParteId {
+    float: left;
+    padding: 3px;
+    width: auto!important;
+}
+textarea#MediazioneSoggettoVersioneFatti{
+    float: left;
+    width: 100%!important;
+}

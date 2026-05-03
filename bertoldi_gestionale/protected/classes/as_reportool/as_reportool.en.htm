@@ -1,0 +1,311 @@
+<html>
+<head><title>as_reportool: Report building PHP class</title>
+<meta http-equiv="Content-Type" Content="text/html; charset=windows-1252">
+<style type="text/css">
+  body     { font-family:arial,helvetica;font-size:12px; }
+  pre { color:#0000FF; border: 1px solid #e0e0e0; padding-left:8px; background: #f8f8ff;}
+  td   { font-family:arial,helvetica;font-size:12px;}
+  tr.odd   { background-color: #F0F0F8; color:#000000; }
+  tr.even  { background-color: #F8F8FF; color:#000000; }
+  h4       { background-color: #F8F8FF; color:#000000; text-align: left; }
+  h5       { background-color: #F8F8FF; color:#000000; text-align: left; }
+  hr       { color: #c0c0ff; border: none; height: 1px;}
+</style>
+
+</head>
+<body>
+
+<!-- DOC BEGIN -->
+<h3>as_reportool: Report building PHP class</h3>
+
+<p>This is another PHP class for building HTML report pages from SQL data.
+You just set the main SQL query, list of fields to be printed, and list of grouping fields,
+if You need sub-totals. All these data can be added by calling respective class methods
+or loaded from XML file (if your PHP is 5.x and simpleXML support is on).
+
+<br />
+This program is free and distributed under <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GNU GPL license</a>.
+
+<p>Installation is standard - just copy <b>as_reportool.php</b> and <b>as_dbutils.php</b> class files to your site's folder,
+and add "include(), or require_once() for them to your php script file.
+</p>
+
+<h3>Using as_reportool library</h3>
+<p>
+<pre>
+require_once('as_reportool.php');
+//...
+$rep = new CReporTool();
+</pre>
+
+First: You set an SQL query that returns all the data for report.
+Method SetQuery() is called to do this.
+
+<br />
+Next, You'll add all "fields" names that should be printed, in desired order, by AddField() method.
+Remember, these names must correspond with some field or expression's name in datarow.
+<br />
+For example, if your query contains something like "SELECT ... (field1+field2) `field1_field2`",
+to print this computed value in report, use "field1_field2" name:
+<pre>$rep-&gt;AddField('field1_field2','F1 and F2 sum');</pre>
+
+<br />
+If You need some sub-totals (your query should return right ordered records in that case !),
+use a method AddGroupingField() to set "grouping" fields.
+Subtotals can be nested with no limit - the first field passed with AddGroupingField will be
+the "upper level", the next one will be the lower.
+<br />
+During getting data rows (and printing report) loop, when some "grouping" field value changes,
+all subtotals will be printed, beginning from the "lowest" level and up to this field's level in totals hierarchy.
+
+<br /><br />Generated report is HTML code that looks adequate not only in the browser, but in the hard-printed page too.
+CSS styles used for this formatting are built-in into the class, but You can override them by calling SuppressCss() method.
+In this case "CSS style" block is not printed, so it's your responsibility to include all necessary styles somewhere in Your "style area".
+They are: td.rep_ltrb, td.rep_lrb, td.rep_rb, td.num, td.cnt, td.newgroup.
+
+
+<h3>CReporTool class methods list</h3>
+
+<li>
+<b>CReporTool([$filename [, $outcharset]])</b> - constructor can be used to load report definition from prepared XML file.
+Pass xml file name as a first parameter in <b>new CReporTool()</b> calling.
+If parameter missed, an empty CReporTool object will be created.
+The second parameter is used when Your output HTML page should be in non UTF-8 charset.
+Then you just pass your output charset name, and all string values (headers for fealds, grouping, total strings) loaded from
+XML file, will be converted to desired character set.
+(I noticed, that simpleXML function <b>simplexml_load_file</b> doesn't support parsing of non- UTF-8 files, it seams to ignore charset value in the header,
+so they must be written and saved in UTF-8 (alhough i may be wrong).
+</li>
+
+<li>
+<b>LoadFromXml($filename [,$outcharset=''])</b> loads report definition from prepared XML file.
+When You create new object with calling <b>new CReporTool($filename)</b>, constructor calls LoadFromXml().
+The first parameter is a file name, the second one - output charset (see explanation above).
+The structure for XML file is shown here and is self-explanatory (that's why everybody's mad about XML :)
+<br />If You plan using XML files, make sure Your hosting provider enables PHP5 with simpleXML support,
+because as_reportool uses simpleXML for XML files parsing !
+<br /><br />
+Here is XML file example
+<pre>
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;report_def version="1.00"&gt;
+  &lt;query&gt;SELECT c.categoryid, b.animalid, a.nickname,a.gender,a.birth, a.weight
+   FROM big_zoo a, animals b, animal_categories c
+   WHERE a.animalid=b.animalid AND b.category=c.categoryid ORDER BY c.categoryid, b.animalid
+  &lt;/query&gt;
+  &lt;headings&gt;&lt;![CDATA[
+&lt;tr&gt;&lt;td colspan="8" class="rep_ltrb"&gt;This is additional headings to print before default columns headings&lt;/td&gt;&lt;/tr&gt;
+]]&gt;&lt;/headings&gt;
+  &lt;nodefaultheadings value="1" /&gt;
+  &lt;summary title="Summary totals (%rowcount%)" /&gt;
+  &lt;delimiters decimal="," thousand=" " /&gt;
+  &lt;grpfield name="categoryid" fconv="GetAnymalCategoryName" title="Animal category " totaltitle="Totals for category" /&gt;
+  &lt;grpfield name="animalid" fconv="GetAnymalClassName" title="Animal class" totaltitle="Totals for class" /&gt;
+
+  &lt;field name="nickname" title="Nick" fconv="" format="" /&gt;
+  &lt;field name="gender" title="Gender" fconv="DecodeGender" /&gt;
+  &lt;field name="weight" title="Weight, kg" summable="1" format="i" /&gt;
+
+&lt;/report_def&gt;
+
+</pre>
+</li>
+<br /><b>query</b> tag sets SQL query exactly as SetQuery() method does it.
+<br /><b>headings</b> tag sets additional headings, like the method SetHeadings() does;
+<br /><b>nodefaultheadings</b> with value="1" hides generated column headings, like SetHeadings($new_headings,1);
+
+<br /><b>grpfield</b> tags is equal to calling AddGroupingField(),
+<br /><b>field</b> tag used for AddField();
+<br /><b>summary</b> tag used for SetSummary();
+<br /><b>delimiters</b> tag is uqual to calling SetNumberDelimiters($decimal,$thousand).
+
+<br />
+<br />
+<li>
+<b>AddGroupingField($fldid,$fconv='',$title='',$totaltitle='')</b> adds a field that makes a group,
+so when changed, subtotals should be printed, followed by a header for the next grouping value.
+<ul>
+  <li><b>$fldid</b> is a field name (or pseudo-name for the data column as it given in sql query),</li>
+  <li><b>$fconv</b> is a user (or php built-in) function name that will be called to convert data value before printing.
+  For example, if the value is a numeric ID of department, this function is called to return department's name.</li>
+  <li><b>$title</b> is a title that will be printed as a beginning of a new group, for example "department " for the new dept</li>
+  <li><b>$totaltitle</b> is used as a header in the "subtotals" row. "%name%" macros will be replaced with current grouping field value,
+  so if You pass "Totals for %name%", resulting subtotals line will begin with "Totals for Whales" or alike</li>
+</ul>
+
+More than one grouping field can be added, to make multi-level sub-totals.
+</li>
+
+<br /><br />
+<li>
+<b>AddField($fldid,$fldtitle='',$summable=0,$fconv='', $format='')</b> adds a printable field that makes a column in your report.
+Parameters:
+  <ul>
+  <li>$fldid is a field name (or pseudo-name for the data column as it given in sql query)</li>
+  <li>$fldtitle is a field's title used in the column's headings</li>
+  <li>$summable : if true (or any non-empty value), sub-totals for the field will be calculated/printed</li>
+  <li>$fconv is a function name that will be called to convert column's value before printing.
+  <li>$format is optional formatting string identifier. Supported values for format listed below:
+    <table border=0 cellpadding="3" cellspacing="1" style="background:#B8B8FE;">
+    <tr class="even"><td>format</td><td>meaning (what it does)</td></tr>
+    <tr class="odd"><td>c</td><td>"Centered" - value is centered horizontally</td></tr>
+    <tr class="even"><td>r</td><td>"Right" - value is right aligned</td></tr>
+    <tr class="odd"><td>money</td><td>Value is <b>number_format</b>-ted as money (NNN NNN.00) and right aligned</td></tr>
+    <tr class="even"><td>i</td><td>"Integer" - is <b>number_format</b>-ted as integer (with thousands delimiter) and right aligned</td></tr>
+    </table>
+  </li>
+  </ul>
+</li>
+
+<br /><br />
+<li><b>SetHeadings($par, $no_defaultheader=0)</b> : usually as_reportool generates simple headings for the report, using fields titles,
+that were passed by AddField() method.
+<br />If You want sofisticated headings in your report, call method CReporTool::SetHeadings().
+First parameter must be an HTML code that contains some table rows, starting with &lt;tr&gt; and with ending &lt;/tr&gt;.
+This code will be echoed right after beginning TABLE tag, and before "default" heading row generated by class.
+If You have a FULL HTML code for the headings and don't want generated titles row, pass a second non-empty parameter $no_defaultheader,
+so it turns off default headings generation.
+</li>
+
+<br /><br />
+<li><b>SetSummary($title)</b> : if You want a "summary" row at the end of report, call this function.
+Use optional string parameter $title to pass the title string for that row, and if You want to see all printed rows count (not including subtotals!), include macro %rowcount% in this string -
+it will be replaced with the count.
+</li>
+
+<br /><br />
+<li><b>SetNumberDelimiters($dec, $tho)</b> sets delimiter chars for decimal part and thousands in number representations.
+These delimiters will be passed to number_format() for each field having 'i' or 'money' format. By default these delimiters are
+"," for thousands and "." for decimal part.
+</li>
+
+
+<br /><br />
+<li><b>SetFontStyles($par)</b> can be used to set css styles for the font used in report.
+For example, to draw all report with "verdana" font and size 3mm, pass a string :
+
+<pre>$rep-&gt;SetFontStyles("font-family: Verdana; font-size:3mm;");</pre>
+</li>
+
+<br /><br />
+<li><b>DrawReport($title='')</b> is a final method that executes passed SQL query, builds and echoes report body. Optional string parameter is a title that will be
+  printed on top, before the report's headings.
+</li>
+
+<h3>Making report example.</h3>
+
+OK. Now let's describe some example data tables that we'll use to show reporting functionality.
+This is a "big zoo" database (our zoo is really big - it has a small "ocean" with oceanic animals like shark and even whale!).
+This DB has one table for animal categories, another one - for describing animals,
+and last one is a list of all animals living in the zoo.
+You can create these tables by running sql file included in distributive (sampledata.sql)
+<br /><br />
+
+<table border=0 cellpadding="3" cellspacing="1" style="background:#B8B8FE;">
+<tr class="even"><td>field</td><td>type</td><td>description</td></tr>
+
+<tr class="odd"><td colspan=3><b>table animal_categories</b></td></tr>
+<tr class="even"><td>categoryid</td><td>INT</td><td>unique category's ID</td></tr>
+<tr class="odd"><td>categoryname</td><td>VARCHAR</td><td>category name</td></tr>
+
+<tr class="even"><td colspan=3><b>table animals</b></td></tr>
+<tr class="odd"><td>animalid</td><td>INT</td><td>unique animal type's ID</td></tr>
+<tr class="even"><td>category</td><td>INT</td><td>category of the animal</td></tr>
+<tr class="odd"><td>animalname</td><td>VARCHAR</td><td>animal's name</td></tr>
+
+<tr class="even"><td colspan=3><b>table big_zoo - all animals living in the zoo</b></td></tr>
+<tr class="odd"><td>itemid</td><td>INT</td><td>living creature's ID</td></tr>
+<tr class="even"><td>animalid</td><td>INT</td><td>what kind of animal is it (ID)</td></tr>
+<tr class="odd"><td>nickname</td><td>VARCHAR</td><td>nick name given to this creature</td></tr>
+<tr class="even"><td>birth</td><td>DATE</td><td>birth date</td></tr>
+<tr class="odd"><td>gender</td><td>CHAR(1)</td><td>gender(m for male, f for female)</td></tr>
+<tr class="even"><td>weight</td><td>INT</td><td>creature's weight</td></tr>
+</table>
+
+<br /><br />
+We want to print report for all creatures in our zoo, with subtotals for every animal class and category.
+
+<pre>
+$rep = new CReporTool();
+
+$rep-&gt;SetQuery("SELECT c.categoryid, b.animalid, a.nickname,a.gender,a.birth,a.weight
+   FROM big_zoo a, animals b, animal_categories c
+   WHERE a.animalid=b.animalid AND b.category=c.categoryid ORDER BY c.categoryid, b.animalid");
+
+$rep-&gt;AddGroupingField('categoryid','GetAnymalCategoryName','Animal category ','Totals for category');
+
+$rep-&gt;AddGroupingField('animalid','GetAnymalClassName','Animal class ','Totals for class');
+
+$rep-&gt;AddField('nickname','Nick');
+
+$rep-&gt;AddField('gender','Gender',0,'DecodeGender'); // DecodeGender() will show 'male' for 'm' and female for 'f' value.
+$rep-&gt;AddField('birth','Birth date',0,'DateToChar'); // your function DateToChar converts DATE value to be more readable
+$rep-&gt;AddField('weight','Weight, kg',1,'','i'); // this field is summable and will be printed right-aligned and number_format()ted
+$rep-&gt;DrawReport('Report: All animals in zoo');
+</pre>
+
+<li>As You can see, our SQL query orders returned records by category and animal class, according to grouping fields passed to
+our CReporTool object.
+<br />You may be want SQL server to build subtotals rows (using GROUP BY <b>WITH ROLLUP</b> option in MySQL, for example)
+- please don't do it, because CReporTool calculates totals by itself and cannot detect "totals" rows in returned SQL data.
+</li>
+<p>
+As a result You should see report page like this one:<br /><br />
+
+<style type="text/css">
+/** styles for report drawing **/
+   td.rep_ltrb { border: 1px solid #000000; text-align:center; font-family:arial,verdana; font-size:4mm;}
+   td.rep_lrb { border-left:1px solid #000000; border-top:none; border-right: 1px solid #000000; border-bottom: 1px solid #000000; text-align:left; font-family:arial,verdana; font-size:4mm;}
+   td.rep_rb  { border-left:none; border-top:none; border-right: 1px solid #000000; border-bottom: 1px solid #000000; text-align:left; font-family:arial,verdana; font-size:4mm; }
+   td.num { text-align: right; };
+   td.cnt { text-align: center; };
+   td.newgroup { background: #EAEAEA; font-family:arial,verdana; font-size:4mm; }
+</style>
+<h4 style='text-align:center; font-weight:bold;'>Report: All animals in zoo</h4>
+<div id="divreport" style="text-align:center;"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="rep_ltrb">Nick</td><td class="rep_ltrb">Gender</td><td class="rep_ltrb">Birth date</td><td class="rep_ltrb">Weight, kg</td></tr><tr><td class="rep_lrb newgroup" colspan="4">Animal category  Sea animals</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : whales</td></tr>
+<tr><td class="rep_lrb">&nbsp;Whale-Boy</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;06/22/1997</td><td class="rep_rb num">&nbsp;7,000</td></tr>
+<tr><td class="rep_lrb">&nbsp;Whale-Girl</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;08/01/2000</td><td class="rep_rb num">&nbsp;6,500</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for whales</td><td class="rep_rb num" >13,500</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : sharks</td></tr>
+<tr><td class="rep_lrb">&nbsp;BloodyJaws</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;09/15/2001</td><td class="rep_rb num">&nbsp;1,500</td></tr>
+<tr><td class="rep_lrb">&nbsp;HungryMary</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;11/10/2002</td><td class="rep_rb num">&nbsp;1,200</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for sharks</td><td class="rep_rb num" >2,700</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : dolphins</td></tr>
+<tr><td class="rep_lrb">&nbsp;BigMartha</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;05/20/1998</td><td class="rep_rb num">&nbsp;3,000</td></tr>
+<tr><td class="rep_lrb">&nbsp;BigBob</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;01/12/1996</td><td class="rep_rb num">&nbsp;3,500</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for dolphins</td><td class="rep_rb num" >6,500</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for category Sea animals</td><td class="rep_rb num" >22,700</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4">Animal category  Jungle animals</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : elephants</td></tr>
+<tr><td class="rep_lrb">&nbsp;LazyTom</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;10/23/2004</td><td class="rep_rb num">&nbsp;5,000</td></tr>
+<tr><td class="rep_lrb">&nbsp;MightyJack</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;06/16/2003</td><td class="rep_rb num">&nbsp;5,300</td></tr>
+<tr><td class="rep_lrb">&nbsp;Samantha-Shy</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;04/24/2004</td><td class="rep_rb num">&nbsp;4,200</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for elephants</td><td class="rep_rb num" >14,500</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : gorillas</td></tr>
+<tr><td class="rep_lrb">&nbsp;Gorilla-Mom</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;08/23/2001</td><td class="rep_rb num">&nbsp;150</td></tr>
+<tr><td class="rep_lrb">&nbsp;Gorilla-Son</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;04/15/2008</td><td class="rep_rb num">&nbsp;40</td></tr>
+<tr><td class="rep_lrb">&nbsp;Gorilla-Dad</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;02/05/2000</td><td class="rep_rb num">&nbsp;180</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for gorillas</td><td class="rep_rb num" >370</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for category Jungle animals</td><td class="rep_rb num" >14,870</td></tr>
+<tr><td class="rep_lrb" colspan="3">Summary all animals (12) </td><td class="rep_rb num" >37,570</td></tr>
+</table></div>
+</p>
+
+<br />
+You can investigate included report_sample.php file as a starting point for your reports.
+
+
+
+<h4>Change log (Version history)</h4>
+
+<h5>1.00.002 (11/26/2008)</h5>
+First release
+
+<!-- DOC END -->
+<hr>
+<div align=center><font size=-2>Copyright &copy; Alexander Selifonov, <a href="http://www.selifan.ru">www.selifan.ru</a>,
+distrubuted under <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GPL</a>
+</font></div>
+</body></html>

@@ -1,0 +1,176 @@
+h2.sezione_prenotazioni {
+    text-align: center;
+    background: #416a94;
+    border-bottom: 2px solid #666;
+    margin-bottom: 8px;
+    padding:8px;
+    color: #dbf2ff;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+/* Parte Iniziale */
+.divIntestazione {
+    padding: 10px;
+    font-size: 18px;
+    color: #29537e;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/* Elenco corse */
+#ElencoCorseA, #ElencoCorseR {
+    margin-bottom: 20px;
+    border: 1px solid #eee
+}
+#ElencoCorseA h1, #ElencoCorseR h1{
+    background: #ddd;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+#ElencoCorseA h1{
+    background: #dbf2ff;
+}
+#ElencoCorseR h1{
+    background: #cbe1ee;
+}
+.elencoContainerTabella {
+    padding: 10px;
+}
+#InfoFermateA h2 {
+    margin-top: 0px;
+    padding: 10px;
+}
+#InfoFermateA {
+}
+#InfoFermateR {
+}
+
+/* Biglietti e Pax */
+#InfoBiglietti {
+    margin-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+#InfoBiglietti h2 {
+    padding: 10px;
+}
+.brain_rowAll {
+    padding: 0px;
+    margin-bottom: 30px;
+}
+/* Info Passeggeri */
+#InfoPasseggero{
+    margin-top: 10px;
+}
+/* Selezione posti */
+#SelezionePosti h2 {
+    padding: 10px;
+    margin-top: 10px;
+}
+#SelezionePosti .tab_chiudi {
+    float: right;
+}
+/* TABS */
+.ui-state-active a{
+    font-weight: bold;
+    color: #FFF !important;
+    background: #1e83bd;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.ui-state-default a:hover {
+    color: #FFF !important;
+    background: #52ade1;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+/* Elenco note */
+#ElencoNoteAndata textarea {
+    width: 100%;
+}
+#ElencoNoteAndata p.txt_on_txtarea {
+    padding: 10px 10px 5px 0;
+    margin-top: 5px;
+    font-size: 13px;
+    color:#666;
+}
+/* bottoni */
+#Emetti {
+    font-size:12px;
+    padding-top:3px;
+}
+/* posti */
+input[type=checkbox] {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0;
+}
+
+input[type=checkbox] + label
+{
+       background: url(../images/empty_seat.png) !important;
+       height: 40px;
+       width: 40px;
+       display:inline-block;
+       padding: 0 0 0 0px;
+}
+   
+input[type=checkbox]:checked + label
+{
+        background: url(../images/taken_seat.png) !important;
+       height: 40px;
+       width: 40px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+}
+/* LEGENDA */
+.legenda {
+    float: right;
+    margin: 10px;
+    margin-top: 100px;
+}
+.legenda tr {
+}
+.legenda td {
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+.legenda td p {
+    padding: 0px !important;
+}
+.legenda td.legenda_simbolo {
+    width: 80px;
+    padding: 8px; 
+}
+.legenda td.legenda_simbolo {
+    width: 80px;
+    text-align: center;
+}
+.legenda td.legenda_testo {
+    width: 150px;    
+    padding: 8px; 
+}
+.legenda h2 {
+    text-align: center; 
+    padding: 8px !important;
+    margin: 0px !important;
+    color: #FFF;
+    background: #356791;
+}

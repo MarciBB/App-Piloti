@@ -1,0 +1,155 @@
+/* 
+    Document   : login
+    Created on : 4-giu-2011, 10.36.11
+    Author     : a.esposito
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.brain_boxLogin {
+	width: 520px;
+	height: 370px;
+	margin: 0px auto;
+	-moz-border-radius: 15px;
+ }
+  .brain_boxLogin h1{
+	font-size:18px;
+	background-image: url(../images/bkg_resolve.png);
+	background-position: top left;
+	line-height: 30px;
+	background-repeat: no-repeat;
+	font-weight: normal;
+	color: #FFFFFF;
+	padding-left: 30px;
+ }
+ .brain_boxLogin h2{
+	font-size:24px;
+	line-height: 30px;
+	color: #15547D;
+	padding-left: 20px;
+ }
+  .brain_boxLogin p{
+	font-size:13px;
+ }
+ .brain_data-contentLogin{
+	width:100%;
+	padding:0px;
+	margin:0px;
+	background-color: #FFFFFF;
+	border: 1px solid #ccc;
+	height:296px;
+	float: left;
+	-moz-border-radius: 15px;
+    }
+	 .brain_data-contentLogin a{
+	color:#036BA2;
+	font-size:12px;
+	margin-left: 10px;
+	padding-top: 100px;
+ }
+ 	.brain_data-contentLogin input{
+	float:left;
+	padding: 3px;
+	color: #29537E;
+	font-size: 1em;
+	margin-bottom: 15px;
+	}
+div.titolo_soggetto {
+	padding: 7px 9px;
+	width: 90%;
+	float: left;
+}
+div.titolo_soggetto h3{
+	float: left;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: normal;
+	width: 80%;
+	padding: 5px 0 2px 25px;
+	background-image: url(/images/tit_soggetto_bckgnd.png);
+	background-repeat: no-repeat;
+	background-position: left 3px;
+}
+.brain_login{
+	background: url("/images/avanti.png") no-repeat scroll left top transparent;
+	float: left;
+	padding-right: 14px;
+	text-align: center;
+	width: 104px;
+	margin-top: 10px;
+	height: 28px;
+	color: #FFF;
+	border: none;
+	}
+.brain_login:hover{
+		 background: url("/images/avantiOn.png") no-repeat scroll left top transparent;
+	}
+fieldset {
+	float: left;
+	padding: 10px 30px;
+	width:90%;
+ }
+	
+fieldset legend {
+    font-weight: bold;
+}
+
+dl dd {
+    margin: 0;
+}
+
+dl dt label {
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-size: 85%;
+	padding-top: 7px;
+	color: #666666;
+	text-align: left;
+	width: 30%;
+
+}
+
+.forgot{
+	display: inline;
+	margin-bottom: 5px;
+	font-size: 85%;
+	padding-top: 7px;
+}
+
+.inputTextbox {
+    width: 400px;
+    background: url('form_bg.jpg') repeat-x left top #fff;
+    border: 1px solid #CCCCCC;
+    font-size: large;
+    padding: 3px;
+}
+
+.inputSubmitBtn {
+	background: url('../images/avanti.png') no-repeat left top;
+	border:none;
+	color:#FFFFFF !important;
+	font-family:Tahoma,Verdana,Arial,Sans-Serif;
+	font-size:12px;
+	padding:0px;
+	width: 106px;
+	float: left;
+	clear: both;
+	height: 31px;
+}
+
+.inputSubmitBtn:hover {
+	background: url('../images/avantiOn.png') no-repeat left top;
+	border:none;
+	color:#FFFFFF;
+}	
+
+#loginResult {
+    display: none;
+    padding: 5px;
+    margin-top: 10px;
+    color: #ffffff;
+    background: #FF0000;
+    font-size: large;
+    font-weight: bold;
+}	

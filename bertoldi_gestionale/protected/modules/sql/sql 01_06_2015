@@ -1,0 +1,78 @@
+ALTER TABLE `RT_Corsa` 
+ADD COLUMN `RitornoAperto` INT(1) NULL DEFAULT 0 AFTER `VariazioneOre`;
+
+INSERT INTO `RT_Corsa` 
+(`LineaId`, `CorsaNome`, `TipologiaBusDefaultId`, `CorsaPeso`, `AttivaDal`, `AttivaAl`, `VendibileDal`, `VendibileAl`, `OrePrimaStopVendita`, `IncludiFeriale`, `IncludiPrefestivo`, `IncludiFestivo`, `OrarioPartenza`, `OrarioArrivo`, `NextDay`, `DataIns`, `OpeIns`, `SedeIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `RitornoAperto`)
+VALUES 
+('1', 'Ritorno Aperto Germania - Italia', '9', '999', '2015-06-01', '2050-01-01', '2015-06-01', '2050-01-01', '00:00:00', '1', '1', '1', '00:00:00', '00:00:00', '0', '2015-02-22 09:47:43', '1', '1', '2015-06-06 10:21:28', '3', '1', '1', '0', '1', '1', '1');
+
+
+INSERT INTO `RT_Corsa` 
+(`LineaId`, `CorsaNome`, `TipologiaBusDefaultId`, `CorsaPeso`, `AttivaDal`, `AttivaAl`, `VendibileDal`, `VendibileAl`, `OrePrimaStopVendita`, `IncludiFeriale`, `IncludiPrefestivo`, `IncludiFestivo`, `OrarioPartenza`, `OrarioArrivo`, `NextDay`, `DataIns`, `OpeIns`, `SedeIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `RitornoAperto`) 
+VALUES 
+('2', 'Ritorno Aperto Italia - Germania', '9', '999', '2015-06-01', '2050-01-01', '2015-06-01', '2050-01-01', '00:00:00', '1', '1', '1', '00:00:00', '00:00:00', '0', '2015-02-22 09:47:43', '1', '1', '2015-06-06 10:21:28', '3', '1', '1', '0', '1', '1', '1');
+
+//ATTENZIONE: inserire l'id CorsaId delle corse create al passo precedente. Sostituire 31 e 32
+INSERT INTO  `RT_ValiditaBiglietto` (
+`ValiditaBigliettoId` ,`Dal` ,`Al` ,`CorsaId` ,`DataIns` ,`OpeIns` ,`SedeIns` ,`IpIns` ,`DataAgg` ,`OpeAgg` ,`SedeAgg` ,`IpAgg` ,`Stato` ,`Cancella` ,`UpdateCount` ,`OdcIdRef` ,`GestoreIdRef` ,`RT_ValiditaBigliettocol` ,`RT_ValiditaBigliettocol1`)
+VALUES (
+NULL ,  '2015-06-01',  '2050-01-01',  '31',  '2015-06-08 12:39:28',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1', NULL , NULL
+);
+INSERT INTO  `RT_ValiditaBiglietto` (
+`ValiditaBigliettoId` ,`Dal` ,`Al` ,`CorsaId` ,`DataIns` ,`OpeIns` ,`SedeIns` ,`IpIns` ,`DataAgg` ,`OpeAgg` ,`SedeAgg` ,`IpAgg` ,`Stato` ,`Cancella` ,`UpdateCount` ,`OdcIdRef` ,`GestoreIdRef` ,`RT_ValiditaBigliettocol` ,`RT_ValiditaBigliettocol1`)
+VALUES (
+NULL ,  '2015-06-01',  '2050-01-01',  '32',  '2015-06-08 12:40:10',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1', NULL , NULL
+);
+
+//ATTENZIONE: sostituire l'id ValiditaBigliettoId con quello ottenuto al passo precedente. Sostituire 32 e 33
+INSERT INTO `RT_ValiditaBigliettoDettaglio` (
+`ValiditaBigliettoId`, `BigliettoId`, `DataIns`, `OpeIns`, `SedeIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`)
+VALUES 
+(32, 3, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(32, 11, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(32, 17, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(32, 19, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(32, 21, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(32, 22, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(33, 3, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(33, 11, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(33, 17, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(33, 19, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(33, 21, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1'),
+(33, 22, '2015-06-08 12:39:28', '3', '1', '1', '0', '1', '1');
+
+
+INSERT INTO  `RT_Scontistica` (
+`ListinoId` , `ListinoNome` , `GruppoPartenza` , `GruppoDestinazione` , `ListinoPeso` , `DataIns` , `OpeIns` , `SedeIns` , `IpIns` , `DataAgg` , `OpeAgg` , `SedeAgg` , `IpAgg` , `Stato` , `Cancella` , `UpdateCount` , `OdcIdRef` , `GestoreIdRef` , `DaPax` , `APax` , `AttivaDal` , `AttivaAl` )
+VALUES (
+	NULL ,  'Sovrapprezzo Open', NULL , NULL ,  '999',  '2015-06-17 08:21:45',  '3',  '1',  '127.0.0.1',  '2015-06-20 09:00:42',  '3',  '1',  '127.0.0.1',  '1', '0', NULL ,  '1',  '1',  '0',  '9999',  '2015-06-01',  '2050-01-01'
+);
+
+//ATTENZIONE: sostituire l'id ListinoId con quello ottenuto al passo precedente. Sostituire 9
+INSERT INTO  `RT_ScontisticaBiglietto` (
+`ListinoBigliettoId` , `ListinoId` , `BigliettoId` , `Prezzo` , `DataIns` , `OpeIns` , `SedeIns` , `IpIns` , `DataAgg` , `OpeAgg` , `SedeAgg` , `IpAgg` , `Stato` , `Cancella` , `UpdateCount` , `OdcIdRef` , `GestoreIdRef` )
+VALUES 
+	(NULL ,  '9',  '17',  '10',  '2015-06-20 09:08:33',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'),
+	(NULL ,  '9',  '21',  '10',  '2015-06-20 09:08:33',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'),
+	(NULL ,  '9',  '19',  '10',  '2015-06-20 09:08:33',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'),
+	(NULL ,  '9',  '2',  '10',  '2015-06-20 09:08:33',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'),
+	(NULL ,  '9',  '3',  '10',  '2015-06-20 09:08:33',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'),
+	(NULL ,  '9',  '1',  '10',  '2015-06-20 09:08:33',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1');
+
+//ATTENZIONE: sostituire l'id ListinoId con quello ottenuto nell'inserimento in RT_Scontistica. Sostituire 9
+INSERT INTO  `csreisen`.`RT_ScontisticaCorsa` (
+`ScontisticaCorsaId` ,`ListinoId` ,`Dal` ,`Al` ,`DataIns` ,`OpeIns` ,`SedeIns` ,`IpIns` ,`DataAgg` ,`OpeAgg` ,`SedeAgg` ,`IpAgg` ,`Stato` ,`Cancella` ,`UpdateCount` ,`OdcIdRef` ,`GestoreIdRef`)
+VALUES (
+	NULL ,  '9',  '2015-06-01',  '2050-01-01',  '2015-06-17 08:22:53',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'
+);
+
+
+
+//ATTENZIONE: Sostituire l'id ScontisticaCorsaId con l'id ottenuto al passo precedente. Sostituire 30
+//ATTENZIONE: Sostituire l'id CorsaId con l'id ottenuto con l'inserimento delle corse. Sostituire 31 e 32
+INSERT INTO  `RT_ScontisticaCorsaDettaglio` (
+`ScontisticaCorsaDettaglioId` , `ScontisticaCorsaId` , `CorsaId` , `DataIns` , `OpeIns` , `SedeIns` , `IpIns` , `DataAgg` , `OpeAgg` , `SedeAgg` , `IpAgg` , `Stato` , `Cancella` , `UpdateCount` , `OdcIdRef` , `GestoreIdRef` )
+VALUES 
+	(NULL ,  '30',  '31',  '2015-06-17 08:22:53',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1'),
+	(NULL ,  '30',  '32',  '2015-06-17 08:22:53',  '3',  '1',  '127.0.0.1', NULL , NULL , NULL , NULL ,  '1',  '0', NULL ,  '1',  '1');
+

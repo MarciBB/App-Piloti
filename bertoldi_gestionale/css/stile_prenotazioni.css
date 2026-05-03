@@ -1,0 +1,222 @@
+h2.sezione_prenotazioni {
+    text-align: center;
+    background: #00a4aa;
+    border-bottom: 2px solid #00a4aa !important;
+    margin-bottom: 8px;
+    padding:8px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+/* Parte Iniziale */
+.divIntestazione {
+    padding: 10px;
+    font-size: 18px;
+    color: #29537e;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/* Elenco corse */
+#ElencoCorseA, #ElencoCorseR, #ElencoCorseL {
+    margin-bottom: 20px;
+    border: 1px solid #eee
+}
+#ElencoCorseA h1, #ElencoCorseR h1, #ElencoCorseL h1{
+    background: #ddd;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+#ElencoCorseA h1, #ElencoCorseL h1 {
+    background: #ccc;
+}
+#ElencoCorseR h1{
+    background: #ccc;
+}
+.elencoContainerTabella {
+    padding: 10px;
+}
+#InfoFermateA h2 {
+    margin-top: 0px;
+    padding: 10px;
+}
+#InfoFermateA {
+}
+#InfoFermateR {
+}
+
+/* Biglietti e Pax */
+#InfoBiglietti {
+    margin-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+#InfoBiglietti h2 {
+    padding: 10px;
+}
+.brain_rowAll {
+    padding: 0px;
+    margin-bottom: 30px;
+}
+/* Info Passeggeri */
+#InfoPasseggero{
+    margin-top: 10px;
+}
+/* Selezione posti */
+#SelezionePosti h2 {
+    padding: 10px;
+    margin-top: 10px;
+}
+#SelezionePosti .tab_chiudi {
+    float: right;
+}
+/* TABS */
+.ui-state-active a{
+    font-weight: bold;
+    color: #FFF !important;
+    background: #1e83bd;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.ui-state-default a:hover {
+    color: #FFF !important;
+    background: #52ade1;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+/* Elenco note */
+#ElencoNoteAndata textarea {
+    width: 100%;
+}
+#ElencoNoteAndata p.txt_on_txtarea {
+    padding: 10px 10px 5px 0;
+    margin-top: 5px;
+    font-size: 13px;
+    color:#666;
+}
+/* bottoni */
+#Emetti {
+    font-size:12px;
+    padding-top:3px;
+}
+/* posti */
+input[type=checkbox] {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0;
+}
+
+input[type=checkbox] + label
+{
+       background: url(../images/empty_seat.png) !important;
+       height: 30px;
+       width: 30px;
+       display:inline-block;
+       padding: 0 0 0 0px;
+}
+   
+input[type=checkbox]:checked + label
+{
+        background: url(../images/taken_seat.png) !important;
+        height: 30px;
+        width: 30px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+}
+.nome_cliente{
+    text-align: center;
+    margin-top: 8px;
+    width: 70px;
+}
+#gestoreElencoAule td{
+    vertical-align: middle;
+}
+/* LEGENDA */
+.legenda {
+    float: right;
+    margin: 10px;
+    margin-top: 100px;
+}
+.legenda tr {
+}
+.legenda td {
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+.legenda td p {
+    padding: 0px !important;
+}
+.legenda td.legenda_simbolo {
+    width: 80px;
+    padding: 8px; 
+}
+.legenda td.legenda_simbolo {
+    width: 80px;
+    text-align: center;
+}
+.legenda td.legenda_testo {
+    width: 150px;    
+    padding: 8px; 
+}
+.legenda h2 {
+    text-align: center; 
+    padding: 8px !important;
+    margin: 0px !important;
+    color: #FFF;
+    background: #356791;
+}
+/* Prezzo */
+.prezzo_grande {
+    font-size: 18px;
+}
+
+/* 4 input sulla stessa linea */
+.brain_4_input_inline {
+    width: 23% !important;
+    border-bottom: none !important;
+}
+.brain_4_input_inline label {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+}
+.brain_4_input_inline input {
+    width: 80%;
+}
+.brain_4_input_inline label.error {
+    color: #F80 !important
+}
+
+/* 3 input sulla stessa linea */
+.brain_3_input_inline {
+    width: 30% !important;
+    border-bottom: none !important;
+}
+.brain_3_input_inline label {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+}
+.brain_3_input_inline input {
+    width: 80%;
+}
+.brain_3_input_inline label.error {
+    color: #F80 !important
+}

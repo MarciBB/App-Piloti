@@ -1,0 +1,65 @@
+CREATE TABLE `RT_Coupon` (
+  `CouponId` INT NOT NULL AUTO_INCREMENT,
+  `CouponNome` VARCHAR(45) NULL,
+  `Codice` VARCHAR(45) NULL,
+  `Importo` DECIMAL(10,2) NULL,
+  `MaxUtilizzi` INT(4) NULL,
+  `Utilizzi` INT(4) NULL DEFAULT 0,
+  `DataIns` DATETIME NULL DEFAULT NULL,
+  `OpeIns` INT(10) NULL DEFAULT NULL,
+  `SedeIns` INT(10) NULL DEFAULT NULL,
+  `IpIns` VARCHAR(16) NULL DEFAULT 'null',
+  `DataAgg` DATETIME NULL DEFAULT NULL,
+  `OpeAgg` INT(10) NULL DEFAULT NULL,
+  `SedeAgg` INT(10) NULL DEFAULT NULL,
+  `IpAgg` VARCHAR(16) NULL DEFAULT 'null',
+  `Stato` INT(1) NULL DEFAULT 1,
+  `Cancella` INT(1) NULL DEFAULT 0,
+  `UpdateCount` INT(10) NULL DEFAULT NULL,
+  `OdcIdRef` INT(10) NULL DEFAULT NULL,
+  `GestoreIdRef` INT(10) NULL,
+  PRIMARY KEY (`CouponId`));
+  
+INSERT INTO `AppModulo` 
+  	(`AppModuloId`, `AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) 
+  	VALUES 
+  	('45', 'Coupon di Sconto', '4', '73', 'rt_coupon', 'coupon.php', '1', '0', '0', '1', '0', '0');
+
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '6', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '5', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '4', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '3', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '2', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '1', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '45', '7', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '1', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '2', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '3', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '4', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '5', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '6', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '306', '45', '7', '4', '2013-12-12 13:25:26', '1', '1', '151.75.147.213', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '1', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '2', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '3', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '4', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '5', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '6', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '307', '45', '7', '4', '2013-12-17 15:16:50', '1', '1', '151.73.62.7', '1', '0', '1', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '1', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '2', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '3', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '4', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '5', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '6', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES (NULL, '308', '45', '7', '1', '2014-09-15 12:54:03', '8', '2', '79.248.118.57', '2014-09-16 12:37:44', '8', '2', '79.248.90.83', '1', '0', '2', '1');
+
+ALTER TABLE `RT_PagamentoTipo` 
+ADD COLUMN `EmettiCoupon` INT(1) NULL DEFAULT 0 AFTER `EtichettaRimborso`;
+
+
+INSERT INTO `RT_PagamentoTipo` 
+	(`PagamentoTipoId`, `PagamentoTipo`, `SupplementoFisso`, `SupplementoPercentuale`, `TempoScadenza`, `MsgSMSStato`, `MsgSMSTesto`, `MsgEmailStato`, `MsgEmailTesto`, `GestorePrimario`, `VisualizzaInRimborso`, `EtichettaRimborso`, `EmettiCoupon`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `OdcIdRef`) 
+	VALUES 
+	('', 'Coupon', '0.00', '0.00', '0', '0', '', '0', '', '1', '1', 'Coupon', '1', '2013-10-26 12:40:19', '2', '1', '192.168.91.31', '1', '0', '1');
+

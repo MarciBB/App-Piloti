@@ -1,0 +1,35 @@
+CREATE TABLE RT_PrenotazioneMessaggio (
+  `PrenotazioneMessaggioId` INT(11) NOT NULL AUTO_INCREMENT,
+  `PrenotazioneId` INT(11) NULL,
+  `Messaggio` VARCHAR(255) NULL,
+  `Numero` VARCHAR(45) NULL,
+  `Canale` VARCHAR(45) NULL,
+  `DataIns` DATETIME NULL,
+  `OpeIns` INT(11) NULL,
+  PRIMARY KEY (`PrenotazioneMessaggioId`));
+  
+  
+  CREATE TABLE `GooglePeople` (
+  `GooglePeopleId` INT NOT NULL AUTO_INCREMENT,
+  `Email` VARCHAR(255) NULL,
+  `Cellulare` VARCHAR(45) NULL,
+  PRIMARY KEY (`GooglePeopleId`));
+  
+  CREATE TABLE RT_PrenotazioneTitoloPosto (
+  `PrenotazioneTitoloPostoId` INT(11) NOT NULL AUTO_INCREMENT,
+  `PrenotazioneId` INT(11) NULL,
+  `PrenotazioneNumeroId` INT(10) NULL DEFAULT NULL,
+  `PrenotazioneTitoloId` INT(11) NULL,
+  `ComuneId` INT(11) NULL DEFAULT NULL,
+  `Ordine` INT(4) NULL DEFAULT NULL,
+  `TipoViaggio` VARCHAR(45) NULL DEFAULT NULL,
+  `Comune` VARCHAR(45) NULL DEFAULT NULL,
+  `Orario` VARCHAR(45) NULL DEFAULT NULL,
+  `GiorniAggiuntivi` INT(1) NULL DEFAULT NULL,
+  `CorsaId` INT(10) NULL DEFAULT NULL,
+  `CorsaDataPartenza` DATE NULL DEFAULT NULL,
+  `TrattaId` INT(10) NULL DEFAULT NULL,
+  `Interscambio` INT(1) NULL DEFAULT 0,
+  `NumeroBus` INT(5) NULL DEFAULT NULL,
+  `NumeroPosto` INT(5) NULL DEFAULT NULL,
+  PRIMARY KEY (`PrenotazioneTitoloPostoId`));

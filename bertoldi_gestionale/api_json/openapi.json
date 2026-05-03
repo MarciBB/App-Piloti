@@ -1,0 +1,202 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Bertoldi Boats API",
+    "version": "1.0.0",
+    "description": "Specifica OpenAPI degli endpoint esposti da /api_json/api.php. Tutte le chiamate richiedono il parametro query 'token'."
+  },
+  "servers": [
+    { "url": "https://YOUR_DOMAIN", "description": "Server" }
+  ],
+  "components": {
+    "parameters": {
+      "token": {
+        "name": "token",
+        "in": "query",
+        "required": true,
+        "schema": { "type": "string" }
+      }
+    },
+    "schemas": {
+      "StatusResponse": {
+        "type": "object",
+        "properties": {
+          "versione": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      },
+      "MessageResponse": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string" }
+        }
+      },
+      "Experience": {
+        "type": "object",
+        "properties": {
+          "LineaId": { "type": "integer" },
+          "LineaNome": { "type": "string" },
+          "TipoTour": { "type": "string" }
+        }
+      },
+      "ExperienceDetail": {
+        "type": "object",
+        "properties": {
+          "LineaId": { "type": "integer" },
+          "PercorsoNome": { "type": "string" },
+          "LineaNome": { "type": "string" },
+          "TipoTour": { "type": "string" },
+          "Porto": { "type": "string" },
+          "Descrizione": { "type": "string" },
+          "Link": { "type": "string" },
+          "AndataRitorno": { "type": "integer" }
+        }
+      },
+      "ExperiencePrice": {
+        "type": "object",
+        "properties": {
+          "TipologiaBigliettoId": { "type": "integer" },
+          "Nome": { "type": "string" },
+          "Descrizione": { "type": "string" }
+        }
+      },
+      "ExperiencePortsResponse": {
+        "type": "object",
+        "properties": {
+          "portiPartenza": { "type": "array", "items": { "type": "object" } },
+          "portiArrivo": { "type": "array", "items": { "type": "object" } }
+        }
+      },
+      "AvailableRidesRequest": {
+        "type": "object",
+        "properties": {
+          "comunePartenzaId": { "type": "integer" },
+          "comuneDestinazioneId": { "type": "integer" },
+          "dataPartenza": { "type": "string" },
+          "lineaId": { "type": "integer" },
+          "biglietti": { "type": "object", "additionalProperties": { "type": "integer" } }
+        },
+        "required": ["comunePartenzaId","comuneDestinazioneId","dataPartenza","lineaId","biglietti"]
+      },
+      "AvailableRide": {
+        "type": "object",
+        "properties": {
+          "CorsaId": { "type": "integer" },
+          "CorsaNome": { "type": "string", "nullable": true },
+          "LineaNome": { "type": "string", "nullable": true },
+          "DataPartenza": { "type": "string" },
+          "DataPartenzaFormattata": { "type": "string" },
+          "OrarioPartenza": { "type": "string" },
+          "OrarioArrivo": { "type": "string" },
+          "Durata": { "type": "string" },
+          "PostiDisponibili": { "type": "integer" },
+          "PostiOccupati": { "type": "integer" },
+          "PrezzoTotale": { "type": "number" },
+          "PrezzoTotaleInCents": { "type": "integer" },
+          "PickupId": { "type": "string" },
+          "Pickup": { "type": "string" },
+          "DropoffId": { "type": "string" },
+          "Dropoff": { "type": "string" },
+          "DaConfermare": { "type": "boolean" }
+        }
+      },
+      "AvailableRidesResponse": {
+        "type": "object",
+        "properties": {
+          "currency": { "type": "string" },
+          "dataPartenza": { "type": "string" },
+          "postiTotaliRichiesti": { "type": "integer" },
+          "rides": { "type": "array", "items": { "$ref": "#/components/schemas/AvailableRide" } },
+          "message": { "type": "string" }
+        }
+      },
+      "ReservationRequest": {
+        "type": "object",
+        "properties": {
+          "departureDate": { "type": "string" },
+          "departureRide": { "type": "integer" },
+          "returnDate": { "type": "string", "nullable": true },
+          "returnRide": { "type": "integer", "nullable": true },
+          "departureStationCode": { "type": "integer" },
+          "arrivalStationCode": { "type": "integer" },
+          "passengers": { "type": "array", "items": { "type": "object" } },
+          "phoneNumber": { "type": "string" },
+          "email": { "type": "string" },
+          "customerName": { "type": "string", "nullable": true }
+        },
+        "required": ["departureDate","departureRide","departureStationCode","arrivalStationCode","passengers","phoneNumber","email"]
+      },
+      "BookingTicketSegment": {
+        "type": "object",
+        "properties": {
+          "departureDateTime": { "type": "string" },
+          "arrivalDateTime": { "type": "string" },
+          "departureStationCode": { "type": "integer" },
+          "arrivalStationCode": { "type": "integer" },
+          "typeExperience": { "type": "string" },
+          "experience": { "type": "string" }
+        }
+      },
+      "BookingTicket": {
+        "type": "object",
+        "properties": {
+          "passengers": { "type": "array", "items": { "type": "object" } },
+          "ticketPriceInCents": { "type": "integer" },
+          "ticketNumber": { "type": "string" },
+          "ticketUrl": { "type": "string" },
+          "outboundSegments": { "type": "array", "items": { "$ref": "#/components/schemas/BookingTicketSegment" } },
+          "inboundSegments": { "type": "array", "items": { "$ref": "#/components/schemas/BookingTicketSegment" } }
+        }
+      },
+      "BookingResponse": {
+        "type": "object",
+        "properties": {
+          "currency": { "type": "string" },
+          "pnr": { "type": "string" },
+          "bookingId": { "type": "string" },
+          "status": { "type": "string" },
+          "totalPriceInCents": { "type": "integer" },
+          "refundableAmountInCents": { "type": "integer" },
+          "customer": { "type": "string" },
+          "customerEmail": { "type": "string" },
+          "customerPhone": { "type": "string" },
+          "tickets": { "type": "array", "items": { "$ref": "#/components/schemas/BookingTicket" } }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api_json/api.php": {
+      "get": {
+        "summary": "Status / Experiences / Experience / ExperiencePrices / GetBooking / GetBookings",
+        "parameters": [
+          { "$ref": "#/components/parameters/token" },
+          { "name": "handler", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      },
+      "post": {
+        "summary": "Reservation / Booking / ExperienceDates / ExperiencePorts / AvailableRides",
+        "parameters": [
+          { "$ref": "#/components/parameters/token" },
+          { "name": "handler", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      },
+      "delete": {
+        "summary": "ReservationDelete / BookingDelete",
+        "parameters": [
+          { "$ref": "#/components/parameters/token" },
+          { "name": "handler", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    }
+  }
+}

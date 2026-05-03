@@ -1,0 +1,569 @@
+/* General */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+ul {
+    list-style-type: none;
+    padding: 0px; 
+    margin: 0px;
+}
+li span{
+    font-weight: bold;
+    padding: 0px; 
+    margin: 0px;
+}
+
+tr{
+    padding: 0px;
+    margin: 0px;
+}
+td{
+    vertical-align: top;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Top */
+#t_top1 {
+    margin: 0px !important;
+    padding: 0px !important;
+    /*background: #000;*/
+}
+#t_top1 .top_big {
+    width: 16.5cm;
+    height: 7cm;
+    /*border-bottom: 1px dashed #333;*/
+}
+#t_top1 .cella_madre {
+    margin: 1.3cm 0.7cm 0cm 0.2cm;
+}
+#t_top1 .top_small {
+    width: 3.9cm !important;
+    height: 7cm;
+    /*border-left: 1px dashed #333;*/
+    /*border-bottom: 1px dashed #333;*/
+}
+#t_top1 .cella_figlia {    
+    margin: 1.7cm 0.3cm 0cm 0.5cm;
+}
+#t_top1 .top_small_2 {
+    width: 5.2cm;
+    height: 7cm;
+    /*border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;*/
+}
+#t_top1 .cella_figlia_2 {    
+    margin: 1.7cm 0.3cm 0cm 0.3cm;
+}
+
+#t_top1 .campo_big {
+    font-size: 16px;
+    font-weight: bold;
+}
+#t_top1 .note {
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+/* Top2 */
+#t_top2 .top_big {
+    width: 13.5cm;
+    height: 10cm;
+    /*border-bottom: 1px dashed #333;    */
+}
+#t_top2 .cella_madre {
+    margin: 2.0cm 0.3cm 1.3cm 0.3cm;
+}
+#t_top2 .top_small {
+    width: 4cm;
+    height: 10cm;
+    /*border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;*/
+}
+#t_top2 .cella_figlia {    
+    margin: 2.0cm 0.3cm 1.3cm 0.3cm;
+}
+#t_top2 .top_small_2 {
+    width: 5.2cm;
+    height: 10cm;
+    /*border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;*/
+}
+#t_top2 .cella_figlia_2 {    
+    margin: 2.0cm 0.3cm 1.3cm 0.3cm;
+}
+
+#t_top2 .campo_big {
+    font-size: 14px;
+    font-weight: bold;
+}
+#t_top2 .note {
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+/* tabella informazioni viaggio */
+table.informazioni_viaggio {
+    width: 100%;
+    border: 1px solid #aaa;
+    margin-top: 2px;
+}
+table.informazioni_viaggio td {
+    padding: 1px 5px;
+    width: 50%;
+    border-bottom: 1px solid #eee !important;
+    border-right: 1px solid #eee !important;
+}
+#t_top2 table.informazioni_viaggio td {
+    padding:2px;
+}
+table.informazioni_viaggio tr {
+    border: 1px solid #eee !important;
+}
+table.informazioni_viaggiatore {
+    width: 85%
+}
+table.informazioni_viaggiatore {
+    /*border: 1px solid #aaa;*/
+}
+table.informazioni_viaggiatore td{
+    padding: 1px 3px;
+}
+table.informazioni_viaggio td li{
+    font-size: 8px;
+}
+span.campo_big_2 {
+    font-size: 11px !important;
+}
+li.campo_big_2 {
+    font-size: 10px !important;
+}
+
+/* Testo in verticale */
+.scrivi_verticale{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+/* posiziona il footer */
+li.rivendita1 {
+    margin-top: 5px;
+    padding-left: 5px;
+}
+li.rivendita2 {
+    margin-top: 5px;    
+    padding-left: 5px;
+}
+
+
+/* Bottom */
+#t_bottom .bottom_big {
+    width: 17cm;
+    height: 11cm;
+    border-bottom: 1px dashed #333;
+}
+#t_bottom .bottom_small {
+    width: 4.5cm;
+    height: 11cm;
+    border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;
+}
+#t_bottom .big_container {
+    margin: 3cm 2.3cm 1.3cm 2.3cm;
+}
+#t_bottom .small_container {
+    margin: 2.6cm 0.3cm 1.3cm 0.3cm;
+}
+#t_bottom h3 {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+}
+#t_bottom p.sottotitolo {
+    text-align: center;
+    margin-top: 0px;
+    font-style: italic;
+}
+#t_bottom div.numero_titolo {
+    width: 130px;
+    float:right;
+    text-align: center;
+}
+#t_bottom div.numero_titolo p{
+    margin-bottom: 5px;
+}
+
+#t_bottom div.numero_titolo h4{
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin-top: 0px;	
+	font-family:Verdana, Geneva, sans-serif;
+}
+#t_bottom .bottom_small {
+    text-align: center;
+}
+#t_bottom .bottom_small li {
+    font-style: normal !important;
+}
+#t_bottom div.numero_titolo_small {
+    width: 130px;
+    margin:auto;
+}
+#t_bottom div.numero_titolo_small p{
+    margin-bottom: 5px;
+}
+
+#t_bottom div.numero_titolo_small h4{
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin-top: 0px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+#t_bottom li {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+#t_bottom li span.grande{
+    font-style: normal !important;
+    font-size: 20px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+#t_bottom .bottom_big{
+    padding-top: 0px;
+}
+#t_bottom .totale {
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    clear: both;
+}
+#t_bottom .totale span.grande{
+    margin-left:2px;
+}
+#t_bottom .corsivo {
+    margin-left:30px;
+    font-weight: normal;
+    font-size: 13px;
+}
+#t_bottom li span.grande2{
+    font-style: normal !important;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+#t_bottom .lista_sx{
+    width: 220px;
+    float: left;
+}
+#t_bottom .data_biglietto {
+    text-decoration: underline;
+    font-size: 16px;    
+    margin-bottom: 0px;
+}
+#t_bottom .info_biglietto {
+    text-decoration: underline;
+    font-size: 12px;    
+    margin-bottom: 0px;
+}
+#t_bottom .prezzo_biglietto {
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+#t_bottom .label {
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 0px;
+}
+
+/* General */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+ul {
+    list-style-type: none;
+    padding: 0px; 
+    margin: 0px;
+}
+li span{
+    font-weight: bold;
+    padding: 0px; 
+    margin: 0px;
+}
+
+tr{
+    padding: 0px;
+    margin: 0px;
+}
+td{
+    vertical-align: top;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Top */
+#t_top1 {
+    margin: 0px !important;
+    padding: 0px !important;
+    /*background: #000;*/
+}
+#t_top1 .top_big {
+    width: 16.5cm;
+    height: 7cm;
+    /*border-bottom: 1px dashed #333;*/
+}
+#t_top1 .cella_madre {
+    margin: 1.3cm 0.7cm 0cm 0.2cm;
+}
+#t_top1 .top_small {
+    width: 3.9cm !important;
+    height: 7cm;
+    /*border-left: 1px dashed #333;*/
+    /*border-bottom: 1px dashed #333;*/
+}
+#t_top1 .cella_figlia {    
+    margin: 1.7cm 0.3cm 0cm 0.5cm;
+}
+#t_top1 .top_small_2 {
+    width: 5.2cm;
+    height: 7cm;
+    /*border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;*/
+}
+#t_top1 .cella_figlia_2 {    
+    margin: 1.7cm 0.3cm 0cm 0.3cm;
+}
+
+#t_top1 .campo_big {
+    font-size: 16px;
+    font-weight: bold;
+}
+#t_top1 .note {
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+/* Top2 */
+#t_top2 .top_big {
+    width: 15.9cm;
+    height: 10cm;
+    /*border-bottom: 1px dashed #333;*/    
+}
+#t_top2 .cella_madre {
+    margin: 2.5cm 0.5cm 1.3cm 0.3cm;
+}
+#t_top2 .top_small {
+    width: 4.2cm;
+    height: 10cm;
+    /*border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;*/
+}
+#t_top2 .cella_figlia {    
+    margin: 2.5cm 0.3cm 1.3cm 0.3cm;
+}
+#t_top2 .top_small_2 {
+    width: 5.0cm;
+    height: 10cm;
+    /*border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;*/
+}
+#t_top2 .cella_figlia_2 {    
+    margin: 2.5cm 0.3cm 1.3cm 0.3cm;
+}
+
+#t_top2 .campo_big {
+    font-size: 14px;
+    font-weight: bold;
+}
+#t_top2 .note {
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+/* tabella informazioni viaggio */
+table.informazioni_viaggio {
+    width: 100%;
+    border: 1px solid #aaa;
+    margin-top: 2px;
+}
+table.informazioni_viaggio td {
+    padding: 1px 5px;
+    width: 50%;
+    border-bottom: 1px solid #eee !important;
+    border-right: 1px solid #eee !important;
+}
+#t_top2 table.informazioni_viaggio td {
+    padding:2px;
+}
+table.informazioni_viaggio tr {
+    border: 1px solid #eee !important;
+}
+table.informazioni_viaggiatore {
+    width: 85%
+}
+table.informazioni_viaggiatore {
+    /*border: 1px solid #aaa;*/
+}
+table.informazioni_viaggiatore td{
+    padding: 1px 3px;
+}
+table.informazioni_viaggio td li{
+    font-size: 8px;
+}
+span.campo_big_2 {
+    font-size: 11px !important;
+}
+li.campo_big_2 {
+    font-size: 10px !important;
+}
+
+/* Testo in verticale */
+.scrivi_verticale{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+/* posiziona il footer */
+li.rivendita1 {
+    margin-top: 5px;
+    padding-left: 5px;
+}
+li.rivendita2 {
+    margin-top: 5px;    
+    padding-left: 5px;
+}
+
+
+/* Bottom */
+#t_bottom .bottom_big {
+    width: 17cm;
+    height: 11cm;
+    border-bottom: 1px dashed #333;
+}
+#t_bottom .bottom_small {
+    width: 4.5cm;
+    height: 11cm;
+    border-left: 1px dashed #333;
+    border-bottom: 1px dashed #333;
+}
+#t_bottom .big_container {
+    margin: 3cm 2.3cm 1.3cm 2.3cm;
+}
+#t_bottom .small_container {
+    margin: 2.6cm 0.3cm 1.3cm 0.3cm;
+}
+#t_bottom h3 {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+}
+#t_bottom p.sottotitolo {
+    text-align: center;
+    margin-top: 0px;
+    font-style: italic;
+}
+#t_bottom div.numero_titolo {
+    width: 130px;
+    float:right;
+    text-align: center;
+}
+#t_bottom div.numero_titolo p{
+    margin-bottom: 5px;
+}
+
+#t_bottom div.numero_titolo h4{
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin-top: 0px;	
+	font-family:Verdana, Geneva, sans-serif;
+}
+#t_bottom .bottom_small {
+    text-align: center;
+}
+#t_bottom .bottom_small li {
+    font-style: normal !important;
+}
+#t_bottom div.numero_titolo_small {
+    width: 130px;
+    margin:auto;
+}
+#t_bottom div.numero_titolo_small p{
+    margin-bottom: 5px;
+}
+
+#t_bottom div.numero_titolo_small h4{
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    margin-top: 0px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+#t_bottom li {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+#t_bottom li span.grande{
+    font-style: normal !important;
+    font-size: 20px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+#t_bottom .bottom_big{
+    padding-top: 0px;
+}
+#t_bottom .totale {
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    clear: both;
+}
+#t_bottom .totale span.grande{
+    margin-left:2px;
+}
+#t_bottom .corsivo {
+    margin-left:30px;
+    font-weight: normal;
+    font-size: 13px;
+}
+#t_bottom li span.grande2{
+    font-style: normal !important;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+#t_bottom .lista_sx{
+    width: 220px;
+    float: left;
+}
+#t_bottom .data_biglietto {
+    text-decoration: underline;
+    font-size: 16px;    
+    margin-bottom: 0px;
+}
+#t_bottom .info_biglietto {
+    text-decoration: underline;
+    font-size: 12px;    
+    margin-bottom: 0px;
+}
+#t_bottom .prezzo_biglietto {
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+#t_bottom .label {
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 0px;
+}

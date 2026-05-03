@@ -1,0 +1,14 @@
+<script>
+var OxO565a=["windowType","wordWindow","controlWindow","speller","%27","document","frames","\x3Chtml\x3E","\x3Cmeta http-equiv=\x22Content-Type\x22 content=\x22text/html; charset=utf-8\x22\x3E","\x3Clink rel=\x22stylesheet\x22 type=\x22text/css\x22 href=\x22spellerStyle.css\x22/\x3E","\x3Cbody class=\x22normalText\x22 onLoad=\x22document.forms[0].submit();\x22\x3E","\x3Cp\x3ESpell check in progress...\x3C/p\x3E","\x3Cform action=\x22","spellCheckScript","\x22 method=\x22post\x22\x3E","length","textInputs","\x3Cinput type=\x22hidden\x22 name=\x22textinputs[]\x22 value=\x22","\x22\x3E","\x3C/form\x3E","\x3C/body\x3E","\x3C/html\x3E"];var wordWindow=null;var controlWindow=null;function init_spell(Ox1eb){if(Ox1eb){if(Ox1eb[OxO565a[0]]==OxO565a[1]){wordWindow=Ox1eb;} else {if(Ox1eb[OxO565a[0]]==OxO565a[2]){controlWindow=Ox1eb;} ;} ;} ;if(controlWindow&&wordWindow){var Ox1ec=top[OxO565a[3]];wordWindow[OxO565a[3]]=Ox1ec;Ox1ec.startCheck(wordWindow,controlWindow);} ;} ;function encodeForPost(Oxb){var Ox1ee= new String(Oxb);Ox1ee=encodeURIComponent(Ox1ee);return Ox1ee.replace(/\'/g,OxO565a[4]);} ;function postWords(){var Ox1f0=window[OxO565a[6]][0][OxO565a[5]];Ox1f0.open();Ox1f0.write(OxO565a[7]);Ox1f0.write(OxO565a[8]);Ox1f0.write(OxO565a[9]);var Ox1ec=top[OxO565a[3]];Ox1f0.write(OxO565a[10]);Ox1f0.write(OxO565a[11]);Ox1f0.write(OxO565a[12]+Ox1ec[OxO565a[13]]+OxO565a[14]);for(var i=0;i<Ox1ec[OxO565a[16]][OxO565a[15]];i++){Ox1f0.write(OxO565a[17]+encodeForPost(Ox1ec[OxO565a[16]][i].value)+OxO565a[18]);} ;Ox1f0.write(OxO565a[19]);Ox1f0.write(OxO565a[20]);Ox1f0.write(OxO565a[21]);Ox1f0.close();} ;
+</script>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<title>Speller Pages</title>
+</head>
+<frameset rows="*,201" onLoad="postWords();">
+<frame src="blank.html">
+<frame src="controls.html">
+</frameset>
+</html>

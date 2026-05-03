@@ -1,0 +1,56 @@
+CREATE TABLE `RT_FoglioViaggio` (
+  `FoglioViaggioId` INT(11) NOT NULL AUTO_INCREMENT,
+  `BusId` INT(11) NULL,
+  `LineaId` INT(11) NULL,
+  `LineaNome` VARCHAR(255) NULL,
+  `CorsaId` INT(11) NULL,
+  `CorsaNome` VARCHAR(255) NULL,
+  `CorsaDataPartenza` DATE NULL,
+  `AutistaId1` INT(11) NULL,
+  `AutistaId2` INT(11) NULL,
+  `Autista1` VARCHAR(255) NULL,
+  `Autista2` VARCHAR(255) NULL,
+  `TipologiaBus` VARCHAR(255) NULL,
+  `Targa` VARCHAR(255) NULL,
+  `Cellulare` VARCHAR(45) NULL,
+  `Partenza` VARCHAR(255) NULL,
+  `Arrivo` VARCHAR(255) NULL,
+  `OrarioPartenza` TIME NULL,
+  `KmPartenza` INT(11) NULL,
+  `KmArrivo` INT(11) NULL,
+  `AutistaIdUpdate` INT(11) NULL,
+  PRIMARY KEY (`FoglioViaggioId`));
+  
+CREATE TABLE `RT_FoglioViaggioTipoSpesa` (
+  `FoglioViaggioTipoSpesaId` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(255) NULL,
+  PRIMARY KEY (`FoglioViaggioTipoSpesaId`));
+  
+INSERT INTO `RT_FoglioViaggioTipoSpesa` (`Nome`) VALUES ('Carburante');
+INSERT INTO `RT_FoglioViaggioTipoSpesa` (`Nome`) VALUES ('Traghetto');
+INSERT INTO `RT_FoglioViaggioTipoSpesa` (`Nome`) VALUES ('Olio');
+INSERT INTO `RT_FoglioViaggioTipoSpesa` (`Nome`) VALUES ('Lavaggio');
+INSERT INTO `RT_FoglioViaggioTipoSpesa` (`Nome`) VALUES ('Altro');
+
+CREATE TABLE `RT_FoglioViaggioSpesa` (
+  `FoglioViaggioSpesaId` INT(11) NOT NULL AUTO_INCREMENT,
+  `FoglioViaggioId` INT(11) NULL,
+  `FoglioViaggioTipoSpesaId` INT(11) NULL,
+  `EventoKm` INT(11) NULL,
+  `NumeroLitri` INT(11) NULL,
+  `Importo` DECIMAL(10,2) NULL,
+  `AutistaId` INT(11) NULL,
+  `Autista` VARCHAR(255) NULL,
+  `Url` VARCHAR(255) NULL,
+  `FoglioViaggioPagamentoId` INT(11) NULL,
+  PRIMARY KEY (`FoglioViaggioSpesaId`));
+  
+CREATE TABLE `RT_FoglioViaggioPagamento` (
+  `FoglioViaggioPagamentoId` INT(11) NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(255) NULL,
+  PRIMARY KEY (`FoglioViaggioPagamentoId`));
+  
+INSERT INTO `RT_FoglioViaggioPagamento` (`Nome`) VALUES ('Contanti');
+INSERT INTO `RT_FoglioViaggioPagamento` (`Nome`) VALUES ('POS');
+  
+  

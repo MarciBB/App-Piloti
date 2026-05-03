@@ -1,0 +1,71 @@
+CREATE TABLE `ApiToken` (
+  `ApiTokenId` INT NOT NULL AUTO_INCREMENT,
+  `OperatoreId` INT(11) NULL,
+  `Token` VARCHAR(45) NULL,
+  `Descrizione` VARCHAR(45) NULL,
+  PRIMARY KEY (`ApiTokenId`));
+  
+INSERT INTO `Gestore` (`OdcId`, `RagioneSociale`, `PartitaIva`, `CodiceFiscale`, `Indirizzo`, `Cap`, `ComuneId`, `Sx`, `Dx`, `GestorePadre`, `GestorePrimario`, `GestoreGruppoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `Verificato`) 
+  	VALUES ('1', 'Distribusion Technologies GmbH WEB', '000', '000', 'Schwedwnstr. 9', '00000', '8293', '387', '388', '1', '0', '1', '2021-05-19 10:00:00', '13', '1', '77.242.129.191', '1', '0', '1', '1', '1');
+INSERT INTO `Sede` (`GestoreId`, `ComuneId`, `Indirizzo`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `CodiceSede`, `SedeAutonoma`, `SedeLegale`, `VenditaOltreOrario`, `SedeWeb`) 
+	VALUES ('511', '8293', 'Schwedwnstr. 9 Berlin', '2021-05-19 10:00:00', '13', '1', '77.242.129.191', '1', '0', '1', '1', 'DISWEB', '0', '0', '0', '0');
+INSERT INTO `GestoreConvenzione` (`GestoreId`, `ValidaDal`, `ValidaAl`, `ProvvigioneId`, `LineaId`, `SoloPrenotazione`, `ListaAttesa`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('511', '2020-05-01', '2031-12-31', '3', '13', '0', '0', '2021-05-01 10:00:00', '7', '1', '127.0.0.1', '1', '0', '1', '1');
+INSERT INTO `GestoreConvenzione` (`GestoreId`, `ValidaDal`, `ValidaAl`, `ProvvigioneId`, `LineaId`, `SoloPrenotazione`, `ListaAttesa`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('511', '2020-05-01', '2031-12-31', '3', '14', '0', '0', '2021-05-01 10:00:00', '7', '1', '127.0.0.1', '1', '0', '1', '1');
+INSERT INTO `GestoreConvenzione` (`GestoreId`, `ValidaDal`, `ValidaAl`, `ProvvigioneId`, `LineaId`, `SoloPrenotazione`, `ListaAttesa`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('511', '2020-05-01', '2031-12-31', '3', '16', '0', '0', '2021-05-01 10:00:00', '7', '1', '127.0.0.1', '1', '0', '1', '1');
+INSERT INTO `GestoreConvenzione` (`GestoreId`, `ValidaDal`, `ValidaAl`, `ProvvigioneId`, `LineaId`, `SoloPrenotazione`, `ListaAttesa`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('511', '2020-05-01', '2031-12-31', '3', '17', '0', '0', '2021-05-01 10:00:00', '7', '1', '127.0.0.1', '1', '0', '1', '1');
+INSERT INTO `Operatore` (`Username`, `Password`, `GestoreId`, `Cognome`, `Nome`, `Email`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `RecuperaPwd`, `OperatoreTipoId`, `IsAdmin`, `OperatoreWeb`) 
+	VALUES ('distributionweb', '052da9a8728aa951832987d4b6673570', '508', 'distributionweb', 'distributionweb', 'distributionweb@distributionweb.com', '2021-06-19 10:00:00', '13', '1', '127.0.0.1', '1', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `OperatoreRuolo` (`OperatoreId`, `RuoloId`, `DataIns`, `IpIns`, `Stato`, `Cancella`) VALUES ('542', '306', '2021-06-19 10:00:00', '127.0.0.1', '1', '0');
+INSERT INTO `ApiToken` (`OperatoreId`, `Token`, `Descrizione`) VALUES ('542', 'v6ay4p5gm5yYEAxC4D3JeMK17DYS8g1a', 'Distribusion Technologies GmbH');
+
+
+
+CREATE TABLE FatturaInCloudAgenzia (
+  `FatturaId` INT NOT NULL AUTO_INCREMENT,
+  `Verificata` INT(1) NULL,
+  `GestoreId` INT(11) NULL,
+  `FatturaInCloudId` VARCHAR(45) NULL,
+  `Nome` VARCHAR(45) NULL,
+  `IndirizzoVia` VARCHAR(45) NULL,
+  `IndirizzoCap` VARCHAR(45) NULL,
+  `IndirizzoCitta` VARCHAR(45) NULL,
+  `IndirizzoProvincia` VARCHAR(45) NULL,
+  `Paese` VARCHAR(45) NULL,
+  `PaeseISO` VARCHAR(45) NULL,
+  `Lingua` VARCHAR(45) NULL,
+  `PIVA` VARCHAR(45) NULL,
+  `CF` VARCHAR(45) NULL,
+  `Articolo` VARCHAR(45) NULL,
+  `ArticoloCodIva` INT(5) NULL,
+  `ArticoloQuantita` INT(5) NULL,
+  `ArticoloPrezzoNetto` FLOAT NULL,
+  `ArticoloPrezzoLordo` FLOAT NULL,
+  `PagamentoData` DATE NULL,
+  `PagamentoScadenza` DATE NULL,
+  `PagamentoImporto` VARCHAR(45) NULL,
+  `CodiceDestinatario` VARCHAR(45) NULL,
+  `PEC` VARCHAR(45) NULL,
+  `Email` VARCHAR(45) NULL,
+  `Tel` VARCHAR(45) NULL,
+  `Fax` VARCHAR(45) NULL,
+  `FatturaData` DATE NULL,
+  `FatturaStato` VARCHAR(45) NULL,
+  `FatturaNumero` VARCHAR(45) NULL,
+  `Anno` INT(5) NULL,
+  `Progressivo` INT(11) NULL,
+  PRIMARY KEY (`FatturaId`));
+  
+  
+INSERT INTO `AppModulo` (`AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) VALUES ('FatturaInCloud', '3', '7', 'rt_contabilita', 'fatturaincloud.php', '1', '0', '0', '1', '0', '0');
+
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '1', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '2', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '3', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '4', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '5', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '6', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '50', '7', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+
+  distribusionweb
+  distribusion2021
+       

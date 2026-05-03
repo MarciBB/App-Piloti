@@ -1,0 +1,637 @@
+[23-Jun-2023 15:48:32 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[23-Jun-2023 15:48:32 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined index: step in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 683
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined variable: tipologiabus_wizard in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 515
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Trying to get property of non-object in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 431
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined variable: Posti1 in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 455
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined variable: Posti2 in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 459
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined variable: Righe in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 462
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined variable: Colonne in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 466
+[23-Jun-2023 15:48:34 UTC] PHP Notice:  Undefined variable: Stato in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 475
+[23-Jun-2023 15:49:00 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[23-Jun-2023 15:49:00 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[23-Jun-2023 15:49:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Jun-2023 15:49:04 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[23-Jun-2023 15:49:04 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[23-Jun-2023 15:49:04 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[29-Jun-2023 16:07:52 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[29-Jun-2023 16:07:53 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:07:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:08:11 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:13:47 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[29-Jun-2023 16:16:00 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[29-Jun-2023 16:16:00 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[04-Jul-2023 18:32:01 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[04-Jul-2023 18:32:05 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[04-Jul-2023 19:18:19 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[04-Jul-2023 19:18:19 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[04-Jul-2023 19:18:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:24 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[21-Jul-2023 11:54:24 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[21-Jul-2023 11:54:48 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:54:48 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:48 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:54:58 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:54:58 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:54:58 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[21-Jul-2023 11:55:04 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:55:04 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:04 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:55:05 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:55:05 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:55:05 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[21-Jul-2023 11:55:51 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[21-Jul-2023 11:55:51 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[21-Jul-2023 11:56:04 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:56:04 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:05 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:08 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:56:08 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:56:08 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[21-Jul-2023 11:56:10 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:56:10 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:10 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[21-Jul-2023 11:56:13 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[21-Jul-2023 11:56:13 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[21-Jul-2023 12:46:05 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[21-Jul-2023 12:46:05 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[28-Jul-2023 14:40:15 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[28-Jul-2023 14:40:15 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[28-Jul-2023 14:40:28 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[28-Jul-2023 14:40:28 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[28-Jul-2023 14:41:15 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[28-Jul-2023 14:41:15 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[28-Jul-2023 14:58:26 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[28-Jul-2023 14:58:26 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[29-Jul-2023 06:22:39 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[29-Jul-2023 06:22:39 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 14:47:08 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 14:47:08 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:00 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 15:59:06 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:06 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 15:59:51 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:51 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 15:59:53 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 15:59:53 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 15:59:54 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[05-Oct-2023 16:01:12 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:12 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:12 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:14 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:14 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:14 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[05-Oct-2023 16:01:21 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:01:21 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 16:01:28 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:28 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:29 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:31 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:31 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:31 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[05-Oct-2023 16:01:40 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:01:40 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 16:01:56 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:56 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:01:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:01 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:02:02 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 16:02:30 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:02:30 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:30 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:02:38 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:02:38 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 16:12:03 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:03 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:03 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:07 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:07 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:07 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[05-Oct-2023 16:12:11 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:12:12 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 16:12:25 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:25 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:25 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:28 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:28 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:28 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[05-Oct-2023 16:12:44 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:12:45 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 16:12:55 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:55 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:12:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 16:13:02 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 16:13:02 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 17:18:49 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[05-Oct-2023 17:18:49 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[05-Oct-2023 17:19:08 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 17:19:08 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[05-Oct-2023 17:19:08 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[19-Oct-2023 15:34:17 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[19-Oct-2023 15:34:17 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[10-Nov-2023 19:06:50 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[10-Nov-2023 19:06:50 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[23-Nov-2023 16:34:58 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[23-Nov-2023 16:34:58 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:22 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 16:35:31 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[23-Nov-2023 17:45:14 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[23-Nov-2023 17:45:14 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[20-Dec-2023 11:07:51 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[20-Dec-2023 11:07:51 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[27-Dec-2023 10:38:50 UTC] PHP Notice:  Undefined index: do in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 667
+[27-Dec-2023 10:38:50 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_processing.php on line 33
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:38:59 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:41:44 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:41:44 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:37 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:44:37 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:44:38 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[27-Dec-2023 10:44:42 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:44:42 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:42 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:46 UTC] PHP Warning:  include_once(/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:44:46 UTC] PHP Warning:  include_once(): Failed opening '/home/bertoldiboats/public_html/protected/classes/class.Mediatore.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus_action.php on line 10
+[27-Dec-2023 10:44:46 UTC] PHP Notice:  Undefined index: TipologiaBusId in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 697
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300
+[27-Dec-2023 10:44:56 UTC] PHP Notice:  Undefined variable: ArrObjectTB in /home/bertoldiboats/public_html/protected/modules/rt_tipologiabus/tipologiabus.php on line 300

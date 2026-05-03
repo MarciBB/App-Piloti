@@ -1,0 +1,15 @@
+/* Validation CSS */
+
+.brain_formModifica span.required{
+    background: url("/images/field_required.png") no-repeat scroll right top transparent;
+    color: #00A4AA !important;
+    padding-bottom: 0;
+    padding-right: 25px;
+	font-weight:normal!important;
+}
+.brain_formModifica label.error{
+        color: #ff9000;
+        text-decoration: none;
+        font-style: italic;
+		clear:both;
+}

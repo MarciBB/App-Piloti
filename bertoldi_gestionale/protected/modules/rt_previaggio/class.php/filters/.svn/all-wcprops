@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_previaggio/class.php/filters
+END
+FilterASCII85.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_previaggio/class.php/filters/FilterASCII85.php
+END
+FilterASCII85_FPDI.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_previaggio/class.php/filters/FilterASCII85_FPDI.php
+END
+FilterLZW.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_previaggio/class.php/filters/FilterLZW.php
+END
+FilterLZW_FPDI.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_previaggio/class.php/filters/FilterLZW_FPDI.php
+END

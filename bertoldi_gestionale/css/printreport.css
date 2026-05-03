@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+.brain_top{display: none} /*non stampa il top*/
+
+td.rep_ltrb {
+    color: #000;
+    font-family: arial,verdana;
+    font-size: 10px !important;
+    font-weight: bold;
+    padding: 2px;
+    text-align: left;
+}

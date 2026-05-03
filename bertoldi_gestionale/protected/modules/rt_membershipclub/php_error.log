@@ -1,0 +1,6 @@
+[19-Jun-2017 18:45:27] PHP Notice:  Constant WEB_ROOT already defined in /home/onebus.braincomputing.net/public_html/custom/reserved/class.Config.php on line 89
+[19-Jun-2017 18:45:28] PHP Notice:  Undefined index: do in /home/onebus.braincomputing.net/public_html/protected/modules/rt_membershipclub/membershipclub.php on line 662
+[19-Jun-2017 18:45:28] PHP Notice:  Undefined index: partita_iva in /home/onebus.braincomputing.net/public_html/protected/modules/rt_membershipclub/membershipclub.php on line 67
+[19-Jun-2017 18:45:28] PHP Notice:  Constant WEB_ROOT already defined in /home/onebus.braincomputing.net/public_html/custom/reserved/class.Config.php on line 89
+[20-May-2019 10:14:13] PHP Notice:  Undefined index: partita_iva in /home/0n3St4g1ng/public_html/protected/modules/rt_membershipclub/membershipclub.php on line 67
+[26-May-2019 10:16:06] PHP Notice:  Undefined index: partita_iva in /home/0n3St4g1ng/public_html/protected/modules/rt_membershipclub/membershipclub.php on line 67

@@ -1,0 +1,139 @@
+/*CSS TABELLA*/
+
+.dataTables_length {
+    float: left!important;
+    font-size: 12px!important;
+    padding: 3px 0 0px 0;
+    width: 100%;
+}					
+.brain_tabellaTr{
+	background: none repeat scroll 0 0 #dfebe9 !important;
+	font-size: 12px!important;
+	font-weight: 600 !important;
+	text-align: left!important;
+	color: #333 !important;
+	text-align: center !important;
+}
+.brain_tabellaTr th {
+	font-weight: 600 !important;
+	padding: 1.4rem 0rem !important;
+	text-align: center !important;
+}
+.table.display thead th {
+	vertical-align: middle;
+}
+.brain_tabellaFilter{
+	background: #ccc;
+}
+
+.brain_tabellaFilter input, .brain_tabellaFilter select{
+	  width: 97%;
+	  border: none;
+	  border-radius: 16px;
+	  background-color: #fff;
+	  position: relative;
+	  background-position: 5% center;
+	  background-repeat: no-repeat;
+	  background-size: auto;
+	  padding: 0.4rem 0px;
+	  display: block;
+	  margin-right: auto;
+	  margin-left: 8px;
+	  text-align: center;
+}
+
+.brain_tabellaInput{
+	background:#D6D6D6;
+}
+tr.odd td.sorting_1 {
+}
+tr.even td.sorting_1 {
+}
+table.display td {
+    border-bottom: 1px solid #D6D6D6 !important;
+    border-right: 1px solid #D6D6D6 !important;
+    border-left: 1px solid #D6D6D6 !important;
+    /*color: #333333;*/
+    font-size: 13px;
+    text-align: center !important;
+}
+tr.odd {
+    background-color: #FFFFFF;
+}
+tr.even {
+    background-color: #F5F5F5;
+}
+
+table.display td.dataTables_empty {
+	text-align: center;
+	padding: 20px;
+	font-size: 14px;
+	color: #999;
+	font-style: italic;
+}
+#example{
+	border:none;
+}
+.sorting_asc, .sorting_desc, .sorting {
+    border-right: 1px solid #d6d6d6;
+}
+.dataTables_info {
+    float: left;
+    font-size: 12px;
+    padding-left: 12px;
+    padding-top: 10px;
+    width: 60%;
+}
+
+
+table.display tbody tr.even:hover, #example tbody tr.even td.highlighted {
+background-color: #fff7f4;
+}
+
+table.display tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+background-color: #fff7f4;
+}
+
+table.display td a.seleziona_item {
+	color: #004080;
+	background: url('/images/pointer_select.png') no-repeat scroll 0 0;
+	padding-left: 20px;
+	padding-bottom: 2px;
+	text-decoration: none;
+	font-weight: bold;
+}
+table.display td a.seleziona_item:hover {
+	color: #004080;
+	background: url('/images/pointer_select_hover.png') no-repeat scroll 0 0;
+	padding-left: 20px;
+	padding-bottom: 2px;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.seleziona_comune {
+	color: #004080;
+	background: url('/images/pointer_select.png') no-repeat scroll 0 0;
+	padding-left: 20px;
+	padding-bottom: 2px;
+	text-decoration: underline;
+	font-weight: normal;
+	line-height:60px;
+}
+a.seleziona_comune:hover {
+	color: #6CBBD5;
+	background: url('/images/pointer_select_hover.png') no-repeat scroll 0 0;
+	padding-left: 20px;
+	padding-bottom: 2px;
+	text-decoration: underline;
+	font-weight: normal;
+	line-height:60px;
+}
+.brain_add th{
+	text-align: left;
+	height: 50px;
+	
+}
+
+#elenco_comuni table.display {margin:0}
+
+#elenco_comuni .dataTables_wrapper {margin:0}

@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+</IfModule>
+
+# Aggiungi l'header per consentire iFrame e CORS
+<IfModule mod_headers.c>
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type"
+Header always set X-Frame-Options "ALLOWALL"
+Header edit Set-Cookie ^(.*)$ $1;SameSite=None;Secure
+</IfModule>

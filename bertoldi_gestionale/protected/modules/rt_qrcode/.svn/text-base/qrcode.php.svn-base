@@ -1,0 +1,222 @@
+<?php
+$basepath = $_SERVER['DOCUMENT_ROOT'];
+include_once($basepath."/main_include.php");
+
+$config = new Config();
+$run = $config->load();
+$modulespath_ = Config::$modulespath;
+$classespath_ = Config::$classespath;
+$errors = new Errors();
+
+include_once($classespath_."class.Form.php");
+include_once($classespath_."class.Ruolo.php");
+include_once($classespath_."class.Sede.php");
+include_once($classespath_."class.Gestore.php");
+include_once($classespath_."class.Nazione.php");
+include_once($classespath_."class.Regione.php");
+include_once($classespath_."class.Comune.php");
+include_once($classespath_."class.Percorso.php");
+include_once($classespath_."class.Linea.php");
+include_once($classespath_."class.Corsa.php");
+include_once($classespath_."class.Tratta.php");
+include_once($classespath_."class.TrattaTipo.php");
+include_once($classespath_."class.Mezzo.php");
+include_once($classespath_."class.TrattaDirezione.php");
+include_once($classespath_."class.Prenotazione.php");
+include_once($classespath_."class.Fermata.php");
+include_once($classespath_."class.PrenotazioneMovimento.php");
+include_once($classespath_."class.PagamentoTipo.php");
+
+global $dizionario;
+
+$db= new Database();
+$db->connect();
+
+$dt = new DT();
+
+$Codice = $_GET['code'];
+
+
+$sql = "SELECT PrenotazioneNumeroId FROM RT_PrenotazioneNumero WHERE CodiceQrcode='$Codice'";
+$prenotazioneId = $db->query_first($sql);
+$PrenotazioneNumeroId = $prenotazioneId['PrenotazioneNumeroId']; 
+$sql = "SELECT * FROM RT_PrenotazioneDettaglio WHERE PrenotazioneNumero=$PrenotazioneNumeroId";
+$prenotazioni = $db->fetch_array($sql);
+
+$app = $_GET['app'];
+$action = $_GET['action'];
+
+if(isset($action) && $action == 'validate'){
+	//chiamata tramite app
+	$risultato['A'] = 0;
+	if (count($prenotazioni) > 0) {
+		$prenotazione = $prenotazioni[0];
+		$infoBiglietto['PrenotazioneId'] = $prenotazione['PrenotazioneId'];
+	
+		$sql = "SELECT * FROM RT_PrenotazioneTitolo WHERE PrenotazioneNumeroId = $PrenotazioneNumeroId";
+		$titolo  = $db->query_first($sql);
+	
+		$sql = "SELECT ClienteNome, ClienteCellulare, ClienteSessoId FROM RT_Prenotazione WHERE PrenotazioneId = ".$prenotazione['PrenotazioneId'];
+		$PrenotazioneInfo  = $db->query_first($sql);
+	
+		$sql = "SELECT s.CodiceSede, g.RagioneSociale FROM Sede s LEFT JOIN Gestore g ON (s.GestoreId=g.GestoreId) WHERE SedeId=".$prenotazione['SedeIns'];
+		$sede = $db->query_first($sql);
+		$Agenzia = $sede['RagioneSociale'];
+		$Rivendita = $sede['CodiceSede'];
+	
+		$todays_date = time();
+		if (count($prenotazioni) == 1) {
+			$event_date = strtotime($dt->format($prenotazione['DataPartenza'], "Y-m-d", "d-m-Y")." ".$prenotazione['OrarioPartenza']);
+			$infoBiglietto['CorsaId'] = $prenotazione['CorsaId'];
+			if ($todays_date>$event_date)
+			{
+				$risultato['A'] = 1; //Biglietto Valido – scaduto e non pi&ugrave; utilizzabile.
+				$risultato['R'] = 0;
+				$infoBiglietto['DataPartenza'] = $prenotazione['DataPartenza'];
+			}
+			else
+			{
+				$risultato['A'] = 2; //Biglietto Valido
+				$risultato['R'] = 0;
+				$infoBiglietto['DataPartenza'] = $prenotazione['DataPartenza'];
+			}
+		}else{
+				
+			$event_date_andata = strtotime($dt->format($prenotazione['DataPartenza'], "Y-m-d", "d-m-Y")." ".$prenotazione['OrarioPartenza']);
+			$event_date_ritorno = strtotime($dt->format($prenotazioni[1]['DataPartenza'], "Y-m-d", "d-m-Y")." ".$prenotazioni[1]['OrarioPartenza']);
+			$infoBiglietto['CorsaId'] = $prenotazione['CorsaId'];
+			if ($todays_date > $event_date_andata)
+			{
+				$risultato['A'] = 1; //Biglietto di Andata Valido – scaduto e non pi&ugrave; utilizzabile.
+				$infoBiglietto['DataPartenza'] = $prenotazione['DataPartenza'];
+			}
+			else
+			{
+				$risultato['A'] = 2; //Biglietto di Andata valido
+				$infoBiglietto['DataPartenza'] = $prenotazione['DataPartenza'];
+			}
+			$infoBiglietto['CorsaIdRitorno'] = $prenotazioni[1]['CorsaId'];
+			if ($todays_date > $event_date_ritorno)
+			{
+				$risultato['R'] = 1; //Biglietto di Ritorno Valido – scaduto e non pi&ugrave; utilizzabile.
+				$infoBiglietto['DataPartenzaRitorno'] = $prenotazioni[1]['DataPartenza'];
+			}
+			else
+			{
+				$risultato['R'] = 2; //Biglietto di Ritorno valido
+				$infoBiglietto['DataPartenzaRitorno'] = $prenotazioni[1]['DataPartenza'];
+			}
+		}
+	
+	
+		$infoCliente['ClienteNome'] = utf8_decode($PrenotazioneInfo['ClienteNome']) ;
+		$infoCliente['ClienteCellulare'] = $PrenotazioneInfo['ClienteCellulare'];
+			
+		$infoBiglietto['Codice'] = $titolo['Codice']."/".$titolo['Anno'];
+		$infoBiglietto['TipologiaBiglietto'] = $prenotazione['TipologiaBiglietto'];
+		$infoBiglietto['PercorsoNome'] =  $prenotazione['PercorsoNome'];
+		$infoBiglietto['CorsaNome'] = $prenotazione['CorsaNome'];
+		$infoBiglietto['Importo'] = number_format ($prenotazione['Importo'], 2, ",", "" );
+		$infoBiglietto['Agenzia'] = utf8_decode($Agenzia) . " (" . $Rivendita . ")";
+			
+		$infoBiglietto['Partenza'] = utf8_decode($prenotazione['ComunePartenza']) . " - " . utf8_decode($prenotazione['FermataPartenza']) . " del " . $dt->format($prenotazione['DataPartenza'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioPartenza'], "H:i:s", "H:i");
+		$infoBiglietto['Arrivo'] = utf8_decode($prenotazione['ComuneArrivo']) . " - " . utf8_decode($prenotazione['FermataArrivo']) . " il " . $dt->format($prenotazione['DataArrivo'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioArrivo'], "H:i:s", "H:i");
+	
+		if (count($prenotazioni) == 2) {
+			$prenotazione = $prenotazioni[1];
+			$infoBiglietto['PartenzaRitorno'] = utf8_decode($prenotazione['ComunePartenza']) . " - " . utf8_decode($prenotazione['FermataPartenza']) . " del " . $dt->format($prenotazione['DataPartenza'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioPartenza'], "H:i:s", "H:i");
+			$infoBiglietto['ArrivoRitorno'] = utf8_decode($prenotazione['ComuneArrivo']) . " - " . utf8_decode($prenotazione['FermataArrivo']) . " il " . $dt->format($prenotazione['DataArrivo'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioArrivo'], "H:i:s", "H:i");
+		}
+	} else {
+		$risultato['A'] = 0;
+	}
+	echo json_encode(array('risultato'=>$risultato, 'infoCliente'=>$infoCliente, 'infoBiglietto'=>$infoBiglietto, 'codice' => $Codice));
+
+} else {
+	//chiamata tramite browser
+	if (count($prenotazioni) > 0) {
+		$prenotazione = $prenotazioni[0];
+		
+		$sql = "SELECT * FROM RT_PrenotazioneTitolo WHERE PrenotazioneNumeroId = $PrenotazioneNumeroId";
+		$titolo  = $db->query_first($sql);
+		
+		$sql = "SELECT s.CodiceSede, g.RagioneSociale FROM Sede s LEFT JOIN Gestore g ON (s.GestoreId=g.GestoreId) WHERE SedeId=".$prenotazione['SedeIns'];
+		$sede = $db->query_first($sql);
+		$Agenzia = $sede['RagioneSociale'];
+		$Rivendita = $sede['CodiceSede'];
+		
+		$todays_date = time();
+		if (count($prenotazioni) == 1) {
+			$event_date = strtotime($dt->format($prenotazione['DataPartenza'], "Y-m-d", "d-m-Y"));
+			if ($todays_date>$event_date)
+			{
+				echo "<b>".$dizionario['qrcode']['biglietto_valido1']."</b>";
+			}
+			else
+			{
+				echo "<b>".$dizionario['qrcode']['biglietto_valido2']."</b>";
+			}
+		}else{
+			$event_date_andata = strtotime($dt->format($prenotazione['DataPartenza'], "Y-m-d", "d-m-Y"));
+			$event_date_ritorno = strtotime($dt->format($prenotazioni[1]['DataPartenza'], "Y-m-d", "d-m-Y"));
+			if ($todays_date>$event_date_andata)
+			{
+				echo "<b>".$dizionario['qrcode']['andata_valido']."</b><br>";
+			}
+			else
+			{
+				echo "<b>".$dizionario['qrcode']['andata_valido2']."</b><br>";
+			}
+			if ($todays_date>$event_date_ritorno)
+			{
+				echo "<b>".$dizionario['qrcode']['ritorno_valido']."</b><br>";
+			}
+			else
+			{
+				echo "<b>".$dizionario['qrcode']['ritorno_valido2']."</b><br>";
+			}
+		}
+		
+		?>
+		<br><br>
+		<b><?=$dizionario['qrcode']['info']?></b><br>
+		<?=$dizionario['qrcode']['intestato']?> : <?php echo utf8_decode($prenotazione['Cognome']) . " " . utf8_decode($prenotazione['Nome']); ?><br>
+		<?=$dizionario['generale']['sesso']?>: 
+		<?php
+		if($prenotazione['SessoId']==1){
+			echo $dizionario['generale']['signore'];
+		}else if ($prenotazione['SessoId']==2){
+			echo $dizionario['generale']['signora'];
+		}else{
+			echo $dizionario['generale']['nd'];
+		}
+		?><br>
+		<?=$dizionario['generale']['eta']?>: <?php echo $prenotazione['Eta'];?><br><br>
+		
+		<b><?=$dizionario['qrcode']['info_biglietto']?></b><br>
+		<?=$dizionario['qrcode']['titolo']?>: <?php echo $titolo['Codice']."/".$titolo['Anno'];?><br>
+		<?=$dizionario['qrcode']['tipo']?>: <?php echo $prenotazione['TipologiaBiglietto'];?><br>
+		<?=$dizionario['qrcode']['info_biglietto']?>: <?php echo $prenotazione['PercorsoNome'];?><br>
+		<?=$dizionario['generale']['corsa']?>: <?php echo $prenotazione['CorsaNome'];?><br>
+		<?=$dizionario['generale']['importo']?>: <?php echo number_format ($prenotazione['Importo'], 2, ",", "" );?>&euro;<br>
+		<?=$dizionario['qrcode']['emesso_da']?>: <?php echo utf8_decode($Agenzia) . " (" . $Rivendita . ")"?><br><br> 
+		
+		<b><?=$dizionario['qrcode']['info_viaggio']?></b><br>
+		<b><?=$dizionario['qrcode']['viaggio_andata']?>:</b><br>
+		<?=$dizionario['generale']['partenza']?>: <?php echo utf8_decode($prenotazione['ComunePartenza']) . " - " . utf8_decode($prenotazione['FermataPartenza']) . " del " . $dt->format($prenotazione['DataPartenza'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioPartenza'], "H:i:s", "H:i"); ?><br>
+		<?=$dizionario['generale']['arrivo']?>: <?php echo utf8_decode($prenotazione['ComuneArrivo']) . " - " . utf8_decode($prenotazione['FermataArrivo']) . " il " . $dt->format($prenotazione['DataArrivo'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioArrivo'], "H:i:s", "H:i"); ?><br>
+		<?
+		if (count($prenotazioni) == 2) {
+			$prenotazione = $prenotazioni[1];
+			?>
+			<br>
+			<b><?=$dizionario['qrcode']['viaggio_ritorno']?>:</b><br>
+			<?=$dizionario['generale']['partenza']?>: <?php echo utf8_decode($prenotazione['ComunePartenza']) . " - " . utf8_decode($prenotazione['FermataPartenza']) . " del " . $dt->format($prenotazione['DataPartenza'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioPartenza'], "H:i:s", "H:i"); ?><br>
+			<?=$dizionario['generale']['arrivo']?>: <?php echo utf8_decode($prenotazione['ComuneArrivo']) . " - " . utf8_decode($prenotazione['FermataArrivo']) . " il " . $dt->format($prenotazione['DataArrivo'], "Y-m-d", "d/m/Y") . " ore " . $dt->format($prenotazione['OrarioArrivo'], "H:i:s", "H:i"); ?><br>
+			<?
+		}
+	} else {
+		echo $dizionario['qrcode']['inesistente'];
+	}
+}
+?>

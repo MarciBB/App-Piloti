@@ -1,0 +1,19 @@
+ALTER TABLE `RT_MembershipClub` 
+ADD COLUMN `Validazione` INT(2) NULL AFTER `PasswordWeb`,
+ADD COLUMN `ValidazioneCodice` VARCHAR(10) NULL AFTER `Validazione`,
+ADD COLUMN `RecuperoCodice` VARCHAR(10) NULL AFTER `ValidazioneCodice`,
+ADD COLUMN `RecuperoData` DATE NULL AFTER `RecuperoCodice`,
+ADD COLUMN `TelefonoFamiliare` VARCHAR(255) NULL AFTER `RecuperoData`,
+ADD COLUMN `Sesso` INT(4) NULL AFTER `TelefonoFamiliare`;
+
+ALTER TABLE `csreisen`.`rt_membershipclub` 
+CHANGE COLUMN `PasswordWeb` `PasswordWeb` VARCHAR(255) NULL DEFAULT NULL ;
+
+
+ALTER TABLE RT_Prenotazione 
+ADD COLUMN `MembershipClubCode` VARCHAR(255) NULL AFTER `Penale`;
+
+ALTER TABLE `RT_Coupon` 
+ADD COLUMN `MembershipClubCode` VARCHAR(255) NULL AFTER `Valore`;
+
+

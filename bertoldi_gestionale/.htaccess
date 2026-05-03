@@ -1,0 +1,61 @@
+RewriteEngine on
+Options -MultiViews
+
+# HTTPS BRAIN
+RewriteCond %{HTTP_HOST} ^www\.bertoldiboats\.com [NC]
+RewriteRule ^(.*)$ https://office.bertoldiboats.com/$1 [L,R=301]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteEngine On
+RewriteRule ^operatore$ /protected/modules/app/login.php [L,R=301]
+RewriteRule ^molo$ /protected/modules/app/login.php [L,R=301]
+
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+# BEGIN EWWWIO
+
+# END EWWWIO
+<IfModule mod_deflate.c>
+#The following line is enough for .js and .css
+AddOutputFilter DEFLATE js css
+#The following line also enables compression by file content type, for the following list of Content-Type:s
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml
+#The following lines are to avoid bugs with some browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4.0[678] no-gzip
+BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+# MOD_DEFLATE #
+# BEGIN Expire headers
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 600 seconds"
+ExpiresByType image/x-icon "access plus 2500000 seconds"
+ExpiresByType image/jpeg "access plus 2500000 seconds"
+ExpiresByType image/png "access plus 2500000 seconds"
+ExpiresByType image/gif "access plus 2500000 seconds"
+ExpiresByType application/x-shockwave-flash "access plus 2500000 seconds"
+ExpiresByType text/css "access plus 2500000 seconds"
+ExpiresByType text/javascript "access plus 2500000 seconds"
+ExpiresByType application/javascript "access plus 2500000 seconds"
+ExpiresByType application/x-javascript "access plus 2500000 seconds"
+ExpiresByType text/html "access plus 600 seconds"
+ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</IfModule>

@@ -1,0 +1,111 @@
+/*///STILE MENU TOP///*/
+UL#topnav LI .row {
+	float:left;
+	clear:both;
+	z-index:-1000;
+}
+	UL#topnav LI .row .sottomenu {
+		float: left;
+		margin: 0 4px;
+		padding: 10px 0;
+		height:100%;
+	}
+		UL#topnav LI .sub {
+			float:left;
+			clear:both;
+			z-index:8000;
+			position:absolute;
+		}
+			#menubar UL#topnav LI .sub UL {
+				clear: both;
+				float: left;
+			}
+
+
+
+/*///STILE TABELLA IN DIALOG BOX///*/
+.brain_tabellaTr {
+    background: none repeat scroll 0 0 #416A94 !important;
+    color: #FFFFFF !important;
+    font-size: 12px !important;
+    font-weight: lighter !important;
+    text-align: left !important;
+}
+
+.dataTables_length {
+    float: left !important;
+    font-size: 12px !important;
+    padding: 3px 0 0;
+    width: 80%!important;    
+	margin-top: 10px;
+}
+.brain_servicebar {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 7px 7px 7px 7px;
+    float: right;
+    margin: 0;
+    padding: 7px;
+    width: auto;
+}
+.dataTables_filter {
+    display: none!important;
+    float: right;
+    text-align: right;
+    width: 0%;
+}
+.dataTables_wrapper {
+    clear: both;
+    margin-top: 20px;
+    position: relative;
+}
+table.display thead th {
+    cursor: pointer;
+    font-weight: normal;
+	padding:5px;
+}
+table.display tfoot {
+    background-color: #EAEAEA;
+}
+table,  td, tr, th{
+    text-align:left;
+	vertical-align:middle!important;
+}
+ td {
+    padding: 8px!important;
+}
+span.operatore_attivo {
+    padding-top:6px!important;
+}
+.dataTables_length {
+    color: #333333;
+    float: left;
+    margin-top: 10px;
+    width: 40%;
+	margin-bottom:10px;
+}
+.MediazioneSoggettoPatrocinio label {
+    margin-top: 6px !important;
+	float:left!important;
+}
+table.display tfoot th {
+    font-weight: bold!important;
+    height: 35px!important;
+    padding: 10px 18px 3px 5px!important;
+    width: 100%!important;
+}
+table.display {
+    clear: both!important;
+    margin: 10px auto 0!important;
+    width: 100%!important;
+}
+.brain_dialogbox .wizart .brain_campoForm label {
+    margin-right: 20px;
+    margin-top: 5px !important;
+    width: auto !important;
+}
+.MediazioneAccettazione label {
+    float: left;
+	clear:none;
+    width: 88% !important;
+}

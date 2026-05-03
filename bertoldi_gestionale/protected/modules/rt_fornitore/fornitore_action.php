@@ -1,0 +1,82 @@
+<?php
+
+
+$basepath=$_SERVER['DOCUMENT_ROOT'];
+include_once($basepath."/main_include.php");
+$config=new Config();
+$run=$config->load(); 
+$modulespath_=Config::$modulespath;
+$classespath_=Config::$classespath;
+$errors=new Errors();
+include_once($classespath_."class.DT.php");
+include_once($classespath_."class.Fornitore.php");
+
+global $ModuloId;
+global $user;
+
+$ModuloId=55; // modulo base mediazione
+if(is_object($user)) {
+	$permessi=$user->get_permessi_modulo($ModuloId);
+	if (sizeof($permessi)>0) {   
+		if (!empty($_POST)) {
+			switch($_POST['action']) {
+				case "AggiungiFornitore":
+					$FunzioneId=2;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiFornitore();
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni		
+				break;
+				case "ModificaFornitore":
+					$FunzioneId=4;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiFornitore($_POST['FornitoreId']);
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+				break;
+				
+			}
+		} else {
+			
+			Errors::$ErrorePermessiModulo;
+		}
+	}
+}
+// se l'utente non è loggato
+else {
+	header("Location: /logout.php");
+}
+
+function aggiungiFornitore($FornitoreId = null) {
+	
+	global $user;
+	$db = new Database();
+	$db->connect();
+	
+	$storico = new StoricoOperazioni();
+	$storico->conn = $db;
+	
+	$dt = new DT();
+	
+	$fornitore = $_POST['Fornitore'];
+
+	if (!isset($FornitoreId)) {
+		$fornitore = $storico->operazioni_insert($fornitore, $user);
+		$result = $db->insert("RT_Fornitori", $fornitore);
+	} else {
+		$fornitore = $storico->operazioni_update($fornitore, $user);
+		$result = $db->update("RT_Fornitori", $fornitore, "FornitoreId=".$FornitoreId." AND OdcIdRef=".$user->OdcId);
+	}
+	
+	if($result) {
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+
+?>

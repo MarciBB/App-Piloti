@@ -1,0 +1,1418 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS import files */
+@import url('menu_hover.css');
+@import url('tables.css');
+@import url('notifiche.css?p=1');
+@import url('dialogbox.css');
+@import url('validation.css');
+
+html,body{margin:0; padding: 0;height: 100%}
+i.edita {
+	color: #00A4AA;
+	font-size: 20px;
+}
+i.red{
+	font-size: 20px;
+	color: red;
+}
+i.green{
+	font-size: 20px;
+	color: green;
+}
+i.grey{
+	font-size: 20px;
+	color: #ccc;
+}
+i.orange{
+	font-size: 14px;
+	color: #00A4AA;
+}
+i.blue{
+	font-size: 20px;
+	color: #5084ff;
+}
+i.grey-dark{
+	font-size: 25px;
+	color: #333;
+	-webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+i.loading-white{
+	font-size: 30px;
+	color: #fff;
+	-webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+.dataTables_processing, #brain_loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 40px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #00A4AA !important;
+	text-align: center;
+	color: #fff !important;
+	font-size: 14px;
+	background-color: #00A4AA !important;
+	border-radius: 6px;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+.dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 40px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #333;
+	text-align: center;
+	color: #333;
+	font-size: 14px;
+	background-color: #00A4AA;
+	border-radius: 6px;
+}
+body{
+	background: #f5f5f5;
+	font-family: "Montserrat",sans-serif;
+	color:#333;
+	}
+p{
+	padding-bottom:20px;
+	line-height:18px;
+}	
+
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+	cursor: pointer;
+	background-color: #ccc;
+	color: #333;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	background-color: #00a4aa !important;
+	color: #fff !important;
+}
+.top-menu {
+	padding: 20px 24px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+	.brain_row{
+		width:100%;
+		}
+		.brain_top{
+			background:#f5f5f5;
+			}
+			.brain_titolo, .brain_titolo_login{
+				height: 50px;
+				float: left;
+				text-align: center;
+				margin: 0px 20px 20px 20px;
+			}
+			.brain_titolo h1, .brain_titolo_login h1{
+				font-size: 18px;
+				font-weight: normal;
+				padding-top: 12px;
+				color: #FFF;
+			}
+			.brain_titolo img{
+				height: 70px;
+				width:auto;
+			}
+			.brain_titolo_top img.logo{
+				height: 34px;
+				width:auto;
+			}
+			.brain_titolo_login img {
+				height: 90px;
+				width:auto;
+			}
+			.brain_titolo p, .brain_titolo_login p{
+				font-size:14px;
+				padding-top:11px;
+				padding-left:5px;
+				float:left;
+			}	
+			.brain_sede{
+	float: left;
+	text-align: left;
+	width: 28%;
+	margin-left: 20px;
+				}	
+	.brain_logo{
+		text-align: right;
+		width: 20%;
+		position:absolute;
+		right:10px;
+		top:5px;
+		height:75px;
+
+	}
+	.brain_sede p{
+		float: left;
+		font-size: 11px;
+		padding-right: 50px;
+		padding-top: 10px;
+		margin:0px;
+		margin-bottom: 4px;
+		padding-bottom:0px;
+	}
+	.brain_sede a, .brain_utente a{
+		color:#00396B;
+	}
+	.brain_utente{
+		float: right;
+		font-size: 12px;
+		text-align: right;
+		margin-bottom: 4px;
+		color: #00396B;
+	}
+	.brain_infoSede {
+		padding-bottom:0px;
+	}
+	.brain_utente .brain_info{
+		color:#b3c4d3;
+		margin:0px;
+		margin-bottom: 10px;
+		padding-bottom:0px;
+	}
+	.brain_utente a{ 
+		background-color: #00396B;
+		color: #fff;
+		border-radius: 42px;
+		padding: 6px 12px;
+		text-align: center;
+		border: none;
+		text-decoration: none;
+		margin: 0 4px;
+	}	
+				.brain_utente span{
+					padding-top:10px;
+					float:left;
+					line-height:15px;
+					}
+					span.brain_operatore,span.brain_gruppo{
+						padding-right:20px;
+						}
+						span.brain_login{
+							float:left;
+							padding-right:12px;
+							}
+						span.brain_login a{
+							float:left;
+							text-decoration:underline;
+							}
+			.brain_titoloPagina{
+				/*background: none repeat scroll 0 0 #416A94;*/
+				clear: both;
+				color: #FFFFFF;
+				float: left;
+				padding-bottom: 3px;
+				padding-left: 0;
+				padding-top: 8px;
+				width: 100%;
+				}		
+	.brain_titoloPagina h2{
+		float: left;
+		color:#333;
+		padding-left: 12px;
+		font-size: 1.6rem;
+		font-weight: 600;
+		margin-bottom: .6rem;
+	}
+	.brain_tabVerticale{
+		float: left;
+		margin: 0;
+		position: relative;
+		width: 214px;
+		/*width: 15%;*/
+	}				
+		.brain_tabVerticale ul{
+			float:left;
+			width:100%;
+		}			
+			.brain_tabVerticale ul li{
+				border-radius: 10px 0 0 10px;
+				display: block;
+				float: left;
+				/*width: 99%;*/	
+				width: 212px;				
+				background: #ffffff;
+				margin-bottom:6px;
+				border: 1px solid #E4E4E4;
+				border-right:0px;
+				padding-right:1px;
+			}				
+				.brain_tabVerticale ul li.sel{
+					background: #ccc;
+					border: 1px solid #CCC;
+					border-right: 0px;
+				}
+	
+			.brain_tabVerticale ul li span {
+				/*padding-bottom: 16px;
+				padding-left: 12px;
+				padding-top: 16px;*/
+			    padding: 16px 5px 16px 12px;
+				color: #333;
+				font-size: 13px;
+				font-weight:bold;
+				float:left;
+			}		
+			.brain_tabVerticale ul li span a{
+				color: #333;
+				font-size: 13px;
+				float: left;
+				font-weight: bold;
+				text-decoration: none;
+				width: 100%;
+			}			
+			.brain_tabVerticale ul li.sel span a{
+				/*color: #ffffff;*/
+			}			/*
+			.brain_tabVerticale ul li.sel span{
+				background:url('/images/orologio.png') center right no-repeat;
+			}			*/
+	.brain_boxLeft{
+	float: left;
+	/*width: 65%;*/
+	width:82%;
+	font-size:12px;
+	margin: 0px;
+	padding: 0px;
+		}				
+		.brain_boxLeft h3{
+			font-weight:normal;
+			font-size:13px;
+			padding-top:12px;
+			padding-bottom:10px;
+			}	
+    .brain_data-content{
+			width:100%;
+			padding:0px;
+			margin:0px;
+			float:left;
+			clear:left;
+    }
+		.brain_boxIntero{
+		float: left;
+		width: 100%;
+		font-size:12px;
+		margin-bottom: 20px;
+		}				
+		.brain_boxIntero h3{
+			font-weight:normal;
+			font-size:13px;
+			padding-top:20px;
+			padding-bottom:10px;
+			}			
+					
+		.brain_data-content h3{
+			font-size:16px;
+			color:#666666;
+			/*padding-left:8px;*/
+			}			
+			
+	.brain_stato-mediazione, .punteggioMediatore{
+		float: right;
+		width: 13%;
+		font-size:12px;
+		margin: 0;
+		/*margin: 20px 0px 0px 0px;*/
+		padding: 12px;
+		background-color:#FFF;
+		border:1px solid #E4E4E4;
+	}	
+			
+	.punteggioMediatore{
+		margin-top:10px;
+	}	
+			.brain_stato-mediazione h3, .punteggioMediatore h3{
+			color: #89CAEF;
+			font-weight:normal;
+			font-size:16px;
+			padding-bottom:10px;
+			}
+			.brain_stato-mediazione p, .punteggioMediatore p{
+			font-size:11px;
+			line-height:1.3em;
+			font-style: italic;
+			float:left;
+			clear:both;
+			padding-top:15px;
+			}
+.divSubmit{
+	background: none repeat scroll 0 0 #E4E4E4;
+	/*background: #e5f0f6;*/
+	float: left;
+	padding: 16px;
+	width: 98%;
+	}
+	.divSubmit .subLeft{
+		float:left;
+		width:80%;
+		}
+	.divSubmit .subLeft span.brain_datiAggiuntivi {
+		border-bottom: 1px solid;
+		color: #999999;
+		float: left;
+		min-height: 24px!important;
+		padding-bottom: 8px!important;
+		padding-right: 20px;
+		padding-top: 8px;
+		width: 21%!important;
+	}
+	.divSubmit .subLeft i{
+		float:left;
+		}
+	.divSubmit .subRight{
+		float:right;
+		width:20%;
+		text-align:right;
+		}
+.brain_dialogbox .divSubmit{
+	width: 96%!important;
+	}
+	.divSubmit .brain_annulla{
+	/*color:#333;*/
+	float:right;
+	padding:10px;
+	}
+	.divSubmit .brain_salva{
+		float: right;
+		padding-left: 14px;
+		padding-right: 14px;
+		text-align: center;
+		margin:0px;
+	}
+	.divSubmit input.brain_procedi{
+		background: url("/images/buttonBlueOn.png") no-repeat scroll left top transparent;
+		border: 0 none;
+		color: #FFFFFF;
+		cursor: pointer;
+		float: right;
+		margin: 0;
+		padding: 7px 14px 5px 17px;
+		text-align: center;
+		width: 185px;
+	}
+	/*.divSubmit .brain_salva:hover{
+		 background: url("/images/avantiOn.png") no-repeat scroll left top transparent;
+	}*/
+	.divSubmit input.brain_procedi:hover{
+		 background: url("/images/buttonBlueOff.png") no-repeat scroll left top transparent;
+	}
+		.divSubmit .brain_back{
+	background: url("/images/indietro.png") no-repeat scroll left top transparent;
+	float: right;
+	padding-left: 14px;
+	padding-right: 14px;
+	text-align: center;
+	width: 104px;
+	margin:0px;
+	height: 30px;
+	}
+	.divSubmit .brain_back:hover{
+		 background: url("/images/indietroOn.png") no-repeat scroll left top transparent;
+	}
+	.brain_boxInternoForm{
+		background:#F7F7F7;
+		float:left;
+		width:100%;
+		border: 1px solid #CCCCCC;
+		margin: 0;
+		padding: 0;
+	}
+		
+	.brain_formModifica{
+		background: none repeat scroll 0 0 #FFFFFF;
+		border: 1px solid #E4E4E4;
+		float: left;
+		padding: 15px;
+		/*margin: 20px 0px 0px 0px;*/
+		margin: 0;
+		width: 98%;
+		min-height:380px;
+	}
+	.brain_formModifica h2{
+	font-size:18px;
+	color:#0099FF;
+	font-weight:normal;
+	padding-bottom:7px;
+	padding-left:0px;
+	}
+	.brain_campoForm h4{
+		color: #999999;
+		font-family: "Montserrat",sans-serif;
+		font-size: 16px;
+		font-weight: normal;
+		padding-left:0px;
+		padding-bottom:6px;
+		width:40%;
+		float:left;
+		clear:none;
+		padding-top: 2px;
+	}
+	.brain_contenitoreTabella{
+		float:left;
+		width:100%;
+		padding-bottom:30px;
+	}	
+	.brain_rowTotale{
+		float:left;
+		width:99%;
+		padding:3px;
+		background:#e9e9e9;
+	}
+	span.brain_tot{
+		background: none repeat scroll 0 0 #FFE7E5;
+		border: 1px solid #E9CCCC;
+		float: right;
+		font-size: 13px;
+		font-weight: bold;
+		padding: 8px;
+		text-align: right;
+		width: 23%;
+	}
+	.formModifica a{
+		color:#004080;
+		font-size:13px;
+		float:left;
+		padding-top:7px;
+	}
+	.brain_rowBig{
+		float:left;
+		margin-bottom:10px;
+		padding-bottom:10px;
+		border-bottom:1px solid #CCCCCC;
+		width:100%;
+		/*padding-left:15px;*/
+	}
+	.brain_tipoAnagrafica{
+		width:23%;
+		float:left;
+	}
+
+	.brain_campoForm.big{
+		width: 40%;
+	}
+	.brain_campoForm{
+		float: left;
+		width: 28%;
+		padding: 7px;
+	}
+	.wizart .brain_campoForm.label100 > label{
+		width: 100%;
+	}
+	.brainConSelector input{
+		width:59%!important;
+		clear:none!important;
+	}
+	.brainConSelector .brainSelector{
+		width:36%!important;
+		float:right;
+		padding-top:6px;
+	}
+	.anagraficaSelector .brainConSelector .brainSelector{
+		padding-top:0px!important;
+	}
+	.brainConSelector{
+		width:36%!important;
+	}
+	.campoFormSelector .brain_campoForm {
+		border-bottom:0px!important;
+		width:100%!important;
+	}
+	.campoFormSelector .brain_campoForm .brainSelector{
+		clear:both!important;
+		padding-top:0px!important;
+	}
+	input{
+		float:left;
+	}
+.formAnagrafica .brain_campoForm input{
+	clear:both!important;
+}	
+	.brain_campoForm input, .brain_campoForm select {
+		float: left;
+		font-size: 1.2em;
+		color: #333;
+		border: 1px solid #00a4aa;
+		padding: 4px 9px;
+		border-radius: 16px;
+		background-color: #fff;
+	}
+	.brain_campoForm label{
+		/*font-style:italic;*/
+		padding-bottom:2px;
+		float:left;
+		/*width:80%;*/
+		width:100%;
+		color: #00A4AA !important;
+	}
+	span.brain_tipo{
+		float: left;
+		font-size: 12px;
+		/*font-style: italic;*/
+		padding-right: 15px;
+		padding-top: 4px;
+	}
+
+	label.brain_tipoanagrafica1 {
+		background:url('/images/presonaFisica.png') left top no-repeat;
+		float: left;
+		height: 19px;
+		padding-left: 30px;
+		padding-top: 5px;
+		padding-right:35px;
+		width:auto;
+		font-style:normal;
+	}
+	label.brain_tipoanagrafica2 {
+		background:url("/images/personaGiuridica.gif") no-repeat scroll left 3px transparent;
+		float: left;
+		height: 19px;
+		padding-left: 30px;
+		padding-top: 5px;
+		width:auto;
+		padding-right:35px;
+		font-style:normal;
+	}
+        label.brain_tipoanagrafica5 {
+		background:url("/images/personaGiuridica.gif") no-repeat scroll left 3px transparent;
+		float: left;
+		height: 19px;
+		padding-left: 30px;
+		padding-top: 5px;
+		width:auto;
+		padding-right:35px;
+		font-style:normal;
+	}
+        
+        label.brain_tipoanagrafica6 {
+		background:url("/images/personaGiuridica.gif") no-repeat scroll left 3px transparent;
+		float: left;
+		height: 19px;
+		padding-left: 30px;
+		padding-top: 5px;
+		width:auto;
+		padding-right:35px;
+		font-style:normal;
+	}
+        
+	label.brain_tipoanagrafica3 {
+		background:url("/images/liberoProfessionista.png") no-repeat scroll left -4px transparent;
+		float: left;
+		height: 19px;
+		padding-right:35px;
+		padding-left: 30px;
+		padding-top: 5px;
+		width:auto;
+		font-style:normal;
+	}
+	label.brain_tipoanagrafica4 {
+		background:url("/images/associazione.png") no-repeat scroll left -2px transparent;
+		float: left;
+		padding-right:0px;
+		height: 19px;
+		padding-left: 30px;
+		padding-top: 5px;
+		width:auto;
+		font-style:normal;
+	}
+	.brain_salva,.brain_cancella{
+		border: 0 none;
+		color: #FFFFFF;
+		float: left;
+		margin-right: 14px;
+		/*padding-bottom: 5px;
+		padding-left: 14px;
+		padding-top: 6px;*/
+		text-align: left;
+		text-transform: uppercase;
+		/*width: 204px;*/
+		height: 29px;
+	}
+		.brain_back{
+		border: 0 none;
+		float: left;
+		margin-right: 14px;
+		padding-bottom: 5px;
+		padding-left: 14px;
+		padding-top: 6px;
+		text-align: left;
+		text-transform: uppercase;
+		width: 204px;
+		height: 29px;
+	}
+	/*.brain_salva{
+		background:url('/images/buttonBlueOn.png') top left no-repeat;
+	}*/
+	.brain_procedi{
+		background:url('/images/buttonBlueOn.png') top left no-repeat;
+	}
+	/*.brain_salva:hover{
+		background:url('/images/buttonBlueOff.png') top left no-repeat;
+	}*/
+	.brain_procedi:hover{
+		background:url('/images/buttonBlueOff.png') top left no-repeat;
+	}
+	/*.brain_cancella{
+		background:url('/images/buttonRedOn.png') top left no-repeat;
+	}
+	.brain_cancella:hover{
+		background:url('/images/buttonRedOff.png') top left no-repeat;
+	}*/
+	a.brain_add{
+		padding-bottom: 6px;
+		padding-left: 6px;
+		padding-top: 3px;
+		color:#333;
+		height:20px;
+	}
+	.brain_rowTabella{
+		float:left;
+		width:100%;
+	}
+	.brain_campoFright span.brain_affisancaAdd{
+		float: left;
+		padding-top: 0px;
+		padding-bottom:4px;
+		width: 60%;
+		text-align: right;
+	}
+	.brain_campoFright span.brain_affisancaAdd a.brain_add{
+		/*float: right;
+		padding-bottom: 2px;
+		text-align: left;
+		width: 70%;*/
+	}
+	.brain_boxTabella{
+		width:94%;
+		float:left;
+		border:1px dashed #CCCCCC;
+		min-height:100px;
+		margin-bottom: 15px;
+		height: auto;
+		padding: 10px;
+		-moz-border-radius: 15px;
+	}
+
+	.brain_boxTabellaSel{
+		width:98%;
+		float:left;
+		border:none;
+		min-height:100px;
+		margin-bottom: 15px;
+		height: auto;
+		padding: 10px;
+		-moz-border-radius: 15px;
+		background-color: #416A94;
+	}
+	.brain_boxTabellaSel label{
+		color: #FFFFFF;
+		float: left;
+		padding-top: 0 !important;
+	}
+		.MediazioneSoggettoEstType label{
+			padding-top:5px!important;
+		}
+	.brain_boxTabellaSel h2{
+		border-bottom: 0 none;
+		color:#FFF;
+		font-size:15px;
+		padding: 0px;
+	}
+	.brain_boxTabellaSel p{
+		color:#FFF;
+	}
+	.brain_boxTabellaSel a{
+	color:#00CCFF;
+	}
+		
+	.brain_mediazioniAssociate{
+		background: none repeat scroll 0 0 #FFFFFF;
+		border: 1px solid #CCCCCC;
+		float: right;
+		margin-right: 30px;
+		padding:10px;
+		margin-top: 35px;
+		width: 24%;
+	}
+	.brain_mediazioniAssociate h2{
+		float:left;
+		color:#666666;
+		font-size:16px;
+		font-weight:normal;
+		padding-bottom:30px;
+	}
+	.brain_mediazioniAssociate span{
+		border-bottom: 1px solid #EEEEEE;
+		float: left;
+		font-size: 13px;
+		margin-bottom: 15px;
+		width:100%;
+		padding-bottom: 5px;
+	}
+	.brain_mediazioniAssociate span a{
+		float:left;
+		padding-right:8px;
+		color: #004080;
+	}
+	.brain_mediazioniAssociate a.visualizza{
+		background: url("/images/visualizza.png") no-repeat scroll left top transparent;
+		color: #FFFFFF;
+		float: left;
+		padding: 6px 10px 7px 15px;
+		text-decoration: none;
+	}
+	.brain_mediazioniAssociate a.visualizza:hover{
+		float:left;
+		background:url('/images/visualizzaOn.png') top left no-repeat;
+	}
+				
+	a.search{
+		float:left;
+		width:221px;
+		height:30px;
+		cursor:pointer;
+		margin-top:30px;
+		margin-left:40px;
+		clear:none;
+		background:url('/images/button_search_bckgnd.png') 0px 2px no-repeat;
+		color: #FFF;
+		text-decoration: none;
+		text-align: center;
+		padding-top: 10px;
+	}
+	a.search:hover{
+		background:url('/images/button_search_bckgnd_hover.png') 0px 2px no-repeat;
+	}
+	a.edita{
+		background-color: #00A4AA;
+		clear: none;
+		color: #FFFFFF;
+		cursor: pointer;
+		float: left;
+		margin: 5px 5px;
+		padding: 10px 0;
+		text-align: center;
+		text-decoration: none;
+		width: 103px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		border: 1px solid #00A4AA; 
+	}
+	a.edita:hover{
+		color: #333;
+	    background-color: #ccc !important;
+	    border: 1px solid #ccc !important;
+	}
+
+	#brain_main-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		flex: 1;
+		padding: 0 5%;
+		background-color: #F5F5F5 !important;
+	}
+	#brain_page-content {
+		width: 98%;
+		clear: both;
+		float: left;
+		padding:12px;
+	}
+
+	#brain_page-content span.brain_titleBox{
+		display: none;
+	}
+
+	.brain_servicebar{
+		float: right;
+		width: auto;
+		margin: 0;
+		margin-left: 0px;
+		position: relative;
+		background-color: #00A4AA;
+		border-radius: 42px;
+		padding: 6px 12px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: none;
+		color: #fff;
+		margin-left: 10px;
+		margin-bottom: 15px !important;
+	}
+	.brain_servicebar a{
+		color: #fff !important;
+		text-decoration: none !important;
+		
+	}
+	.brain_aggiungi{
+		color: #333;
+		float: right;
+		font-size: 13px;
+		padding: 3px 12px 6px 12px;
+		text-decoration: underline;
+	}
+
+.hidden {display:none}
+#back_list {
+	width:125px;
+	float:left;
+	margin-left: 10px;
+	padding-top:2px;
+	}
+	#back_list img{
+	float:left;
+	}
+	#back_list a{
+		font-size:13px;
+		color:#00A4AA;
+		padding-left:5px;
+	}
+	
+	
+hr.separatore {
+	border: 1px solid #CCC;
+	clear: both;
+	width: 100%;
+	margin: 12px 0;
+}
+
+#elenco_comuni {
+	position: absolute;
+	top:0;
+	left:0;
+	width:550px;
+	padding:0px;
+	background-color:#FFF;
+	border:1px solid #CCC;
+	/*min-height: 302px;*/
+	clear: both;
+	/*margin-top:20px;*/
+	/*_height: 302px;*/
+	zoom: 1; /* Feeling sorry for IE */
+}
+
+#elenco_comuni .SelezionaComune .SelezionaComuneHeader {
+	float: left;
+	width: 100%;
+	background: url("/images/bg-box-dialog.png") repeat-x scroll left top;
+	padding: 5px 0;
+}
+
+#elenco_comuni .SelezionaComune .SelezionaComuneHeader h2{
+	float: left;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	width: 58%;
+	padding: 0 5px;
+}
+
+#elenco_comuni .SelezionaComune .SelezionaComuneHeader a.chiudi{
+	float: right;
+	width: 35%;
+	text-align: right;
+	color: #FFF;
+	text-decoration: underline;
+	margin-right: 5px;
+}
+
+#elenco_comuni .SelezionaComune .SelezionaComuneContent {
+	clear: both;
+}
+
+
+tr.disabilita{
+	color:#888888!important;
+	background-color:#EEEEEE!important;
+}
+table.display tr.disabilita td {
+    color: #888888!important;
+}
+
+/*DATAPICKER*/
+.ui-widget-header {
+    background: #333 !important;
+    color: #FFFFFF!important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none repeat scroll 0 0 #333 !important;
+    color: #FFFFFF!important;
+    font-weight: normal!important;
+}
+.ui-widget {
+    font-family: "Montserrat",sans-serif !important;
+    font-size: 13px!important;
+}
+.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker.ui-datepicker-next:hover {
+	background:#ffffff!important;
+}
+
+
+.medDatiGenerali br{
+	clear:both;
+}
+
+a.flyselection {
+	float: left;
+}
+
+
+
+input.readonly {background:#FFF}
+
+.CambiaStatoMediazioneSubmit {
+	clear: both;
+	margin-top: 8px;
+}
+
+.CambiaStatoMediazione select {
+	font-size: 1.2em;
+	color: #333;
+	padding: 3px;
+}
+
+.CambiaStatoMediazioneSubmit input.brain_CambiaStato{
+	clear: both;
+	margin-top: 8px;
+	background: url("/images/avanti.png") no-repeat scroll left top transparent;
+	text-align: center;
+	border: 0;
+	color: #FFF;
+	font-weight: normal;
+	margin: 0;
+	padding: 7px 0;
+	text-align: center;
+	width: 104px;
+	text-transform: uppercase;
+}
+
+.radio_group {
+	/*border: 1px solid;*/
+	float: left;
+	width: auto;
+}
+
+.radio_group *{
+	/*border: 1px solid;*/
+	float: left;
+	width: auto;
+}
+
+
+
+div.brainGestoreSedi {
+    clear:both;
+    float:left;
+    margin:0;
+    width: 98%;
+    background: #f7f7f7;
+    padding: 10px;
+    -moz-border-radius: 8px;
+	border:1px solid #d6d6d6;
+}
+
+#gestoreElencoAule td{
+	padding:5px;
+	border-left:1px solid #d6d6d6;
+	border-bottom:1px solid #d6d6d6;
+	border-right:1px solid #d6d6d6;
+}
+#gestoreElencoAule tr.rowIntestazione{
+	background:#00A4AA;
+	color: #ffffff;
+}
+#gestoreElencoAule span{
+	float:left;
+	padding-bottom:10px;
+}
+#gestoreElencoAule tfoot th{
+	padding-top:15px!important;
+}
+
+
+/*tooltip*/
+#tooltip{
+	width:450px;
+	padding:10px;
+	-moz-border-radius: 15px;
+	background:#E7F2FA;
+	border:1px solid #A2C9EF;
+}
+	#tooltip ul{
+		float:left;
+	}
+		#tooltip ul li{
+			float:left;
+			clear:both;
+			padding-bottom:5px;
+			font-size:11px;
+			line-height:15px;
+		}
+
+			#tooltip ul li span, #tooltip ul li a{
+				float:left;
+				font-size:13px!important;
+			}
+				#tooltip ul li a{
+					color:#3399FF;
+					text-decoration:none;
+				}
+				#tooltip ul li a:hover{
+					text-decoration:underline;
+				}
+				#tooltip ul li span.brain_etichetta{
+					font-weight:bold;
+					color:#333;
+				}
+				#tooltip ul li span.brain_valore{
+					font-style:italic;
+					color:#666666;
+				}
+.brainFiltri{
+	float: left;
+	width: 100%;
+	color: #ffffff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 32px 0px;
+	background-color: #dbe6e9;
+	border-radius: 24px;
+}
+	.brainFiltri form{
+		width:99%;
+		padding-top:0px;
+		padding-bottom:0px;
+		}
+	.brainFiltri form .rowForm{
+		float:left;
+		width:auto;
+		padding:10px;
+		/*border-right:1px dotted #cccccc;*/
+		min-height:20px;
+		}
+	.brainFiltri form .rowForm label{
+		float: left;
+		font-size: 14px;
+		padding-top: 5px;
+		margin: 0;
+		box-sizing: border-box;
+		font-family: "Montserrat",sans-serif;
+		color: #333;
+	}
+	.brainFiltri form .rowForm select, .brainFiltri form .rowForm input[type="text"], .brainFiltri form .rowForm input[type="number"] {
+		margin-right: 8px;
+		border: none;
+		padding: 4px 9px;
+		border-radius: 16px;
+		background-color: #fff;
+		margin-left: 1rem;
+	}
+	.brainFiltri form .rowForm input[type="text"]{
+		float: left;
+		margin-left: 8px;
+		margin-right: 8px;
+		border: none;
+		padding: 4px 9px;
+		border-radius: 16px;
+		background-color: #fff;
+		margin-left: 1rem;
+	}
+	
+	.brainFiltri form .rowForm input[type="submit"] {
+		background-color: #00a4aa;
+		color: #fff;
+		border-radius: 42px;
+		padding: 6px 12px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+	}
+	
+	
+	.brainFiltri form .rowForm input[type="button"]{
+		background: url("/images/applica.png") no-repeat scroll left top transparent;
+		border: 0 none;
+		color: #FFFFFF;
+		float: left;
+		font-size: 12px;
+		height: 21px;
+		padding-bottom: 7px;
+		width: 72px;
+		}
+.brain_rowMeta{width:49%!important;}
+.brain_rowMeta .brain_campoFormSmall,.brain_rowMeta .brain_campoFormBig{width:99%!important;float:left;}
+.brain_rowMeta .brain_campoFormSmall label,.brain_rowMeta .brain_campoFormBig label{width:20%!important;float:left;text-align:right!important;}
+.brain_rowMeta .brain_campoFormSmall input,.brain_rowMeta .brain_campoFormBig input{width:20%!important;}
+.brain_rowMeta .brain_campoFormSmall span.required,.brain_rowMeta .brain_campoFormBig span.required{float:right!important;}
+.brain_rowMeta .brain_campoFormSmall input.inputSmall,.brain_rowMeta .brain_campoFormBig  input.inputSmall{width:40px!important;}
+
+
+
+/*PUNTEGGIO MEDIATORE*/
+
+
+/* DEFINITION LIST PROGRESS BAR */
+
+.punteggioMediatore dl, .punteggioMediatore dt, .punteggioMediatore dd{margin:0;padding:0;}
+span.results{
+	float: left;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 7px;
+}
+.punteggioMediatore p{
+	float:left;
+	clear:both;
+}
+.punteggioMediatore dd{
+	width:90px;
+	height:28px;
+	background:transparent;
+	border:1px solid #cccccc;
+	border-radius:5px;
+	position:relative;
+	float:left;
+}
+.punteggioMediatore dd span{
+	position:absolute;
+	display:block;
+	width:90px;
+	height:28px;
+	background:url(/images/bar.gif) no-repeat 0 0;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+.punteggioMediatore dd em{
+	position:absolute;
+	display:block;
+	width:90px;
+	height:28px;
+	background:url(/images/bg_cover.gif) repeat-x;*/
+	top:0;
+}
+
+.punteggioMediatore .progressBar{
+	width:216px;
+	height:41px;
+	background:url(/images/bg_bar.gif) no-repeat 0 0;
+	position:relative;
+}
+.punteggioMediatore .progressBar span{
+	position:absolute;
+	display:block;
+	width:90px;
+	height:25px;
+	background:url(/images/bar.gif) no-repeat 0 0;
+	top:8px;
+	left:8px;
+	overflow:hidden;
+	text-indent:-8000px;
+}
+.punteggioMediatore .progressBar em{
+	position:absolute;
+	display:block;
+	width:90px;
+	height:25px;
+	background:url(/images/bg_cover.gif) repeat-x 0 0;
+	top:0;
+}
+
+/* Sostituzione stile bottoni */
+.brain_cancella {
+	font-family: "Montserrat",sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 0px 20px !important;
+	background: -moz-linear-gradient(
+		top,
+		#ff2819 0%,
+		#ab0000);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ff2819),
+		to(#ab0000));
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	border: 1px solid #7d0000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+	margin: 5px !important;
+}
+.brain_salva {
+	cursor: pointer;
+	font-family: "Montserrat",sans-serif;
+	font-size: 14px !important;
+	color: #ffffff;
+	padding: 0px 20px !important;
+	background-color: #00A4AA; 
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #00A4AA; 
+	
+    margin: 5px !important;
+}
+
+.brain_cancella:hover, .brain_salva:hover {
+    color: #333;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.footer {
+    /*position: fixed;
+    margin-top:61%;*/
+    padding: 10px 20px;
+    font-size: 15px;
+    border-top: 1px solid #aaa;
+    clear: both;
+    margin-top: 10px;
+    position:fixed;
+    z-index: -999;
+    background:#eee;
+    bottom: 0;
+    width: 100%
+}
+.hid {
+    text-indent: -9999px;
+    clear:both;
+    height:40px;
+}
+#CorsaRitornoAperto{
+	height: auto;
+    margin-right: 10px;
+    opacity: 1;
+    padding: 10px;
+    position: relative;
+    width: auto;
+}
+#label_CorsaRitornoAperto{
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+    display: inline !important;
+    height: auto;
+    width: auto;
+}
+
+.table_dinamica {
+    width: 600px;
+}
+.table_dinamica .pickdrop{
+    width:45%;
+}
+.table_dinamica .pickdrop_btn{
+    width:10%;
+}
+.table_dinamica td select {
+    width: 100%;
+}
+.table_dinamica td {
+    padding: 10px;
+}
+.table_dinamica td label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.exportToExcel {
+    font-size: 12px !important;
+    margin-left: 10px !important;
+}
+#brain_datatables {
+	background-color: #fff;
+	border-radius: 24px;
+	margin-bottom: 36px;
+}
+
+.dataTables_length select{
+	border: none !important;
+	border-radius: 16px !important;
+	background-color: #fff !important;
+	padding: 4px 9px !important;
+}
+
+input[disabled], select[disabled] {
+	background-color: #eaeaea !important;
+	color: gray !important;
+}
+
+.edita.cancella {
+	background-color: red !important;
+    border: 1px solid red !important;
+}
+
+.report_excel {
+	width: 100% !important;
+}
+
+
+.select2-container--default .select2-results > .select2-results__options {
+  width: 290px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	border-radius: 16px !important;
+  background-color: #fff !important;
+  margin: 0px !important;
+  height: 20px !important;
+  font-size: 15px !important;
+}
+
+.select2-container--default .select2-selection--single {
+	border: 1px solid #00a4aa !important;
+  	padding: 0px 9px !important;
+  	border-radius: 16px !important;
+  	background-color: #fff !important;
+}

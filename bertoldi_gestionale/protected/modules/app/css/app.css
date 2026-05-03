@@ -1,0 +1,69 @@
+.brain_boxLeft{
+	width: auto !important;
+	margin-right: 10px !important;
+}
+
+.brain_formModifica h1{
+	font-size: 15px;
+}
+.content{
+	text-align:center; 
+	margin:0 5%;
+}
+
+.custom-select{
+	width:auto !important;
+	text-align: center;
+}
+.width100{
+	width: 100% !important;
+	line-height: 2.5;
+}
+.brainFiltri form .rowForm label{
+	padding-top: 10px;
+}
+#Dal {
+	line-height: 2.5;
+	color: #495057;
+	background: #fff;
+	background-size: 8px 10px;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	text-align: center;
+	margin-top: 2px;
+}
+#scansiona, #applica{
+	margin-top: 4px;
+}
+#indietro, #ticket{
+	margin: 10px;
+}
+#emetti, #pagamentoOk, #pagamentoErrore, #pagamentoConferma, #pagamentoAnnulla{
+	width: 50% !important;
+}
+#app{
+	display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+#preview, .preview-container {
+	width:50px !important;
+}
+a.link_no_underline:hover {
+  text-decoration: none;
+}
+.button-action {
+	width: 100%; 
+	margin: 5px;
+}
+
+.modal-backdrop {
+	z-index: -1 !important;
+}
+
+.modal-content {
+	z-index: 1000 !important;
+  	top: 20% !important;
+  	left: 10% !important;
+  	display: block !important;
+}

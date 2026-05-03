@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/OneBusGestionale/!svn/ver/170/trunk/protected/modules/rt_membershipclub
+END
+membershipclub_processing_cerca.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_processing_cerca.php
+END
+membershipclub_validator_stop.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_validator_stop.php
+END
+membershipclub_processing.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_processing.php
+END
+membershipclub_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_action.php
+END
+membershipclub_datatable_cerca.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_datatable_cerca.php
+END
+membershipclub.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/OneBusGestionale/!svn/ver/170/trunk/protected/modules/rt_membershipclub/membershipclub.php
+END
+membershipclub_datatable.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_datatable.php
+END
+membershipclub_validator.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/OneBusGestionale/!svn/ver/2/trunk/protected/modules/rt_membershipclub/membershipclub_validator.php
+END

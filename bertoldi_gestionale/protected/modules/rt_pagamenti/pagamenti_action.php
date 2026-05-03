@@ -1,0 +1,85 @@
+<?php
+$basepath=$_SERVER['DOCUMENT_ROOT'];
+include_once($basepath."/main_include.php");
+$config=new Config();
+$run=$config->load(); 
+$modulespath_=Config::$modulespath;
+$classespath_=Config::$classespath;
+$errors=new Errors();
+
+global $ModuloId;
+global $user;
+
+$ModuloId=35; // modulo base mediazione
+
+if(is_object($user)) {
+	$permessi=$user->get_permessi_modulo($ModuloId);
+	if (sizeof($permessi)>0) {   
+		if (!empty($_POST)) {
+			switch($_POST['action']) {
+				case "AggiungiPagamento":
+					$FunzioneId=2;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiPagamento();
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni		
+				break;
+				case "ModificaPagamento":
+					$FunzioneId=4;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiPagamento($_POST['PagamentoTipoId']);
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+				break;
+			}
+		} // end verifica permessi
+		else {
+			Errors::$ErrorePermessiModulo;
+		}
+	}
+}
+// se l'utente non è loggato
+else {
+	header("Location: /logout.php");
+}
+
+function aggiungiPagamento($PagamentoTipoId = null) {
+	
+	global $user;
+	$db = new Database();
+	$db->connect();
+	
+	$storico = new StoricoOperazioni();
+	$storico->conn = $db;
+	
+	$pagamento = $_POST['Pagamento'];
+	if(isset($pagamento['MsgSMSStato']) && ($pagamento['MsgSMSStato'] == 1 || $pagamento['MsgSMSStato'] == '1')) {
+		$pagamento['MsgSMSStato'] = 1;
+	} else {
+		$pagamento['MsgSMSStato'] = 0;
+	}
+	if(isset($pagamento['MsgEmailStato']) && ($pagamento['MsgEmailStato'] == 1 || $pagamento['MsgEmailStato'] == '1')) {
+		$pagamento['MsgEmailStato'] = 1;
+	} else {
+		$pagamento['MsgEmailStato'] = 0;
+	}
+	
+	if (!isset($PagamentoTipoId)) {
+		$pagamento = $storico->operazioni_insert($pagamento, $user);
+		$result = $db->insert("RT_PagamentoTipo", $pagamento);
+	} else {
+		$pagamento = $storico->operazioni_update($pagamento, $user);
+		$result = $db->update("RT_PagamentoTipo", $pagamento, "PagamentoTipoId=".$PagamentoTipoId." AND OdcIdRef=".$user->OdcId);
+	} 
+	
+	if($result) {
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+?>

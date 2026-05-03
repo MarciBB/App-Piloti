@@ -1,0 +1,605 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS import files */
+@import url('menu_hover.css');
+
+
+body{
+	background:#f7f7f7;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666666;
+	}
+	.brain_row{
+		width:100%;
+		}
+		.brain_top{
+			background:#ffffff;
+			}
+			.brain_titolo{
+				width:12%;
+				float:left;
+				}
+				.brain_titolo h1{
+					float: left;
+					font-size: 18px;
+					font-weight: normal;
+					padding-left: 12px;
+					padding-top: 7px;
+					}
+				.brain_titolo p{
+					font-size:14px;
+					padding-top:11px;
+					padding-left:5px;
+					float:left;
+					}	
+			.brain_sede{
+				float: right;
+				text-align: right;
+				width: 20%;
+				}		
+				.brain_sede span{
+					float: right;
+					font-size: 11px;
+					padding-right: 50px;
+					padding-top: 10px;
+					}
+					.brain_sede a, .brain_utente a{
+						color:#000000;
+						}
+			.brain_utente{
+				float: left;
+				font-size: 11px;
+				text-align: left;
+				width: 46%;
+				}		
+				.brain_utente span{
+					padding-top:10px;
+					float:left;
+					}
+					span.brain_operatore,span.brain_gruppo{
+						padding-right:20px;
+						}
+						span.brain_login{
+							float:left;
+							padding-right:12px;
+							}
+				ul.brain_menu{
+					background: url("../images/bg-ul.png") no-repeat scroll left top transparent;
+					clear: both;
+					float: left;
+					margin-top: 3px;
+					padding-left: 1px;
+					width: 79%;
+					}
+					ul.brain_menu li{
+						float:left;
+						background:url(../images/bg-a.png) top right no-repeat;
+						padding-right:1px;
+						}
+						ul.brain_menu li a{
+							background: url("../images/bg-li.png") repeat-x top left transparent;
+							color: #333333;
+							float: left;
+							font-size: 21px;
+							padding-left: 7px;
+							padding-right: 14px;
+							padding-top: 8px;
+							text-decoration: none;
+							}
+						ul.brain_menu li a.brain_sel{
+							background: url("../images/asel.png") repeat-x top left transparent;
+							color:#ffffff;
+							}
+							ul.brain_menu li a span{
+								float: left;
+								height: 41px;
+								width: 45px;
+								}
+							ul.brain_menu li a span.brain_home{
+								background:url(../images/home.png) top left no-repeat;
+								}
+							ul.brain_menu li a span.brain_mediazioni{
+								background:url(../images/mediazioni.png) top left no-repeat;
+								}
+							ul.brain_menu li a span.brain_anagrafica{
+								background:url(../images/anagrafica.png) top left no-repeat;
+								}
+							ul.brain_menu li a span.brain_contabilita{
+								background:url(../images/contabilita.png) top left no-repeat;
+								}
+							ul.brain_menu li a span.brain_statistiche{
+								background:url(../images/statistiche.png) top left no-repeat;
+								}
+							ul.brain_menu li a span.brain_admin{
+								background:url(../images/admin.png) top left no-repeat;
+								}
+							ul.brain_menu li a.brain_sel span.brain_home{
+								background:url(../images/homeSel.png) top left no-repeat;
+								}
+							ul.brain_menu li a.brain_sel span.brain_mediazioni{
+								background:url(../images/mediazioniSel.png) top left no-repeat;
+								}
+							ul.brain_menu li a.brain_sel span.brain_anagrafica{
+								background:url(../images/anagraficaSel.png) top left no-repeat;
+								}
+							ul.brain_menu li a.brain_sel span.brain_contabilita{
+								background:url(../images/contabilitaSel.png) top left no-repeat;
+								}
+							ul.brain_menu li a.brain_sel span.brain_statistiche{
+								background:url(../images/statisticheSel.png) top left no-repeat;
+								}
+							ul.brain_menu li a.brain_sel span.brain_admin{
+								background:url(../images/adminSel.png) top left no-repeat;
+								}
+							ul.brain_menu li a span.brain_link{
+								height:auto;
+								width:auto;
+								float:left;
+								}
+							ul.brain_menu li a span.brain_plus{
+								height:auto;
+								width:auto;
+								float:left;
+								clear:both;
+								color:#004080;
+								font-size:13px;
+								text-decoration:underline;
+								}
+								ul.brain_menu li a.brain_sel span.brain_plus{
+									color:#ffffff;
+									}
+			.brain_titoloPagina{
+				background: none repeat scroll 0 0 #416A94;
+				clear: both;
+				color: #FFFFFF;
+				float: left;
+				padding-bottom: 3px;
+				padding-left: 0;
+				padding-top: 8px;
+				width: 100%;
+				}		
+				.brain_titoloPagina h2{
+					float: left;
+					font-size: 12px;
+					font-weight: bold;
+					padding-left: 12px;
+					}
+	.brain_tabVerticale{
+		float: left;
+		margin-top: 20px;
+		padding-left: 25px;
+		width: 18%;
+	}				
+		.brain_tabVerticale ul{
+			float:left;
+			width:100%;
+		}			
+			.brain_tabVerticale ul li{
+				display: block;
+				float: left;
+				width: 99%;
+			}				
+				.brain_tabVerticale ul li.sel{
+					background:url('../images/liBg.png') top right no-repeat;
+				}			
+			.brain_tabVerticale ul li span{
+				float:left;
+				border:1px solid #B8B8B8;
+				border-top:0px;
+				padding-bottom: 19px;
+				padding-left: 20px;
+				padding-top: 19px;
+				width: 84%;
+				color: #666666;
+				font-size: 13px;
+				font-weight: bold;
+				text-decoration: none;
+			}			
+			.brain_tabVerticale ul li span a{
+				float:left;
+				width: 100%;
+				color: #666666;
+				font-size: 13px;
+				font-weight: bold;
+				text-decoration: none;
+			}				
+				.brain_tabVerticale ul li span.sel{
+					background: url("../images/spanBg.png") repeat-x scroll left top transparent;
+					border: 0 none;
+					padding-left: 22px;
+				}				
+	.brain_boxLeft{
+		float: left;
+		padding-left: 12px;
+		width: 70%;
+		color:#333333;
+		font-size:12px;
+		margin-bottom: 20px;
+		}				
+		.brain_boxLeft h3{
+			font-weight:normal;
+			font-size:13px;
+			color:#333333;
+			padding-top:12px;
+			padding-bottom:10px;
+			}			
+	.wizart{
+		margin-top:20px;
+		padding:0px;
+	}		
+		.wizart h2{
+			color: #666666;
+			font-family: Arial;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.wizart .brain_campoForm{
+			border-bottom: 1px solid #E9E9E9;
+			padding-top: 15px;
+			width: 70%;
+		}
+		.wizart .brain_campoForm  input, .wizart .brain_campoForm select {
+			float: left;
+			padding: 3px;
+			width: 50%!important;
+			}
+		.wizart .brain_campoForm  label{
+			float: left;
+			width: 33%!important;
+			}
+		.divSubmit{
+			background: none repeat scroll 0 0 #E4E4E4;
+			float: left;
+			padding: 15px 30px 15px 29px;
+			width: 91%;
+		}
+			.divSubmit .brain_salva{
+				 background: url("../images/avanti.png") no-repeat scroll left top transparent;
+				float: right;
+				padding-left: 14px;
+				padding-right: 14px;
+				text-align: center;
+				width: 104px;
+				margin:0px;
+			}
+			.divSubmit .brain_salva:hover{
+				 background: url("../images/avantiOn.png") no-repeat scroll left top transparent;
+			}
+		.brain_boxInternoForm{
+			background:#F7F7F7;
+			float:left;
+			width:100%;
+			border: 1px solid #A9A9A9;
+		}
+		
+		.brain_formModifica{
+			background: none repeat scroll 0 0 #FFFFFF;
+			border: 1px solid #A9A9A9;
+			float: left;
+			padding: 15px;
+			width: 94%;
+			}
+			.brain_formModifica h3{
+				font-size:16px;
+				color:#666666;
+				font-weight:normal;
+				padding-bottom:7px;
+				padding-left:15px;
+			}
+			.formModifica a{
+				color:#004080;
+				font-size:13px;
+				float:left;
+				padding-top:7px;
+			}
+			.brain_rowBig{
+				float:left;
+				margin-bottom:10px;
+				padding-bottom:10px;
+				border-bottom:1px solid #a9a9a9;
+				width:98%;
+				padding-left:15px;
+			}
+			.brain_tipoAnagrafica{
+				width:23%;
+				float:left;
+			}
+			.brain_campoForm{
+				float: left;
+				padding-bottom: 15px;
+				padding-left: 15px;
+				width: 23%;
+				}
+			input{
+				float:left;
+			}
+			.brain_campoForm input, .brain_campoForm select {
+				float: left;
+				padding: 3px;
+				width: 80%;
+				}
+			.brain_campoForm label{
+				font-style:italic;
+				padding-bottom:2px;
+				float:left;
+				width:100%;
+				}
+				span.brain_tipo{
+					color: #333333;
+					float: left;
+					font-size: 12px;
+					font-style: italic;
+					padding-right: 25px;
+					padding-top: 4px;
+				}
+
+					label.brain_personaFisica {
+						background:url('../images/presonaFisica.png') left top no-repeat;
+						float: left;
+						height: 19px;
+						padding-left: 30px;
+						padding-top: 5px;
+						padding-right:35px;
+						width:auto;
+						font-style:normal;
+					}
+					label.brain_personaGiuridica {
+						background:url("../images/personaGiuridica.gif") no-repeat scroll left 3px transparent;
+						float: left;
+						height: 19px;
+						padding-left: 30px;
+						padding-top: 5px;
+						width:auto;
+						padding-right:35px;
+						font-style:normal;
+					}
+					label.brain_liberoProfessionista {
+						background:url("../images/liberoProfessionista.png") no-repeat scroll left -4px transparent;
+						float: left;
+						height: 19px;
+						padding-right:35px;
+						padding-left: 30px;
+						padding-top: 5px;
+						width:auto;
+						font-style:normal;
+					}
+					label.brain_associazione {
+						background:url("../images/associazione.png") no-repeat scroll left -2px transparent;
+						float: left;
+						padding-right:35px;
+						height: 19px;
+						padding-left: 30px;
+						padding-top: 5px;
+						width:auto;
+						font-style:normal;
+					}
+					.brain_salva,.brain_cancella{
+						border: 0 none;
+						color: #FFFFFF;
+						float: left;
+						margin-right: 14px;
+						padding-bottom: 5px;
+						padding-left: 14px;
+						padding-top: 6px;
+						text-align: left;
+						text-transform: uppercase;
+						width: 204px;
+						height: 29px;
+					}
+					.brain_salva{
+						background:url('../images/buttonBlueOn.png') top left no-repeat;
+					}
+					.brain_salva:hover{
+						background:url('../images/buttonBlueOff.png') top left no-repeat;
+					}
+					.brain_cancella{
+						background:url('../images/buttonRedOn.png') top left no-repeat;
+					}
+					.brain_cancella:hover{
+						background:url('../images/buttonRedOff.png') top left no-repeat;
+					}
+					a.brain_add{
+						background: url("../images/add.png") no-repeat scroll left top transparent;
+						padding-bottom: 6px;
+						padding-left: 30px;
+						padding-top: 3px;
+					}
+				.brain_mediazioniAssociate{
+					background: none repeat scroll 0 0 #FFFFFF;
+					border: 1px solid #A9A9A9;
+					float: right;
+					margin-right: 30px;
+					padding:10px;
+					margin-top: 35px;
+					width: 24%;
+				}
+					.brain_mediazioniAssociate h2{
+						float:left;
+						color:#666666;
+						font-size:16px;
+						font-weight:normal;
+						padding-bottom:30px;
+					}
+					.brain_mediazioniAssociate span{
+						border-bottom: 1px solid #EEEEEE;
+						color: #333333;
+						float: left;
+						font-size: 13px;
+						margin-bottom: 15px;
+						width:100%;
+						padding-bottom: 5px;
+					}
+					.brain_mediazioniAssociate span a{
+						float:left;
+						padding-right:8px;
+						color: #004080;
+					}
+					.brain_mediazioniAssociate a.visualizza{
+						background: url("../images/visualizza.png") no-repeat scroll left top transparent;
+						color: #FFFFFF;
+						float: left;
+						padding: 6px 10px 7px 15px;
+						text-decoration: none;
+					}
+						.brain_mediazioniAssociate a.visualizza:hover{
+							float:left;
+							background:url('../images/visualizzaOn.png') top left no-repeat;
+						}
+				
+
+#brain_main-content {
+	width: 98%;
+	border: none;
+	margin: 10px;
+}
+
+							
+/*CSS TABELLA*/
+.dataTables_length {
+    float: left!important;
+    font-size: 12px!important;
+    padding: 10px 0 10px 0;
+    width: 90%;
+}					
+.brain_tabellaTr{
+	background: none repeat scroll 0 0 #416A94!important;
+	color: #FFFFFF!important;
+	font-size: 12px!important;
+	font-weight: lighter !important;
+	text-align: left!important;
+}
+.brain_tabellaFilter{
+	background: #CCC;
+}
+.brain_tabellaInput{
+	background:#D6D6D6;
+}
+tr.odd td.sorting_1 {
+    background-color: #FFFFFF!important;
+    font-size: 13px!important;
+}
+tr.even td.sorting_1 {
+    background-color: #F5F5F5!important;
+    font-size: 13px!important;
+}
+table.display td.center {
+     border-bottom: 1px solid #D6D6D6 !important;
+    border-right: 1px solid #D6D6D6 !important;
+    color: #333333 !important;
+    font-size: 13px !important;
+    text-align: left !important;
+}
+tr.odd {
+    background-color: #FFFFFF!important;
+}
+tr.even {
+    background-color: #F5F5F5!important;
+}
+#example{
+	border:none;
+}
+.sorting_asc, .sorting_desc, .sorting {
+    border-right: 1px solid #d6d6d6;
+}
+.dataTables_info {
+    float: left;
+    font-size: 12px;
+    padding-left: 12px;
+    padding-top: 10px;
+    width: 60%;
+}
+
+.hidden {display:none}
+/*********************************
+	loader
+**********************************/
+/* loader vecchio full screen 
+#layer_nero, #layer_nero2{
+	height:100%;
+	left:0;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:100;
+	display: none;
+	background: transparent url(../images/layer-nero-back.png) top left repeat;
+}
+*/
+/* loader stile analytics */
+#layer_nero, #layer_nero2{
+	height:30px;
+	left:0;
+	position:fixed;
+	top:0px;
+	width:40%;
+	margin: 100px 25% 0 25%;
+	z-index:100;
+	display: none;
+	background: transparent url(../images/layer-nero-back.png) top left repeat;
+	background: #99CCFF;
+}
+/*
+#layer_nero2{
+	display: block;
+	background: transparent;
+}
+.layer_nero_background {
+	background: transparent url(../images/layer-nero-back.png) top left repeat;
+}
+*/
+/* loader vecchio full screen per usarlo ripristnare il file ajax-loader_fullscreen.gif in images
+#loading_big_loading{
+	margin: 90px auto;
+	width: 458px;
+	height: 105px;
+	background: transparent url(../images/loading-loading.png) top left no-repeat;
+}
+#loading_big{
+	margin: 90px auto;
+	width: 458px;
+	height: 105px;
+	background: transparent url(../images/loading-big.png) top left no-repeat;
+}
+
+#loading_big_ok{
+	margin: 90px auto;
+	width: 458px;
+	height: 105px;
+	background: transparent url(../images/loading-big-ok.png) top left no-repeat;
+	display: none;
+}
+
+#loading_big_no{
+	margin: 90px auto;
+	width: 458px;
+	height: 105px;
+	background: transparent url(../images/loading-big-no.png) top left no-repeat;
+	display: none;
+}
+*/
+#loading_big_loading, #loading_big, #loading_big_ok, #loading_big_no{
+	margin: 0px auto;
+	width: 98%;
+	height: 23px;
+	padding: 7px 0 0 2%;
+}
+#loading_big_loading{
+	background: transparent url(../images/loading-loading.png) 45px 10px no-repeat;
+}
+#loading_big{
+	background: transparent url(../images/loading-big.png) 45px 10px no-repeat;
+}
+
+#loading_big_ok{
+	background: #006600 url(../images/loading-big-ok.png) 45px 10px no-repeat;
+	width:50%;
+	margin: 0 25%;
+	display: none;
+}
+#loading_big_no{
+	background: #990000 url(../images/loading-big-no.png) 45px 10px no-repeat;
+	width:50%;
+	margin: 0 25%;
+	display: none;
+}

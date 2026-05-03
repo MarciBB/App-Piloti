@@ -1,0 +1,9 @@
+ CREATE TABLE `RT_MaxDisponibilitaPostiCron` (
+ 		`MaxDisponibilitaPostiId` INT NOT NULL AUTO_INCREMENT,
+ 		`LineaId` INT(11) NULL,
+ 		`CorsaId` INT(11) NULL,
+ 		`DataPartenza` DATE NULL,
+ 		`Comune` INT(11) NULL,
+ 		`Posti` INT(11) NULL,
+                `PostiRP` INT(11) NULL,
+ 		PRIMARY KEY (`MaxDisponibilitaPostiId`));

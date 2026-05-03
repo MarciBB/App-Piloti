@@ -1,0 +1,251 @@
+ALTER TABLE `RT_TipologiaBiglietto` 
+ADD COLUMN `OccupaPosto` INT(1) NULL DEFAULT 1 AFTER `GestoreIdRef`;
+
+UPDATE `RT_TipologiaBiglietto` SET `OccupaPosto`='0' WHERE `TipologiaBigliettoId`='22';
+
+INSERT INTO `RT_TipologiaBiglietto` (`TipologiaBiglietto`, `TipologiaBigliettoDescr`, `TipologiaBigliettoPeso`, `AR`, `EtaDa`, `EtaA`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `OccupaPosto`) VALUES ('Bagaglio Aggiuntivo', 'Bagaglio aggiuntivo di max 10Kg', '90', '0', '0', '3', '2015-11-13 11:22:06', '3', '1', '127.0.0.1', '2015-11-13 16:22:23', '3', '1', '127.0.0.1', '1', '0', '1', '1', '0');
+
+CREATE TABLE `RT_ListinoServizi` (
+  `ListinoServizioId` INT(4) NOT NULL AUTO_INCREMENT,
+  `BigliettoId` INT(4) NULL,
+  `Prezzo` DECIMAL(10,2) NULL,
+  `Limite` INT(4) NULL,
+  `CorsaId` INT(4) NULL,
+  `DataIns` DATETIME NULL,
+  `OpeIns` INT(10) NULL,
+  `SedeIns` INT(10) NULL,
+  `IpIns` VARCHAR(16) NULL,
+  `DataAgg` DATETIME NULL,
+  `OpeAgg` INT(10) NULL,
+  `SedeAgg` INT(10) NULL,
+  `IpAgg` VARCHAR(16) NULL,
+  `Stato` INT(1) NULL,
+  `Cancella` INT(1) NULL,
+  `UpdateCount` INT(10) NULL,
+  `OdcIdRef` INT(10) NULL,
+  `GestoreIdRef` INT(10) NULL,
+  PRIMARY KEY (`ListinoServizioId`));
+  
+  
+  CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_ViewBigliettiPrenotati` AS
+    select 
+        (case
+            when (`apps`.`PrenotazioneStato` = _latin1'Biglietto emesso') then _utf8'BE'
+            else _utf8'C'
+        end) AS `StatoPrenotazione`,
+        `g`.`RagioneSociale` AS `RagioneSociale`,
+        `rdc`.`CodicePrenotazione` AS `CodicePrenotazione`,
+        `p`.`ClienteNome` AS `Principale`,
+        (case
+            when
+                (`rdc`.`Codice` is not null)
+            then
+                concat(convert( `rdc`.`Codice` using utf8),
+                        _utf8'/',
+                        cast(`rdc`.`Anno` as char (5) charset utf8))
+            else concat(convert( `rdc`.`CodicePrenotazione` using utf8),
+                    _utf8'/',
+                    cast(`rdc`.`PrenotazioneNumero` as char (10) charset utf8))
+        end) AS `NumeroBiglietto`,
+        (case
+            when (`tp`.`OccupaPosto` = 1) then concat(`pd`.`Cognome`, _latin1' ', `pd`.`Nome`)
+            else `pd`.`Nome`
+        end) AS `Cliente`,
+        concat(_latin1'+',
+                `p`.`ClienteCellularePrefisso`,
+                _latin1' ',
+                `p`.`ClienteCellulare`) AS `ClienteCellulare`,
+        `pd`.`OrarioPartenza` AS `OrarioPartenza`,
+        `pd`.`OrarioArrivo` AS `OrarioArrivo`,
+        `pd`.`DataArrivo` AS `DataArrivo`,
+        `pd`.`ComunePartenza` AS `ComunePartenza`,
+        `pd`.`ComuneArrivo` AS `ComuneArrivo`,
+        (case
+            when (`pd`.`TipoViaggio` = _latin1'Corsa Semplice') then _utf8'CS'
+            else _utf8'A/R'
+        end) AS `TipoViaggio`,
+        (case
+            when (`pd`.`TipoViaggio` = _latin1'Corsa Semplice') then round(`pd`.`Importo`, 2)
+            else round((`pb`.`PrezzoPax` + ((`pb`.`AumentoPax` - `pb`.`RiduzionePax`) / `pb`.`NumeroPax`)),
+                    2)
+        end) AS `Importo`,
+        `pd`.`CorsaId` AS `CorsaId`,
+        `pd`.`DataPartenza` AS `DataPartenza`,
+        `pd`.`PrenotazioneDettaglioId` AS `PrenotazioneDettaglioId`,
+        `pd`.`DataInizioItinerario` AS `DataInizioItinerario`,
+        `tp`.`OccupaPosto` AS `OccupaPosto`
+    from
+        (((((((`RT_PrenotazioneDettaglio` `pd`
+        left join `RT_Prenotazione` `p` ON ((`pd`.`PrenotazioneId` = `p`.`PrenotazioneId`)))
+        left join `RT_AppPrenotazioneStato` `apps` ON ((`p`.`PrenotazioneStato` = `apps`.`PrenotazioneStatoId`)))
+        left join `Operatore` `o` ON ((`p`.`OpeIns` = `o`.`OperatoreId`)))
+        left join `Gestore` `g` ON ((`o`.`GestoreId` = `g`.`GestoreId`)))
+        left join `RT_PrenotazioneDettaglioCompleto` `rdc` ON (((`p`.`PrenotazioneId` = `rdc`.`PrenotazioneId`)
+            and (`rdc`.`PrenotazioneId` = `pd`.`PrenotazioneId`)
+            and (`rdc`.`PrenotazioneNumero` = `pd`.`PrenotazioneNumero`)
+            and (`rdc`.`DataPartenza` = `pd`.`DataPartenza`))))
+        left join `RT_PrenotazioneBiglietto` `pb` ON (((`pb`.`PrenotazioneId` = `p`.`PrenotazioneId`)
+            and (`pb`.`TipologiaBiglietto` = `pd`.`TipologiaBiglietto`))))
+        left join `RT_TipologiaBiglietto` `tp` ON (((`tp`.`TipologiaBiglietto` = `pb`.`TipologiaBiglietto`)
+            and (`tp`.`TipologiaBiglietto` = `pd`.`TipologiaBiglietto`))))
+    where
+        (((`p`.`PrenotazioneStato` = 3)
+            or (`p`.`PrenotazioneStato` = 1)
+            or (`p`.`PrenotazioneStato` = 2))
+            and (`pd`.`Escludi` <> 1)
+            and (`pd`.`Rimborso` <> 1))
+            and `tp`.`OccupaPosto` = 1
+            
+            
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_ViewSingolaCorsaPostiPrenotati` AS
+    select 
+        `RT_PrenotazionePercorso`.`CorsaId` AS `CorsaId`,
+        `RT_PrenotazionePercorso`.`CorsaDataPartenza` AS `CorsaDataPartenza`,
+        (count(`RT_Prenotazione`.`PrenotazioneId`) - sum(`RT_PrenotazioneDettaglio`.`Escludi`)) AS `TotalePaxPrenotati`,
+        `RT_Prenotazione`.`OdcIdRef` AS `OdcIdRef`
+    from
+        ((((`RT_PrenotazionePercorso`
+        join `RT_Prenotazione` ON ((`RT_PrenotazionePercorso`.`PrenotazioneId` = `RT_Prenotazione`.`PrenotazioneId`)))
+        join `RT_PrenotazioneDettaglio` ON (((`RT_PrenotazionePercorso`.`PrenotazioneId` = `RT_PrenotazioneDettaglio`.`PrenotazioneId`)
+            and (`RT_PrenotazioneDettaglio`.`ComunePartenza` = `RT_PrenotazionePercorso`.`ComuneSalita`)
+            and (`RT_PrenotazioneDettaglio`.`PrenotazioneId` = `RT_Prenotazione`.`PrenotazioneId`))))
+        join `RT_AppPrenotazioneStato` ON ((`RT_PrenotazionePercorso`.`PrenotazioneStato` = `RT_AppPrenotazioneStato`.`PrenotazioneStatoId`)))
+        left join `RT_TipologiaBiglietto` `tb` ON ((`tb`.`TipologiaBiglietto` = `RT_PrenotazioneDettaglio`.`TipologiaBiglietto`)))
+    where
+        ((`RT_Prenotazione`.`Cancella` = 0)
+            and (`RT_PrenotazionePercorso`.`Cancella` = 0)
+            and (`RT_PrenotazionePercorso`.`Stato` = 1)
+            and (`RT_AppPrenotazioneStato`.`OccupaPosti` = 1)
+            and (((`RT_Prenotazione`.`PrenotazioneStato` = 3)
+            and (`RT_PrenotazioneDettaglio`.`Escludi` = 0))
+            or ((`RT_Prenotazione`.`PrenotazioneStato` = 1)
+            and (`RT_Prenotazione`.`Pagato` = 1))
+            or ((`RT_Prenotazione`.`PrenotazioneStato` = 1)
+            and (`RT_Prenotazione`.`Pagato` = 0))
+            or ((`RT_Prenotazione`.`ABordo` = 1)
+            and (`RT_Prenotazione`.`PrenotazioneStato` = 1)))
+            and (`tb`.`OccupaPosto` = 1))
+    group by `RT_PrenotazionePercorso`.`CorsaDataPartenza` , `RT_PrenotazionePercorso`.`CorsaId` , `RT_PrenotazionePercorso`.`OdcIdRef`  
+    
+
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_ViewSingolaCorsaServiziPrenotati` AS
+    select 
+        `RT_PrenotazionePercorso`.`CorsaId` AS `CorsaId`,
+        `RT_PrenotazionePercorso`.`CorsaDataPartenza` AS `CorsaDataPartenza`,
+        (count(`RT_Prenotazione`.`PrenotazioneId`) - sum(`RT_PrenotazioneDettaglio`.`Escludi`)) AS `TotaleServiziPrenotati`,
+        `RT_Prenotazione`.`OdcIdRef` AS `OdcIdRef`
+    from
+        ((((`RT_PrenotazionePercorso`
+        join `RT_Prenotazione` ON ((`RT_PrenotazionePercorso`.`PrenotazioneId` = `RT_Prenotazione`.`PrenotazioneId`)))
+        join `RT_PrenotazioneDettaglio` ON (((`RT_PrenotazionePercorso`.`PrenotazioneId` = `RT_PrenotazioneDettaglio`.`PrenotazioneId`)
+            and (`RT_PrenotazioneDettaglio`.`ComunePartenza` = `RT_PrenotazionePercorso`.`ComuneSalita`)
+            and (`RT_PrenotazioneDettaglio`.`PrenotazioneId` = `RT_Prenotazione`.`PrenotazioneId`))))
+        join `RT_AppPrenotazioneStato` ON ((`RT_PrenotazionePercorso`.`PrenotazioneStato` = `RT_AppPrenotazioneStato`.`PrenotazioneStatoId`)))
+        left join `RT_TipologiaBiglietto` `tb` ON ((`tb`.`TipologiaBiglietto` = `RT_PrenotazioneDettaglio`.`TipologiaBiglietto`)))
+    where
+        ((`RT_Prenotazione`.`Cancella` = 0)
+            and (`RT_PrenotazionePercorso`.`Cancella` = 0)
+            and (`RT_PrenotazionePercorso`.`Stato` = 1)
+            and (`RT_AppPrenotazioneStato`.`OccupaPosti` = 1)
+            and (((`RT_Prenotazione`.`PrenotazioneStato` = 3)
+            and (`RT_PrenotazioneDettaglio`.`Escludi` = 0))
+            or ((`RT_Prenotazione`.`PrenotazioneStato` = 1)
+            and (`RT_Prenotazione`.`Pagato` = 1))
+            or ((`RT_Prenotazione`.`PrenotazioneStato` = 1)
+            and (`RT_Prenotazione`.`Pagato` = 0))
+            or ((`RT_Prenotazione`.`ABordo` = 1)
+            and (`RT_Prenotazione`.`PrenotazioneStato` = 1)))
+            and (`tb`.`OccupaPosto` = 0))
+    group by `RT_PrenotazionePercorso`.`CorsaDataPartenza` , `RT_PrenotazionePercorso`.`CorsaId` , `RT_PrenotazionePercorso`.`OdcIdRef`
+
+
+
+
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_ViewElencoGestioneOperativita_new` AS
+    select 
+        `RT_Corsa`.`CorsaId` AS `CorsaId`,
+        `RT_AppCalendario`.`AppCalendarioData` AS `AppCalendarioData`,
+        date_format(`RT_AppCalendario`.`AppCalendarioData`,
+                _utf8'%d/%m/%Y') AS `DataPartenzaFormattata`,
+        `RT_Corsa`.`CorsaNome` AS `CorsaNome`,
+        `RT_Corsa`.`LineaId` AS `LineaId`,
+        `RT_Linea`.`LineaNome` AS `LineaNome`,
+        `RT_Corsa`.`OrarioPartenza` AS `OrarioPartenza`,
+        if(isnull(`RT_ViewSingolaCorsaPostiAggiunti`.`PostiAggiunti`),
+            0,
+            `RT_ViewSingolaCorsaPostiAggiunti`.`PostiAggiunti`) AS `PostiAggiunti`,
+        if(isnull(`RT_ViewSingolaCorsaPostiPrenotati`.`TotalePaxPrenotati`),
+            0,
+            `RT_ViewSingolaCorsaPostiPrenotati`.`TotalePaxPrenotati`) AS `TotalePrenotati`,
+        if(isnull(`RT_ViewSingolaCorsaPostiRealmentePrenotati`.`TotalePaxPrenotati`),
+            0,
+            `RT_ViewSingolaCorsaPostiRealmentePrenotati`.`TotalePaxPrenotati`) AS `PostiRealmentePrenotati`,
+        if(isnull(`RT_ViewSingolaCorsaServiziPrenotati`.`TotaleServiziPrenotati`),
+            0,
+            `RT_ViewSingolaCorsaServiziPrenotati`.`TotaleServiziPrenotati`) AS `ServiziPrenotati`,
+        (`RT_TipologiaBus`.`TotalePosti` + if(isnull(`RT_ViewSingolaCorsaPostiAggiunti`.`PostiAggiunti`),
+            0,
+            `RT_ViewSingolaCorsaPostiAggiunti`.`PostiAggiunti`)) AS `PostiTotali`,
+        ((`RT_TipologiaBus`.`TotalePosti` + if(isnull(`RT_ViewSingolaCorsaPostiAggiunti`.`PostiAggiunti`),
+            0,
+            `RT_ViewSingolaCorsaPostiAggiunti`.`PostiAggiunti`)) - if(isnull(`RT_ViewSingolaCorsaPostiRealmentePrenotati`.`TotalePaxPrenotati`),
+            0,
+            `RT_ViewSingolaCorsaPostiRealmentePrenotati`.`TotalePaxPrenotati`)) AS `PostiRealmenteDisponibili`,
+        if(isnull(`RT_CorsaBloccoWeb`.`CorsaBloccoId`),
+            0,
+            1) AS `CorsaWebBloccata`,
+        if(isnull(`RT_CorsaBlocco`.`CorsaBloccoId`),
+            0,
+            1) AS `CorsaBloccata`,
+        `RT_CorsaConsolidamento`.`DataIns` AS `DataConsolidamentoF`,
+        `RT_CorsaInizioPreparazione`.`DataIns` AS `DataInizializzazioneF`,
+        `RT_Corsa`.`OdcIdRef` AS `OdcIdRef`,
+        `RT_Corsa`.`GestoreIdRef` AS `GestoreIdRef`
+    from
+        (((((((((((((`RT_Corsa`
+        join `RT_CorsaSettimana` ON ((`RT_Corsa`.`CorsaId` = `RT_CorsaSettimana`.`CorsaId`)))
+        join `RT_AppSettimana` ON ((`RT_CorsaSettimana`.`SettimanaId` = `RT_AppSettimana`.`AppSettimanaId`)))
+        join `RT_AppCalendario` ON ((`RT_AppSettimana`.`AppSettimanaGiorno` = `RT_AppCalendario`.`GiornoSettimana`)))
+        join `RT_Linea` ON ((`RT_Corsa`.`LineaId` = `RT_Linea`.`LineaId`)))
+        left join `RT_ViewSingolaCorsaPostiAggiunti` ON (((`RT_Corsa`.`CorsaId` = `RT_ViewSingolaCorsaPostiAggiunti`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_ViewSingolaCorsaPostiAggiunti`.`DataPartenza`))))
+        left join `RT_ViewSingolaCorsaPostiPrenotati` ON (((`RT_Corsa`.`CorsaId` = `RT_ViewSingolaCorsaPostiPrenotati`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_ViewSingolaCorsaPostiPrenotati`.`CorsaDataPartenza`))))
+        left join `RT_ViewSingolaCorsaPostiRealmentePrenotati` ON (((`RT_Corsa`.`CorsaId` = `RT_ViewSingolaCorsaPostiRealmentePrenotati`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_ViewSingolaCorsaPostiRealmentePrenotati`.`CorsaDataPartenza`))))
+        join `RT_TipologiaBus` ON ((`RT_Corsa`.`TipologiaBusDefaultId` = `RT_TipologiaBus`.`TipologiaBusId`)))
+        left join `RT_CorsaBloccoWeb` ON (((`RT_Corsa`.`CorsaId` = `RT_CorsaBloccoWeb`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_CorsaBloccoWeb`.`DataPartenza`))))
+        left join `RT_CorsaBlocco` ON (((`RT_Corsa`.`CorsaId` = `RT_CorsaBlocco`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_CorsaBlocco`.`DataPartenza`))))
+        left join `RT_CorsaInizioPreparazione` ON (((`RT_Corsa`.`CorsaId` = `RT_CorsaInizioPreparazione`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_CorsaInizioPreparazione`.`DataCorsa`))))
+        left join `RT_CorsaConsolidamento` ON (((`RT_Corsa`.`CorsaId` = `RT_CorsaConsolidamento`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_CorsaConsolidamento`.`DataCorsa`))))
+        left join `RT_ViewSingolaCorsaServiziPrenotati` ON (((`RT_Corsa`.`CorsaId` = `RT_ViewSingolaCorsaServiziPrenotati`.`CorsaId`)
+            and (`RT_AppCalendario`.`AppCalendarioData` = `RT_ViewSingolaCorsaServiziPrenotati`.`CorsaDataPartenza`))))
+    where
+        ((`RT_Corsa`.`Cancella` = 0)
+            and (`RT_AppCalendario`.`AppCalendarioData` >= `RT_Corsa`.`AttivaDal`)
+            and (`RT_AppCalendario`.`AppCalendarioData` <= `RT_Corsa`.`AttivaAl`)
+            and ((`RT_AppCalendario`.`Feriale` = `RT_Corsa`.`IncludiFeriale`)
+            or (`RT_AppCalendario`.`Prefestivo` = `RT_Corsa`.`IncludiPrefestivo`)
+            or (`RT_AppCalendario`.`Festivo` = `RT_Corsa`.`IncludiFestivo`)))
+    group by `RT_Corsa`.`CorsaId` , `RT_AppCalendario`.`AppCalendarioData`
+    order by `RT_AppCalendario`.`AppCalendarioData` , `RT_Linea`.`PercorsoId` , `RT_Linea`.`LineaNome` , `RT_Corsa`.`CorsaNome`

@@ -1,0 +1,133 @@
+ALTER TABLE `RT_Autisti` 
+ADD COLUMN `Username` VARCHAR(255) NULL DEFAULT NULL AFTER `GestoreIdRef`,
+ADD COLUMN `Password` VARCHAR(255) NULL DEFAULT NULL AFTER `Username`,
+ADD COLUMN `OperatoreId` INT(10) NULL DEFAULT NULL AFTER `Password`;
+
+CREATE TABLE `RT_ClientApp` (
+  `ClientAppId` INT(10) NOT NULL AUTO_INCREMENT,
+  `AutistaId` INT(10) NULL,
+  `Pin` INT(10) NULL,
+  `DataIns` DATETIME NULL,
+  `OpeIns` INT(10) NULL,
+  `SedeIns` INT(10) NULL,
+  `IpIns` VARCHAR(16) NULL,
+  `DataAgg` DATETIME NULL,
+  `OpeAgg` INT(10) NULL,
+  `SedeAgg` INT(10) NULL,
+  `IpAgg` VARCHAR(16) NULL,
+  `Stato` INT(1) NULL DEFAULT 1,
+  `Cancella` INT(1) NULL DEFAULT 0,
+  `UpdateCount` INT(10) NULL,
+  `OdcIdRef` INT(10) NULL,
+  `GestoreIdRef` INT(10) NULL,
+  PRIMARY KEY (`ClientAppId`));
+  
+CREATE TABLE IF NOT EXISTS `RT_MobileCarico` (
+  `IdCarico` int(11) NOT NULL AUTO_INCREMENT,
+  `BusId` int(11) DEFAULT NULL,
+  `ComuneId` int(11) DEFAULT NULL,
+  `Comune` varchar(255) DEFAULT NULL,
+  `Fermata` varchar(255) DEFAULT NULL,
+  `DataPartenza` date DEFAULT NULL,
+  `DataPartenzaFormattata` varchar(255) DEFAULT NULL,
+  `OrarioPartenza` varchar(255) DEFAULT '0',
+  `Pax` int(11) DEFAULT NULL,
+  `Caricati` int(11) DEFAULT '0',
+  `Interscambio` int(1) DEFAULT '0',
+  `Assenti` int(11) DEFAULT '0',
+  `AutistaId` int(4) DEFAULT NULL,
+  PRIMARY KEY (`IdCarico`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `RT_MobileCaricoPasseggeri` (
+  `IdCaricoPasseggeri` int(11) NOT NULL AUTO_INCREMENT,
+  `BusId` int(11) DEFAULT NULL,
+  `PrenotazioneNumero` int(11) DEFAULT NULL,
+  `CodicePrenotazione` varchar(255) DEFAULT NULL,
+  `CodiceBiglietto` varchar(255) DEFAULT NULL,
+  `Cliente` varchar(255) DEFAULT NULL,
+  `TipologiaBiglietto` varchar(255) DEFAULT NULL,
+  `FermataArrivoFinale` varchar(255) DEFAULT NULL,
+  `ComunePartenza` varchar(255) DEFAULT NULL,
+  `ComuneArrivo` varchar(255) DEFAULT NULL,
+  `FermataArrivo` varchar(255) DEFAULT NULL,
+  `ClienteCellulare` varchar(255) DEFAULT NULL,
+  `DaPagare` varchar(45) DEFAULT NULL,
+  `TitoloEmesso` varchar(45) DEFAULT NULL,
+  `DataAR` varchar(45) DEFAULT NULL,
+  `Tragitto` varchar(45) DEFAULT NULL,
+  `Caricato` int(1) DEFAULT '0',
+  `ComuneId` int(11) DEFAULT NULL,
+  `IdCarico` int(11) DEFAULT NULL,
+  `AutistaId` int(11) DEFAULT NULL,
+  `ConfermaPagamento` varchar(45) DEFAULT NULL,
+  `sms` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `Pagamento` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`IdCaricoPasseggeri`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `RT_MobileScambio` (
+  `IdScambio` int(11) NOT NULL AUTO_INCREMENT,
+  `BusId` int(11) DEFAULT NULL,
+  `ComuneId` int(11) DEFAULT NULL,
+  `Comune` varchar(255) DEFAULT NULL,
+  `Fermata` varchar(255) DEFAULT NULL,
+  `Pax` int(11) DEFAULT NULL,
+  `AutistaId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdScambio`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `RT_MobileScambioPasseggeri` (
+  `IdScambioPasseggeri` int(11) NOT NULL AUTO_INCREMENT,
+  `BusId` int(11) DEFAULT NULL,
+  `PrenotazioneNumero` int(11) DEFAULT NULL,
+  `CodicePrenotazione` varchar(255) DEFAULT NULL,
+  `CodiceBiglietto` varchar(255) DEFAULT NULL,
+  `Cliente` varchar(255) DEFAULT NULL,
+  `TipologiaBiglietto` varchar(255) DEFAULT NULL,
+  `ComunePartenza` varchar(255) DEFAULT NULL,
+  `ComuneArrivo` varchar(255) DEFAULT NULL,
+  `BusInterscambio` varchar(255) DEFAULT NULL,
+  `IdScambio` int(11) DEFAULT NULL,
+  `AutistaId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdScambioPasseggeri`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `RT_MobileScarico` (
+  `IdScarico` int(11) NOT NULL AUTO_INCREMENT,
+  `BusId` int(11) DEFAULT NULL,
+  `ComuneId` int(11) DEFAULT NULL,
+  `Comune` varchar(255) DEFAULT NULL,
+  `Fermata` varchar(255) DEFAULT NULL,
+  `DataArrivo` date DEFAULT NULL,
+  `DataArrivoFormattata` varchar(55) DEFAULT NULL,
+  `OrarioPartenza` varchar(55) DEFAULT '0',
+  `Pax` int(11) DEFAULT NULL,
+  `Scaricati` int(11) DEFAULT NULL,
+  `Interscambio` int(1) DEFAULT '0',
+  `AutistaId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdScarico`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `RT_MobileScaricoPasseggeri` (
+  `IdScaricoPasseggeri` int(11) NOT NULL AUTO_INCREMENT,
+  `BusId` int(11) DEFAULT NULL,
+  `PrenotazioneNumero` varchar(255) DEFAULT NULL,
+  `CodicePrenotazione` varchar(255) DEFAULT NULL,
+  `CodiceBiglietto` varchar(255) DEFAULT NULL,
+  `Cliente` varchar(255) DEFAULT NULL,
+  `ComunePartenza` varchar(255) DEFAULT NULL,
+  `ComuneArrivo` varchar(255) DEFAULT NULL,
+  `Scaricato` int(11) DEFAULT '0',
+  `ComuneId` int(11) DEFAULT NULL,
+  `IdScarico` int(11) DEFAULT NULL,
+  `AutistaId` int(11) DEFAULT NULL,
+  `TipologiaBiglietto` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`IdScaricoPasseggeri`)
+) ;
+
+ALTER TABLE `RT_Autisti` 
+ADD COLUMN `Username` VARCHAR(255) NULL AFTER `GestoreIdRef`,
+ADD COLUMN `Password` VARCHAR(255) NULL AFTER `Username`,
+ADD COLUMN `OperatoreId` INT(11) NULL AFTER `Password`;

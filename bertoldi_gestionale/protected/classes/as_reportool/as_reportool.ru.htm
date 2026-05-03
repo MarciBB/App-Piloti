@@ -1,0 +1,335 @@
+<html>
+<head><title>as_reportool: PHP класс для формирования отчетов</title>
+<meta http-equiv="Content-Type" Content="text/html; charset=windows-1251">
+<style type="text/css">
+  body     { font-family:arial,helvetica;font-size:12px; }
+  pre { color:#0000FF; border: 1px solid #e0e0e0; padding-left:8px; background: #f8f8ff;}
+  td   { font-family:arial,helvetica;font-size:12px;}
+  tr.odd   { background-color: #F0F0F8; color:#000000; }
+  tr.even  { background-color: #F8F8FF; color:#000000; }
+  h4       { background-color: #F8F8FF; color:#000000; text-align: left; }
+  h5       { background-color: #F8F8FF; color:#000000; text-align: left; }
+  hr       { color: #c0c0ff; border: none; height: 1px;}
+</style>
+
+</head>
+<body>
+
+<!-- DOC BEGIN -->
+<h3>as_reportool: PHP класс для формирования отчетов</h3>
+
+<p>as_reportool - это очередной вариант класса, предназначенного для формирования отчетов из данных, возвращенных
+SQL-запросом. Основная цель при написании класса была сделать максимально простым и прозрачным процесс
+подготовки описания отчета - в итоге он состоит в последовательном вызове нескольких методов
+(передача SQL запроса, списка выводимых и группирующих полей, дополнительных параметров) либо загрузка
+всех параметров из подготовленного XML файла с описанием отчета.
+
+<br />
+Программа распространаяется по лицензии <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GNU GPL</a>,
+т.е. бесплатна для всех видов использования.
+
+<p>Установка скрипта стандартная - скопируйте файл <b>as_reportool.php</b> и вспомогательный <b>as_dbutils.php</b> в одну из папок своего сайта
+и используйте операторы "include(), require_once()" для подключения класса.
+</p>
+
+<h3>Использование as_reportool</h3>
+<p>
+<pre>
+require_once('as_reportool.php');
+//...
+$rep = new CReporTool();
+</pre>
+
+Будем придерживаться "естественного" порядка вызова, однако он не столь важен. Главное - вызывать метод DrawReport()
+в последнюю очередь.
+
+<br /><br />
+<b>Шаг 1</b>: передаем в класс текст SQL запроса, который вернет выводимые данные, отсортированные  в нужном порядке,
+для чего вызываем метод SetQuery().
+
+<br /><br />
+<b>Шаг 2</b>:, с помощью метода AddField() последовательно добавляем все "печатаемые" поля отчета.
+Учтите, что "идентификаторы" полей должны совпадать с "псевдо-именем" полей в данных, возвращаемых SQL запросом.
+<br />
+Например, если наш запрос содержит коснтрукцию типа "SELECT ... (field1+field2) `field1_field2`",
+для печати такого "вычисляемого" значения используем имя "field1_field2" :
+<pre>$rep-&gt;AddField('field1_field2','сумма F1 и F2');</pre>
+
+<br />
+<b>Шаг 3</b>: Если нам нужны промежуточные итоги, передаем в класс имена "группирующих" полей
+(естественно, наш SQL запрос должен в этом случае группировать и сортировать записи в соответствии с этим набором полей),
+используем вызов метода AddGroupingField().
+
+<br />Группирующих полей может быть более чем одно, при наличии двух и более группирующих полей получатся многоуровневые
+под-итоги. Первое поле, указанное в методе AddGroupingField(), будет задавать "верхний" уровень в этой иерархии,
+а все последующие - уровни ниже предыдущего.
+<br />
+
+При вызове DrawReport, во время цикла обработки данных (и печати строк отчета), когда меняется значение одного
+из группирующих полей, выводятся все накопленные под-итоги начиная с последнего уровня и до данного поля включительно.
+
+<br /><br />
+<b>Шаг 4</b>: вызываем DrawReport() для вывода отчета.
+
+<br /><br />Сформированный отчет представляет HTML код, который адекватно выглядит не только на экране, но и на
+распечатке. Отвечают за это подготовленные стили (CSS), которые выводятся перед началом самого отчета.
+
+Возможно, вам захочется задать свои стили форматирования вместо предложенных. В этом случае вывод CSS - блока можно отменить,
+вызвав метод SuppressCss(). Чтобы вывод был адекватным, в этом случае придется самостоятельно описать css-стили с идентификаторами:
+td.rep_ltrb, td.rep_lrb, td.rep_rb, td.num, td.cnt, td.newgroup.
+
+
+<h3>CReporTool - список методов</h3>
+
+<li>
+<b>CReporTool([$filename [, $outcharset]])</b> - конструктор может быть использован не только для создания пустого объекта,
+но и для загрузки описания отчета из подготовленого XML файла.
+
+<br />Передайте его имя в первом параметре оператора <b>new CReporTool()</b>.
+Если параметр опущен, создается пустой объект CReporTool.
+<br />Второй параметр используется, если вы загружаете описание из XML файла, и выходная кодировка (charset) отличается от UTF-8.
+В этом случае укажите имя конечного character set (например, 'windows-1251'), и все символьные значения (заголовки для полей, группировок, итогов)
+ загруженные из XML, будут конвертированы из UTF-8.
+
+(Может, я не докопался до всех возможностей simpleXML, но пока получилось, что simpleXML функция <b>simplexml_load_file</b>
+не разбирает файлы в кодировке отличной от UTF-8 files, похоже, она вообще игнорирует атрибут encoding в заголовке XML.
+А потому приходится XML файл всегда готовить именно в UTF-8.)
+</li>
+
+<li>
+<b>LoadFromXml($filename [,$outcharset=''])</b> метод загружает описание отчета из XML файла.
+Собственно, этот метод и вызывается в конструкторе, когда мы вызываем его с непустым параметром.
+Первый параметр - это имя файла, второй - кодировка, (см. описание конструктора выше).
+Структура XML файла должна соответствовать приведенному ниже примеру, из которого практически все понятно.
+<br />ВНИМАНИЕ: если вы планируете использовать этот метод, удостоверьтесь в том, используете на хостинге PHP 5-ой версии с включенной
+и что есть поддержка simpleXML.
+
+<br /><br />
+Пример XML файла
+<pre>
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;report_def version="1.00"&gt;
+  &lt;query&gt;SELECT c.categoryid, b.animalid, a.nickname,a.gender,a.birth, a.weight
+   FROM big_zoo a, animals b, animal_categories c
+   WHERE a.animalid=b.animalid AND b.category=c.categoryid ORDER BY c.categoryid, b.animalid
+  &lt;/query&gt;
+  &lt;headings&gt;&lt;![CDATA[
+&lt;tr&gt;&lt;td colspan="8" class="rep_ltrb"&gt;This is additional headings to print before default columns headings&lt;/td&gt;&lt;/tr&gt;
+]]&gt;&lt;/headings&gt;
+  &lt;nodefaultheadings value="1" /&gt;
+  &lt;summary title="Summary totals (%rowcount%)" /&gt;
+  &lt;delimiters decimal="," thousand=" " /&gt;
+  &lt;grpfield name="categoryid" fconv="GetAnymalCategoryName" title="Animal category " totaltitle="Totals for category" /&gt;
+  &lt;grpfield name="animalid" fconv="GetAnymalClassName" title="Animal class" totaltitle="Totals for class" /&gt;
+
+  &lt;field name="nickname" title="Nick" fconv="" format="" /&gt;
+  &lt;field name="gender" title="Gender" fconv="DecodeGender" /&gt;
+  &lt;field name="weight" title="Weight, kg" summable="1" format="i" /&gt;
+
+&lt;/report_def&gt;
+
+</pre>
+</li>
+<br /><b>query</b> - тег задает SQL запрос, аналогично вызову SetQuery().
+<br /><b>headings</b> - задание дополнительных заголовков (см. метод SetHeadings() );
+<br /><b>nodefaultheadings</b> - этот тег с атрибутом value="1" "прячет" авто-форируемые заголовки для колонок в шапке отчета (см. с непустым вторым параметром: SetHeadings($new_headings,1);
+<br /><b>grpfield</b> - задание группиирующего поля (см. AddGroupingField() ),
+<br /><b>field</b> - добавление печатаемой колонки с полем (вызов AddField() );
+<br /><b>summary</b> - включение вывода финальных итогов по отчету, с заданием строки титула (вызов SetSummary() );
+<br /><b>delimiters</b> - переключение символов разделителей в выводе числовых значений (см. SetNumberDelimiters($decimal,$thousand) ).
+
+<br />
+<br />
+<li>
+<b>AddGroupingField($fldid,$fconv='',$title='',$totaltitle='')</b> добавляет группирующее поле,
+при смене значения которого будут печататься строки с под-итогами.
+<ul>
+  <li><b>$fldid</b> - имя поля (или псевдо-имя для колонки данных,</li>
+  <li><b>$fconv</b> имя функции, используемой для для преобразования значения поля во что-то более информативное (для вывода на печать).
+  Например, если значение - это числовой ID подразделения, указанная функция должна возвращать название подразделения по его номеру (ID).
+  <li><b>$title</b> титул, или наименование для поля, из которого будет формироваться блок заголовков (шапка отчета)</li>
+  <li><b>$totaltitle</b> текст, выводимый в строке итогов слева от итоговых значений. Макрос "%name%" в это йстроке будет заменен
+  на значение группирующего поля (подразделения, например),
+  т.е. если задать "Итого для %name%", строка итогов будет выглядеть как "Итого для (название здесь)"</li>
+</ul>
+
+Как уже говорилось, можно задавать более одного группирующего поля (последовательным вызовом метода).
+</li>
+
+<br /><br />
+<li>
+<b>AddField($fldid,$fldtitle='',$summable=0,$fconv='', $format='')</b> добавляет в отчет колонку с полем.
+<br />Параметры:
+  <ul>
+  <li>$fldid - имя поля (или псевдо-имя как представлено в SQL запросе)</li>
+  <li>$fldtitle наименование для поля, (используется в заголовках шапки отчета)</li>
+  <li>$summable : если true (или любое непустое значение), для данного поля будут подсчитываться и выводиться
+  под-итоги</li>
+  <li>$fconv - необязательное имя функции преобразования значения поля в его "печатное" представление.
+  <li>$format - необязательный идентификатор формата поля. Поддерживаются следующие форматы:
+    <table border=0 cellpadding="3" cellspacing="1" style="background:#B8B8FE;">
+    <tr class="even"><td>format</td><td>Что означает</td></tr>
+    <tr class="odd"><td>c</td><td>"Centered" - значение центруется в ячейке</td></tr>
+    <tr class="even"><td>r</td><td>"Right" - значение выравнивается вправо</td></tr>
+    <tr class="odd"><td>money</td><td>значение преобразуется функцией <b>number_format()</b> к "денежному" виду (NNN NNN.00)
+    и выравнивается вправо</td></tr>
+    <tr class="even"><td>i</td><td>"Integer" - значение форматируется <b>number_format()</b>-ом как
+    целочисленное (с разделителем тысяч) и выравнивается вправо</td></tr>
+    </table>
+  </li>
+  </ul>
+</li>
+
+<br /><br />
+<li><b>SetHeadings($par, $no_defaultheader=0)</b> : по умолчанию для отчета формируется простая "шапка", состоящая из наименований полей,
+ переданных в методе AddField() (параметр $fldtitle).
+<br />Чтобы вывести что-то более сложное, подготовьте свой HTML код шапки и передайте его в класс с помощью метода SetHeadings().
+Кроме самого кода (первый параметр) можно также передать непустой (0, true) второй параметр, отключающий генерацию
+стандартного кода шапки.
+HTML код должен представлять набор табличных строк, т.е. начинаться тегом &lt;tr&gt; и заканчиваться &lt;/tr&gt;.
+Он выводится перед стандартным (сгенерированным) кодом заголовков.
+</li>
+
+<br /><br />
+<li><b>SetSummary($title)</b> : метод вызывается, если в конце отчета нужно распечатать итоговую строку.
+Можно передать свой текст заголовка в параметре $title. Чтобы в этом тексте вывести общее число строк данных, попавших в отчет,
+включите в строку макрос <b>%rowcount%</b>.
+</li>
+
+<br /><br />
+<li><b>SetNumberDelimiters($dec, $tho)</b> заменяет стандартные символы разделителей для дробной части и тысяч,
+используемые при вызовах number_format, когда форматируются числовые значения полей (полей с типами формата i,money).
+<br />Стандартные символы разделителей - "," для тысяч и "." for дробной части.
+</li>
+
+
+<br /><br />
+<li><b>SetFontStyles($par)</b> устанавливает новый стиль для всего выводимого отчета и должен состоять из css атрибутов.
+Например, чтобы вывести отчет шрифтом "verdana" с размером 3mm, передайте строку :
+
+<pre>$rep-&gt;SetFontStyles("font-family: Verdana; font-size:3mm;");</pre>
+</li>
+
+<br /><br />
+<li><b>DrawReport($title='')</b> финальный метод, генерирующий и выводящий HTML код отчета.
+Последовательно отрабатываются строки данных, возвращаемые переданным SQL запросом, подсчитываются промежуточные (и финальные) итоги.
+<br />Необязательный параметр $title передает титульную строку, выводимую в начале отчета (перед "шапкой").
+</li>
+
+<h3>Пример данных для демонстрации работы класса.</h3>
+
+Для демонстрации нам понадобятся три таблицы в нашей БД.
+Это будет описание гипотетического зоопарка.
+Первая таблица будет содержать список "базовых" категорий животных (морские, ...)
+Вторая - список типов животных (слоны, гориллы и т.д.),
+и третья - список обитателей зоопарка.
+<br />Для генерации данных приготовлен sql-файл, который можно выполнить в консоли mySql командой <b>source sampledata.sql</b>
+<br /><br />
+
+<table border=0 cellpadding="3" cellspacing="1" style="background:#B8B8FE;">
+<tr class="even"><td>Поле</td><td>тип</td><td>описание</td></tr>
+
+<tr class="odd"><td colspan=3><b>таблица animal_categories</b></td></tr>
+<tr class="even"><td>categoryid</td><td>INT</td><td>unique category's ID</td></tr>
+<tr class="odd"><td>categoryname</td><td>VARCHAR</td><td>category name</td></tr>
+
+<tr class="even"><td colspan=3><b>таблица animals</b></td></tr>
+<tr class="odd"><td>animalid</td><td>INT</td><td>unique animal type's ID</td></tr>
+<tr class="even"><td>category</td><td>INT</td><td>category of the animal</td></tr>
+<tr class="odd"><td>animalname</td><td>VARCHAR</td><td>animal's name</td></tr>
+
+<tr class="even"><td colspan=3><b>таблица big_zoo - all animals living in the zoo</b></td></tr>
+<tr class="odd"><td>itemid</td><td>INT</td><td>living creature's ID</td></tr>
+<tr class="even"><td>animalid</td><td>INT</td><td>what kind of animal is it (ID)</td></tr>
+<tr class="odd"><td>nickname</td><td>VARCHAR</td><td>nick name given to this creature</td></tr>
+<tr class="even"><td>birth</td><td>DATE</td><td>birth date</td></tr>
+<tr class="odd"><td>gender</td><td>CHAR(1)</td><td>gender(m for male, f for female)</td></tr>
+<tr class="even"><td>weight</td><td>INT</td><td>creature's weight</td></tr>
+</table>
+
+<br /><br />
+Будем выводить отчет по всем особям, живущим в зоопарке, с промежуточными итогами
+и строкой общих итогов.
+
+<pre>
+$rep = new CReporTool();
+
+$rep-&gt;SetQuery("SELECT c.categoryid, b.animalid, a.nickname,a.gender,a.birth,a.weight
+   FROM big_zoo a, animals b, animal_categories c
+   WHERE a.animalid=b.animalid AND b.category=c.categoryid ORDER BY c.categoryid, b.animalid");
+
+$rep-&gt;AddGroupingField('categoryid','GetAnymalCategoryName','Animal category ','Totals for category');
+
+$rep-&gt;AddGroupingField('animalid','GetAnymalClassName','Animal class ','Totals for class');
+
+$rep-&gt;AddField('nickname','Nick');
+
+$rep-&gt;AddField('gender','Gender',0,'DecodeGender'); // DecodeGender() will show 'male' for 'm' and female for 'f' value.
+$rep-&gt;AddField('birth','Birth date',0,'DateToChar'); // your function DateToChar converts DATE value to be more readable
+$rep-&gt;AddField('weight','Weight, kg',1,'','i'); // this field is summable and will be printed right-aligned and number_format()ted
+$rep-&gt;DrawReport('Report: All animals in zoo');
+</pre>
+
+<br />Возможно, Вы решите воспользоваться возможностями базы для формирования строк под-итогов (например, используя GROUP BY <b>WITH ROLLUP</b> в MySQL)
+- так вот, длеать это не стоит, т.к. CReporTool считает итоги самостоятельно и не умеет распознавать итоговые строки в рекордсете.
+</li>
+<p>
+
+Примерный вид отчета приводится ниже:<br /><br />
+
+<style type="text/css">
+/** styles for report drawing **/
+   td.rep_ltrb { border: 1px solid #000000; text-align:center; font-family:arial,verdana; font-size:4mm;}
+   td.rep_lrb { border-left:1px solid #000000; border-top:none; border-right: 1px solid #000000; border-bottom: 1px solid #000000; text-align:left; font-family:arial,verdana; font-size:4mm;}
+   td.rep_rb  { border-left:none; border-top:none; border-right: 1px solid #000000; border-bottom: 1px solid #000000; text-align:left; font-family:arial,verdana; font-size:4mm; }
+   td.num { text-align: right; };
+   td.cnt { text-align: center; };
+   td.newgroup { background: #EAEAEA; font-family:arial,verdana; font-size:4mm; }
+</style>
+<h4 style='text-align:center; font-weight:bold;'>Report: All animals in zoo</h4>
+<div id="divreport" style="text-align:center;"><table border="0" cellpadding="2" cellspacing="0"><tr><td class="rep_ltrb">Nick</td><td class="rep_ltrb">Gender</td><td class="rep_ltrb">Birth date</td><td class="rep_ltrb">Weight, kg</td></tr><tr><td class="rep_lrb newgroup" colspan="4">Animal category  Sea animals</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : whales</td></tr>
+<tr><td class="rep_lrb">&nbsp;Whale-Boy</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;06/22/1997</td><td class="rep_rb num">&nbsp;7,000</td></tr>
+<tr><td class="rep_lrb">&nbsp;Whale-Girl</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;08/01/2000</td><td class="rep_rb num">&nbsp;6,500</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for whales</td><td class="rep_rb num" >13,500</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : sharks</td></tr>
+<tr><td class="rep_lrb">&nbsp;BloodyJaws</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;09/15/2001</td><td class="rep_rb num">&nbsp;1,500</td></tr>
+<tr><td class="rep_lrb">&nbsp;HungryMary</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;11/10/2002</td><td class="rep_rb num">&nbsp;1,200</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for sharks</td><td class="rep_rb num" >2,700</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : dolphins</td></tr>
+<tr><td class="rep_lrb">&nbsp;BigMartha</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;05/20/1998</td><td class="rep_rb num">&nbsp;3,000</td></tr>
+<tr><td class="rep_lrb">&nbsp;BigBob</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;01/12/1996</td><td class="rep_rb num">&nbsp;3,500</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for dolphins</td><td class="rep_rb num" >6,500</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for category Sea animals</td><td class="rep_rb num" >22,700</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4">Animal category  Jungle animals</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : elephants</td></tr>
+<tr><td class="rep_lrb">&nbsp;LazyTom</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;10/23/2004</td><td class="rep_rb num">&nbsp;5,000</td></tr>
+<tr><td class="rep_lrb">&nbsp;MightyJack</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;06/16/2003</td><td class="rep_rb num">&nbsp;5,300</td></tr>
+<tr><td class="rep_lrb">&nbsp;Samantha-Shy</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;04/24/2004</td><td class="rep_rb num">&nbsp;4,200</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for elephants</td><td class="rep_rb num" >14,500</td></tr>
+<tr><td class="rep_lrb newgroup" colspan="4"> &nbsp;&nbsp;class : gorillas</td></tr>
+<tr><td class="rep_lrb">&nbsp;Gorilla-Mom</td><td class="rep_rb">&nbsp;female</td><td class="rep_rb">&nbsp;08/23/2001</td><td class="rep_rb num">&nbsp;150</td></tr>
+<tr><td class="rep_lrb">&nbsp;Gorilla-Son</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;04/15/2008</td><td class="rep_rb num">&nbsp;40</td></tr>
+<tr><td class="rep_lrb">&nbsp;Gorilla-Dad</td><td class="rep_rb">&nbsp;male</td><td class="rep_rb">&nbsp;02/05/2000</td><td class="rep_rb num">&nbsp;180</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for gorillas</td><td class="rep_rb num" >370</td></tr>
+<tr><td class="rep_lrb" colspan="3">Totals for category Jungle animals</td><td class="rep_rb num" >14,870</td></tr>
+<tr><td class="rep_lrb" colspan="3">Summary all animals (12) </td><td class="rep_rb num" >37,570</td></tr>
+</table></div>
+</p>
+
+<br />
+В дистрибутиве должен присутствовать пример скрипта, формирующий наш отчет.
+
+
+<h4>Change log (История изменений)</h4>
+
+<h5>1.00.002 (11/26/2008)</h5>
+Первый релиз
+
+<!-- DOC END -->
+<hr>
+<div align=center><font size=-2>Copyright &copy; Alexander Selifonov, <a href="http://www.selifan.ru">www.selifan.ru</a>,
+distrubuted under <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GPL</a>
+</font></div>
+</body></html>

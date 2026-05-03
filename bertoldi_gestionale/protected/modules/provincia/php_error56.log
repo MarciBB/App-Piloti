@@ -1,0 +1,7 @@
+[04-Jul-2023 19:23:05 UTC] PHP Notice:  Undefined index: provincia in /home/bertoldiboats/public_html/protected/modules/provincia/provincia.php on line 39
+[04-Jul-2023 19:23:05 UTC] PHP Notice:  Undefined index: regione in /home/bertoldiboats/public_html/protected/modules/provincia/provincia.php on line 40
+[04-Jul-2023 19:23:05 UTC] PHP Notice:  Undefined index: nazione in /home/bertoldiboats/public_html/protected/modules/provincia/provincia.php on line 41
+[04-Jul-2023 19:23:05 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/provincia/provincia_processing.php on line 32
+[05-Oct-2023 14:21:54 UTC] PHP Notice:  Undefined index: provincia in /home/bertoldiboats/public_html/protected/modules/provincia/provincia.php on line 229
+[05-Oct-2023 14:25:05 UTC] PHP Notice:  Undefined index: provincia in /home/bertoldiboats/public_html/protected/modules/provincia/provincia.php on line 229
+[13-Oct-2023 14:52:53 UTC] PHP Notice:  Undefined index: provincia in /home/bertoldiboats/public_html/protected/modules/provincia/provincia.php on line 229

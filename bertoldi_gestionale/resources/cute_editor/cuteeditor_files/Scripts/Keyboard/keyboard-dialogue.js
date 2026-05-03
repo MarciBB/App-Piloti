@@ -1,0 +1,1 @@
+var OxOb961=["value","keyboard_area"];function afficher(Ox8){document.getElementById(OxOb961[1])[OxOb961[0]]=Ox8;} ;function rechercher(){return document.getElementById(OxOb961[1])[OxOb961[0]];} ;

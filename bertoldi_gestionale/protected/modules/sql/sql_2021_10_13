@@ -1,0 +1,48 @@
+CREATE TABLE IF NOT EXISTS `FatturaInCloudViaggiatore` (
+  `FatturaId` int(11) NOT NULL AUTO_INCREMENT,
+  `Tipo` varchar(45) DEFAULT NULL,
+  `PrenotazioneId` int(11) DEFAULT NULL,
+  `PrenotazioneMovimentoId` int(11),
+  `FatturaInCloudId` varchar(45) DEFAULT NULL,
+  `Nome` varchar(255) DEFAULT NULL,
+  `IndirizzoVia` varchar(45) DEFAULT NULL,
+  `IndirizzoCap` varchar(45) DEFAULT NULL,
+  `IndirizzoCitta` varchar(45) DEFAULT NULL,
+  `IndirizzoProvincia` varchar(45) DEFAULT NULL,
+  `Paese` varchar(45) DEFAULT NULL,
+  `PaeseISO` varchar(45) DEFAULT NULL,
+  `Lingua` varchar(45) DEFAULT NULL,
+  `PIVA` varchar(45) DEFAULT NULL,
+  `CF` varchar(45) DEFAULT NULL,
+  `Articolo` varchar(45) DEFAULT NULL,
+  `ArticoloCodIva` int(5) DEFAULT NULL,
+  `ArticoloQuantita` int(5) DEFAULT NULL,
+  `ArticoloPrezzoNetto` float DEFAULT NULL,
+  `ArticoloPrezzoLordo` float DEFAULT NULL,
+  `PagamentoData` date DEFAULT NULL,
+  `PagamentoScadenza` date DEFAULT NULL,
+  `PagamentoImporto` varchar(45) DEFAULT NULL,
+  `CodiceDestinatario` varchar(45) DEFAULT NULL,
+  `PEC` varchar(45) DEFAULT NULL,
+  `Email` varchar(45) DEFAULT NULL,
+  `Tel` varchar(45) DEFAULT NULL,
+  `Fax` varchar(45) DEFAULT NULL,
+  `FatturaData` date DEFAULT NULL,
+  `FatturaStato` varchar(45) DEFAULT NULL,
+  `FatturaNumero` varchar(45) DEFAULT NULL,
+  `Anno` int(5) DEFAULT NULL,
+  `Progressivo` int(11) DEFAULT NULL,
+  `PrenotazioneCodice` VARCHAR(255) NULL DEFAULT NULL,
+  `FatturaInCloudIdRimborsata` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`FatturaId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=118 ;
+
+INSERT INTO `AppModulo` (`AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) VALUES ('FatturaInCloud Biglietti', '3', '8', 'rt_contabilita', 'fatturaincloud_biglietti.php', '1', '0', '0', '1', '0', '0');
+
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '1', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '2', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '3', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '4', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '5', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '6', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '51', '7', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');

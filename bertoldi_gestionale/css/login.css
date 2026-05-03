@@ -1,0 +1,219 @@
+/* 
+    Document   : login
+    Created on : 4-giu-2011, 10.36.11
+    Author     : a.esposito
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body {
+	background: linear-gradient(0, rgba(0, 164, 170, 0.5) 0%, rgba(223, 235, 233, 0.5) 41.67%, rgba(255, 255, 255, 0.5) 69.79%, rgba(255, 255, 255, 0.5) 97.4%) !important;
+}
+.brain_boxLogin {
+	width: 520px;
+	/*height: 370px;*/
+	margin: 20px auto;
+	-moz-border-radius: 15px;
+ }
+.brain_boxLogin h1{
+	font-size:25px;
+	/*background-image: url(../images/bkg_resolve.png);*/
+	/*background-position: top left;*/
+	line-height: 30px;
+	background-repeat: no-repeat;
+	font-weight: bold;
+	color: #29537E;
+	padding: 12px 0 0 15px;
+ }
+ .brain_boxLogin h2,  .brain_boxLogin h1 {
+	line-height: 30px;
+	color: #fff !important;
+	padding: 15px 15px 0;
+	text-align: center;
+ }
+  .brain_boxLogin p{
+	font-size:13px;
+ }
+ .brain_data-contentLogin{
+	width:100%;
+	
+	background: linear-gradient(233.31deg, #00A4AA 28.65%, #00396B 107.16%);
+	box-shadow: 4px 4px 10px #1e617a;
+	padding: 28px 0px;
+	width: 100%;
+	float: left;
+	-moz-border-radius: 15px;
+}
+.brain_data-contentLogin a.forgotpwd{
+	color:#CCC;
+	font-size:12px;
+	margin-left: 10px;
+	float: left;
+	margin-top: 8px;
+	/*clear: left;*/
+ }
+ .error{
+	color: white;
+	font-size: 13px;
+	margin: 6px 24px;
+ }
+.brain_data-contentLogin input, .brain_data-contentLogin select{
+	border: none;
+	border-radius: 16px;
+	background-color: #fff;
+	position: relative;
+	background-position: 5% center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	padding: 0.4rem 0px;
+	display: block;
+	margin-right: auto;
+	margin-left: 8px;
+	text-align: center;
+	float: left;
+	color: #333;
+	font-size: 14px;
+	margin-top: 15px;
+	width: 100%;
+}
+.brain_data-contentLogin input:focus, .brain_data-contentLogin select:focus {
+	border: 3px solid #00396B;
+	
+}
+div.titolo_soggetto {
+	padding: 7px 9px;
+	width: 90%;
+	float: left;
+}
+div.titolo_soggetto h3{
+	float: left;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: normal;
+	width: 80%;
+	padding: 5px 0 2px 25px;
+	background-image: url(/images/tit_soggetto_bckgnd.png);
+	background-repeat: no-repeat;
+	background-position: left 3px;
+}
+.brain_login{
+	background: url("/images/avanti.png") no-repeat scroll left top transparent;
+	float: left;
+	padding-right: 14px;
+	text-align: center;
+	width: 104px;
+	margin-top: 10px;
+	height: 28px;
+	color: #FFF;
+	border: none;
+	}
+.brain_login:hover{
+		 background: url("/images/avantiOn.png") no-repeat scroll left top transparent;
+	}
+fieldset {
+	float: left;
+	padding: 10px 30px;
+	width:90%;
+ }
+	
+fieldset legend {
+    font-weight: bold;
+}
+
+.brain_data-contentLogin dl {
+	clear: both;
+	display: block;
+}
+.brain_data-contentLogin dl dd {
+	margin: 0;
+	float: left;
+	/*display: block;*/
+	width: 70%;
+}
+
+.brain_data-contentLogin dl dt {
+	/*display: block;*/
+	margin: 20px 0 4px 0;
+	color: #fff;
+	font-weight: 600;
+	font-size: 85%;
+	text-align: left;
+	float: left;
+	width: 26%;
+	/*clear: left;*/
+}
+
+.forgot{
+	display: inline;
+	margin-bottom: 5px;
+	font-size: 85%;
+	padding-top: 7px;
+}
+
+.inputTextbox {
+    width: 400px;
+    background: url('form_bg.jpg') repeat-x left top #fff;
+    border: 1px solid #CCCCCC;
+    font-size: large;
+    padding: 3px;
+}
+
+.brain_data-contentLogin .inputSubmitBtn {
+	background: #00A4AA !important;
+color: #fff;
+border-radius: 42px;
+padding: 6px 12px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+text-align: center;
+border: none;
+cursor: pointer;
+}
+
+.brain_data-contentLogin .ForgotSubmitBtn {
+	background: url('/images/buttons/buttonBlueOn.png') no-repeat left top;
+	border:none;
+	color:#FFFFFF !important;
+	font-family:"Montserrat",sans-serif;;
+	font-size:12px;
+	padding:0px;
+	width: 188px;
+	float: left;
+	clear: both;
+	height: 31px;
+}
+
+
+.inputSubmitBtn:hover {
+	background: url('../images/avantiOn.png') no-repeat left top;
+	border:none;
+	color:#FFFFFF;
+}	
+
+#loginResult {
+    display: none;
+    padding: 5px;
+    margin-top: 10px;
+    color: #ffffff;
+    background: #FF0000;
+    font-size: large;
+    font-weight: bold;
+}
+
+.loginFooter {
+	clear: both;
+	margin: 0px auto;
+	/*border: 1px solid;*/
+	text-align: center;
+	width: 60%;
+	padding-top: 22px;
+}
+
+.loginFooter p{
+	font-size: 11px;
+	color: #666;
+	line-height: 1.2em;
+	padding: 0;
+}
+

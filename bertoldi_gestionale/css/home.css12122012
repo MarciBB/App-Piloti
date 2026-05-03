@@ -1,0 +1,82 @@
+        div#LeftSideHp {
+            clear: both;
+            float: left;
+            width: 48%;
+            width: auto;
+            /*border: 1px dashed;*/
+        }
+        div#RightSideHp {
+            float: right;
+            width: 48%;
+            /*border: 1px dashed;*/
+        }
+        div.boxHP {
+            clear: both;
+            float: left;
+            width: 99.8%;
+            /*border: 1px solid red;*/
+        }
+        div.boxHP a, a:active,div.boxHP a:visited{
+            text-decoration: none;
+            color:#29537E;
+        }
+        div.boxHP h1.boxTitolo{
+            clear: both;
+            float: left;
+            width: 90%;
+            padding-left: 24px;
+            margin: 0 0 8px 0;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        div.boxHP div.boxContentHP {
+            clear: both;
+            float: left;
+            width: 97%;
+            padding: 8px;
+            border: 1px solid #CCC;
+            background: #FFF;
+            font-size: 13px;
+            -moz-border-radius: 8px;
+        }
+        
+        div.boxHP table.display {
+            margin: 0 auto 20px 0;
+        }
+        div.boxHP div.boxContentHP h2{
+            clear: both;
+            float: left;
+            width: 96%;
+            color: #29537E;
+            /*border-bottom: 1px solid #666;*/
+            font-weight: bold;
+            font-size: 13px;
+            padding: 5px;
+            /*margin-top: 12px;*/
+        }
+        div.boxHP div.boxContentHP ul{
+            clear: both;
+            float: left;
+            width: 99%;
+            margin: 10px 0 16px 0;
+            /*border: 1px dashed blue;*/
+        }
+        div.boxHP div.boxContentHP ul li{
+            display: block;
+            line-height: 1.6em;
+            /*border-bottom: 1px solid #CCC;*/
+        }
+        div.boxHP div.boxContentHP ul li span.ListElement{
+            width: 70%;
+            float: left;
+            /*border: 1px solid;*/
+        }
+        div.boxHP div.boxContentHP ul li span.dataRight{
+            width: 29%;
+            float: right;
+            text-align: right;
+            /*border: 1px solid;*/
+        }
+        div#boxMediazioniHP h1 {
+            background: url("/images/iconset/mediazioni_small.png") no-repeat scroll left top transparent;
+        }

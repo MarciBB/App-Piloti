@@ -1,0 +1,4 @@
+INSERT INTO `RT_Confine` (`ConfineId`, `Confine`, `Aliquota`, `ValoreScorporo`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('2', 'Italiano', '10.00', '1.10', '1', '0', '1', '1');
+INSERT INTO `RT_Confine` (`ConfineId`, `Confine`, `Aliquota`, `ValoreScorporo`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('3', 'Svizzera', '0', '0', '1', '0', '1', '1');
+INSERT INTO `RT_Confine` (`ConfineId`, `Confine`, `Aliquota`, `ValoreScorporo`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('4', 'Francia', '0', '0', '1', '0', '1', '1');
+INSERT INTO `RT_Confine` (`ConfineId`, `Confine`, `Aliquota`, `ValoreScorporo`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('5', 'Belgio', '0', '0', '1', '0', '1', '1');

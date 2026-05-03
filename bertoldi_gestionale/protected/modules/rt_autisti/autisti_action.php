@@ -1,0 +1,184 @@
+<?php
+$basepath=$_SERVER['DOCUMENT_ROOT'];
+include_once($basepath."/main_include.php");
+$config=new Config();
+$run=$config->load(); 
+$modulespath_=Config::$modulespath;
+$classespath_=Config::$classespath;
+$errors=new Errors();
+include_once($classespath_."class.DT.php");
+include_once($classespath_."class.Autisti.php");
+
+global $ModuloId;
+global $user;
+
+$ModuloId=36; // modulo base mediazione
+if(is_object($user)) {
+	$permessi=$user->get_permessi_modulo($ModuloId);
+	if (sizeof($permessi)>0) {   
+		if (!empty($_POST)) {
+			switch($_POST['action']) {
+				case "AggiungiAutista":
+					$FunzioneId=2;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiAutista();
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni		
+				break;
+				case "ModificaAutista":
+					$FunzioneId=4;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiAutista($_POST['AutistaId']);
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+				break;
+				case "ModificaAccount":
+					$FunzioneId=4;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						modificaAccount($_POST['AutistaId']);
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+					break;
+				case "AggiungiPin":
+					$FunzioneId=2;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						aggiungiPin($_POST['AutistaId']);
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+					break;
+				case "CancellaPin":
+					$FunzioneId=4;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso)){
+						cancellaPin($_POST['ClientAppId']);
+					}else{
+						Errors::$ErrorePermessiModuloFunzione;
+					}
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+					break;
+			}
+		}else if (!empty($_GET)) {
+			switch($_GET['action']) {
+				case "CancellaPin":
+					$FunzioneId=4;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso)){
+						cancellaPin($_GET['ClientAppId']);
+					}else{
+						Errors::$ErrorePermessiModuloFunzione;
+					}
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni
+					break;
+				}
+			
+		} // end verifica permessi
+		else {
+			
+			Errors::$ErrorePermessiModulo;
+		}
+	}
+}
+// se l'utente non è loggato
+else {
+	header("Location: /logout.php");
+}
+
+function aggiungiAutista($AutistaId = null) {
+	
+	global $user;
+	$db = new Database();
+	$db->connect();
+	
+	$storico = new StoricoOperazioni();
+	$storico->conn = $db;
+	
+	$dt = new DT();
+	
+	$autista = $_POST['Autista'];
+	if($autista['DataDiNascita'] != '') {
+		$autista['DataDiNascita'] = $dt->format($autista['DataDiNascita'], "d/m/Y", "Y-m-d");
+	} else {
+		$autista['DataDiNascita'] = 'NULL';
+	}
+	
+	if (!isset($AutistaId)) {
+		$autista = $storico->operazioni_insert($autista, $user);
+		$result = $db->insert("RT_Autisti", $autista);
+	} else {
+		$autista = $storico->operazioni_update($autista, $user);
+		$result = $db->update("RT_Autisti", $autista, "AutistiId=".$AutistaId." AND OdcIdRef=".$user->OdcId);
+	}
+	
+	if($result) {
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+
+function modificaAccount($AutistaId) {
+
+	global $user;
+	$db = new Database();
+	$db->connect();
+
+	$storico = new StoricoOperazioni();
+	$storico->conn = $db;
+
+	$dt = new DT();
+
+	$autista = $_POST['Autista'];
+	
+	if($autista['Password'] != ""){
+		$autista['Password'] = md5($autista['Password'], false);
+	} else {
+		unset($autista['Password']);
+	}
+	
+	$autista = $storico->operazioni_update($autista, $user);
+	$result = $db->update("RT_Autisti", $autista, "AutistiId=".$AutistaId." AND OdcIdRef=".$user->OdcId);
+	
+	if($result) {
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+
+function aggiungiPin($AutistaId) {
+	global $user;
+	$db = new Database();
+	$db->connect();
+	$pin = $_POST['pin'];
+	$autistaObj = new Autista($AutistaId);
+	$autistaObj->conn = $db;
+	$result = $autistaObj->addPin($pin, $AutistaId);
+	if($result) {
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+
+function cancellaPin($clientAppId){
+	global $user;
+	$db = new Database();
+	$db->connect();
+	$autistaObj = new Autista();
+	$autistaObj->conn = $db;
+	$result = $autistaObj->deletePin($clientAppId);
+	if($result) {
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+?>

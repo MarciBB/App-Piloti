@@ -1,0 +1,124 @@
+/* 
+    Document   : login
+    Created on : 4-giu-2011, 10.36.11
+    Author     : a.esposito
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.brain_boxLogin {
+	width: 520px;
+	background-color:#FFF;
+	height: 320px;
+	margin: 50px auto;
+	border:1px solid #6699CC;
+	-moz-border-radius: 15px;
+	padding: 20px 30px 20px 30px;
+ }
+ .brain_boxLogin h2{
+	font-size:24px;
+ }
+  .brain_boxLogin p{
+	font-size:13px;
+ }
+ .brain_data-contentLogin{
+	width:100%;
+	padding:0px;
+	margin:0px;
+	background-color: #F7F7F7;
+	border: 1px solid #ccc;
+	height:75%;
+    }
+	 .brain_data-contentLogin a{
+	float: right;
+	padding: 150px 30px;
+	color:#2D67A2;
+	font-size:12px;
+ }
+div.titolo_soggetto {
+	background: #6699CC;
+	padding: 5px 9px;
+	width: 97%;
+	float: left;
+}
+div.titolo_soggetto h3{
+	float: left;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: normal;
+	width: 80%;
+	padding: 5px 0 2px 25px;
+	background-image: url(/images/tit_soggetto_bckgnd.png);
+	background-repeat: no-repeat;
+	background-position: left 3px;
+}
+.brain_login{
+	background: url("/images/avanti.png") no-repeat scroll left top transparent;
+	float: left;
+	padding-right: 14px;
+	text-align: center;
+	width: 104px;
+	margin-top: 10px;
+	height: 28px;
+	color: #FFF;
+	border: none;
+	}
+.brain_login:hover{
+		 background: url("/images/avantiOn.png") no-repeat scroll left top transparent;
+	}
+fieldset {
+	float: left;
+	padding: 10px 30px;
+	width:20%;
+ }
+	
+fieldset legend {
+    font-weight: bold;
+}
+
+dl dd {
+    margin: 0;
+}
+
+dl dt label {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 5px;
+	font-size: 85%;
+	padding-top: 7px;
+
+}
+
+.inputTextbox {
+    width: 400px;
+    background: url('form_bg.jpg') repeat-x left top #fff;
+    border: 1px solid #CCCCCC;
+    font-size: large;
+    padding: 3px;
+}
+
+.inputSubmitBtn {
+    background: url('button_bg.jpg') repeat-x left top #7D5026;
+    border:1px solid #7D5026;
+    color:#FFFFFF;
+    font-family:Tahoma,Verdana,Arial,Sans-Serif;
+    font-size:11px;
+    font-weight:bold;
+    padding:3px 6px;			
+}
+
+.inputSubmitBtn:hover {
+    background: url('button_bg_over.jpg') repeat-x left top #7D5026;
+    border:1px solid #7D5026;
+    color:#FFFFFF;
+}	
+
+#loginResult {
+    display: none;
+    padding: 5px;
+    margin-top: 10px;
+    color: #ffffff;
+    background: #FF0000;
+    font-size: large;
+    font-weight: bold;
+}	

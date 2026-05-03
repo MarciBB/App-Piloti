@@ -1,0 +1,184 @@
+        div#LeftSideHp {
+            clear: both;
+            float: left;
+            width: 48%;
+            width: auto;
+            /*border: 1px dashed;*/
+        }
+        div#RightSideHp {
+            float: right;
+            width: 48%;
+            /*border: 1px dashed;*/
+        }
+        div.boxHP {
+            clear: both;
+            float: left;
+            width: 99.8%;
+            /*border: 1px solid red;*/
+        }
+        div.boxHP a, a:active,div.boxHP a:visited{
+            text-decoration: none;
+            color:#F63;
+        }
+        div.boxHP i.edita, i.edita:active,div.boxHP i.edita:visited{
+        	font-size: 18px;
+        }
+        i.grey, i.grey:active, i.grey:visited{
+        	font-size: 18px;
+        	color: #333;
+        }
+        i.green, i.green:active, i.green:visited{
+        	font-size: 18px;
+        	color: green;
+        }
+        div.boxHP h1.boxTitolo{
+            clear: both;
+            float: left;
+            width: 90%;
+            padding-left: 24px;
+            margin: 0 0 8px 0;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        div.boxHP div.boxContentHP {
+            clear: both;
+            float: left;
+            width: 97%;
+            padding: 8px;
+            border: 1px solid #CCC;
+            background: #FFF;
+            font-size: 13px;
+            -moz-border-radius: 8px;
+        }
+        
+        div.boxHP table.display {
+            margin: 0 auto 20px 0;
+        }
+        div.boxHP div.boxContentHP h2{
+            clear: both;
+            float: left;
+            width: 96%;
+            color: #29537E;
+            /*border-bottom: 1px solid #666;*/
+            font-weight: bold;
+            font-size: 13px;
+            padding: 5px;
+            /*margin-top: 12px;*/
+        }
+        div.boxHP div.boxContentHP ul{
+            clear: both;
+            float: left;
+            width: 99%;
+            margin: 10px 0 16px 0;
+            /*border: 1px dashed blue;*/
+        }
+        div.boxHP div.boxContentHP ul li{
+            display: block;
+            line-height: 1.6em;
+            /*border-bottom: 1px solid #CCC;*/
+        }
+        div.boxHP div.boxContentHP ul li span.ListElement{
+            width: 70%;
+            float: left;
+            /*border: 1px solid;*/
+        }
+        div.boxHP div.boxContentHP ul li span.dataRight{
+            width: 29%;
+            float: right;
+            text-align: right;
+            /*border: 1px solid;*/
+        }
+        div#boxMediazioniHP h1 {
+            height: 20px;
+			font-weight: bold;
+			padding-left: 10px;
+			padding-top: 2px;
+        }
+        div#boxMediazioniHP {
+            width: 100%;
+			padding:10px;
+        }
+        .boxContentHP {
+            width: 460px !important;
+            
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            margin-bottom: 30px;
+            max-height: 400px;
+  			overflow: scroll;
+  			
+  		overflow-x: hidden;
+        }
+        .box_left {
+            clear: both;
+            float: left;
+            width: 40% !important;
+			margin:20px;
+        }
+        .box_right {
+            float: right;
+            width: 40% !important;
+			margin:20px;
+        }
+        .tabella_modulo {
+             width: 100%;
+        }
+        .tabella_modulo thead{
+            font-weight: bold;
+            background: #ccc !important;
+        }
+        .tabella_modulo td {
+            padding: 9px;
+            border: 1px solid #333;
+            vertical-align: middle;
+        }
+        .tabella_modulo .even{
+            background: #f7f7f7;
+        }
+		
+		
+		.filter-row{display:flex;flex-direction:row;justify-content:space-between;align-items:center;width:100%;color:#cad3dc;margin:1.4rem 0}
+		.filter-row .btns{display:flex;flex-direction:row;justify-content:flex-end;align-items:center}
+		.filter-row .btns .btn{font-size:.9rem;
+			border-radius: 42px;
+			padding: 6px 12px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			border: none;
+			cursor: pointer !important;
+		}
+		.filter-row .btns .btn.btn-primary {
+			background-color: #00396B;
+			color: #fff;
+		}
+		.filter-row .btns .btn.btn-outline-gray {
+			background-color: rgba(0,0,0,0);
+			border: 1px solid #ccc;
+			color: #ccc;
+		}
+		.stats-row{display:grid;grid-template-columns:repeat(3, 1fr);grid-gap:48px;margin-bottom:24px}
+		.stat-card{background:linear-gradient(233.31deg, #00A4AA 28.65%, #00396B 107.16%);box-shadow:4px 4px 10px #1e617a;padding:28px 36px;width:78%}
+		.stat-card .stat-info{display:flex;flex-direction:row;justify-content:space-between;align-items:start}
+		.stat-card .stat-info .title{display:flex;flex-direction:column;justify-content:start;align-items:flex-start;color:#fff;font-weight:600;margin-bottom:0;margin-right:48px}
+		.stat-card .stat-info .title .label{font-size:.8rem}
+		.stat-card .stat-info .title .value{font-size:2.4rem}
+		.stat-card .stat-info .icon{border-radius:100%;background-color:#fff;width:36px;height:36px;display:flex;flex-direction:row;justify-content:center;align-items:center}
+		.stat-card .stat-info .icon img{width:24px;height:24px}
+		.stat-card hr{margin:20px 0 24px 0;border:1px solid rgba(223,235,233,.5)}
+		.stat-card .action-row a{color:#fff;font-size:.8rem;text-decoration:none;display:flex;flex-direction:row;justify-content:space-between;align-items:center}
+		.graph-row{display:grid; grid-template-columns:3fr 2fr;grid-gap:24px}
+		.detail-row{display:block;margin-top:20px;}
+		.graph-card{width:100%;display:flex;flex-direction:column;justify-content:start;background-color:#fff;border-radius:24px}
+		.graph-card .title{background:#dfebe9;margin:0;padding:24px 20px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;border-top-left-radius:24px;border-top-right-radius:24px}
+		.graph-card .title a{color:#000;text-decoration:none;font-size:.9rem}
+		.graph-card .title a img{margin-left:4px}
+		.graph-card .title span{font-size:1rem}
+		.graph-card .title.red{background-color:#c50051;color:#fff}
+		.graph-card .title.red a{color:#fff}
+		.graph-card .title.orange{background-color:#ec7527;color:#fff}
+		.graph-card .title.orange a{color:#fff}
+		.graph-card .graph-container{display:flex;flex-direction:column;justify-content:center}

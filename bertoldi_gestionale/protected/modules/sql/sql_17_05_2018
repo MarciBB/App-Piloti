@@ -1,0 +1,193 @@
+ALTER TABLE `RT_PrenotazioneMovimento` 
+ADD COLUMN `Coupon` VARCHAR(255) NULL DEFAULT NULL AFTER `GestoreIdRef`;
+
+/**********Modifica RT_ElencoFermataOrarioDO*****************/
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_ElencoFermataOrarioDO` AS
+    select 
+        `RT_ElencoFermata`.`FermataId` AS `FermataIdDrop`,
+        `RT_ElencoFermata`.`TrattaId` AS `TrattaId`,
+        `RT_ElencoFermata`.`ComuneId` AS `ComuneId`,
+        `RT_ElencoFermata`.`FermataNome` AS `FermataNome`,
+        `RT_ElencoFermata`.`IsPickup` AS `IsPickup`,
+        `RT_ElencoFermata`.`IsDropOff` AS `IsDropOff`,
+        `RT_ElencoFermata`.`IsInterscambio` AS `IsInterscambio`,
+        `RT_ElencoFermata`.`Prezzo` AS `Prezzo`,
+        `RT_ElencoFermata`.`DataIns` AS `DataIns`,
+        `RT_ElencoFermata`.`OpeIns` AS `OpeIns`,
+        `RT_ElencoFermata`.`SedeIns` AS `SedeIns`,
+        `RT_ElencoFermata`.`IpIns` AS `IpIns`,
+        `RT_ElencoFermata`.`DataAgg` AS `DataAgg`,
+        `RT_ElencoFermata`.`OpeAgg` AS `OpeAgg`,
+        `RT_ElencoFermata`.`SedeAgg` AS `SedeAgg`,
+        `RT_ElencoFermata`.`IpAgg` AS `IpAgg`,
+        `RT_ElencoFermata`.`Stato` AS `Stato`,
+        `RT_ElencoFermata`.`Cancella` AS `Cancella`,
+        `RT_ElencoFermata`.`UpdateCount` AS `UpdateCount`,
+        `RT_ElencoFermata`.`OdcIdRef` AS `OdcIdRef`,
+        `RT_ElencoFermata`.`GestoreIdRef` AS `GestoreIdRef`,
+        `RT_ElencoFermata`.`LineaNome` AS `LineaNome`,
+        `RT_ElencoFermata`.`TrattaNome` AS `TrattaNome`,
+        `RT_ElencoFermata`.`PercorsoNome` AS `PercorsoNome`,
+        `RT_ElencoFermata`.`Comune` AS `Comune`,
+        `RT_ElencoFermata`.`FermataPeso` AS `FermataPeso`,
+        `RT_ElencoFermata`.`LineaId` AS `LineaId`,
+        `RT_ElencoFermata`.`TrattaPeso` AS `TrattaPeso`,
+        `RT_ElencoFermata`.`Latitudine` AS `Latitudine`,
+        `RT_ElencoFermata`.`Longitudine` AS `Longitudine`,
+        `RT_ElencoFermata`.`IsBlackList` AS `IsBlackList`,
+        `RT_ElencoFermata`.`CorsaId` AS `CorsaId`,
+        `RT_Orario`.`GiorniAggiuntivi` AS `GiorniAggiuntivi`,
+        `RT_Orario`.`Orario` AS `Orario`,
+        concat(`RT_ElencoFermata`.`FermataNome`,
+                ' (',
+                `RT_Orario`.`Orario`,
+                ') ',
+                `RT_ElencoFermata`.`TrattaNome`) AS `FermataOrarioDrop`,
+        `RT_ElencoFermata`.`KmInizioTratta` AS `KmInizioTratta`,
+        `RT_Tratta`.`KmTratta` AS `KmTratta`,
+        `RT_Tratta`.`Stato` AS `TrattaStato`
+    from
+        (((`RT_ElencoFermata`
+        join `RT_Orario` ON (((`RT_ElencoFermata`.`FermataId` = `RT_Orario`.`FermataId`)
+            and (`RT_ElencoFermata`.`CorsaId` = `RT_Orario`.`CorsaId`))))
+        join `RT_CorsaTariffa` ON (((`RT_CorsaTariffa`.`FermataDropOff` = `RT_ElencoFermata`.`ComuneId`)
+            and (`RT_ElencoFermata`.`CorsaId` = `RT_CorsaTariffa`.`CorsaId`))))
+        join `RT_Tratta` ON ((`RT_ElencoFermata`.`TrattaId` = `RT_Tratta`.`TrattaId`)))
+    where
+        (`RT_ElencoFermata`.`IsDropOff` = 1)
+        
+ /**********************Modifica RT_ElencoFermataOrarioPK*********************************************/
+ 
+ CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_ElencoFermataOrarioPK` AS
+    select 
+        `RT_ElencoFermata`.`FermataId` AS `FermataId`,
+        `RT_ElencoFermata`.`TrattaId` AS `TrattaId`,
+        `RT_ElencoFermata`.`ComuneId` AS `ComuneId`,
+        `RT_ElencoFermata`.`FermataNome` AS `FermataNome`,
+        `RT_ElencoFermata`.`IsPickup` AS `IsPickup`,
+        `RT_ElencoFermata`.`IsDropOff` AS `IsDropOff`,
+        `RT_ElencoFermata`.`IsInterscambio` AS `IsInterscambio`,
+        `RT_ElencoFermata`.`Prezzo` AS `Prezzo`,
+        `RT_ElencoFermata`.`DataIns` AS `DataIns`,
+        `RT_ElencoFermata`.`OpeIns` AS `OpeIns`,
+        `RT_ElencoFermata`.`SedeIns` AS `SedeIns`,
+        `RT_ElencoFermata`.`IpIns` AS `IpIns`,
+        `RT_ElencoFermata`.`DataAgg` AS `DataAgg`,
+        `RT_ElencoFermata`.`OpeAgg` AS `OpeAgg`,
+        `RT_ElencoFermata`.`SedeAgg` AS `SedeAgg`,
+        `RT_ElencoFermata`.`IpAgg` AS `IpAgg`,
+        `RT_ElencoFermata`.`Stato` AS `Stato`,
+        `RT_ElencoFermata`.`Cancella` AS `Cancella`,
+        `RT_ElencoFermata`.`UpdateCount` AS `UpdateCount`,
+        `RT_ElencoFermata`.`OdcIdRef` AS `OdcIdRef`,
+        `RT_ElencoFermata`.`GestoreIdRef` AS `GestoreIdRef`,
+        `RT_ElencoFermata`.`LineaNome` AS `LineaNome`,
+        `RT_ElencoFermata`.`TrattaNome` AS `TrattaNome`,
+        `RT_ElencoFermata`.`PercorsoNome` AS `PercorsoNome`,
+        `RT_ElencoFermata`.`Comune` AS `Comune`,
+        `RT_ElencoFermata`.`FermataPeso` AS `FermataPeso`,
+        `RT_ElencoFermata`.`LineaId` AS `LineaId`,
+        `RT_ElencoFermata`.`TrattaPeso` AS `TrattaPeso`,
+        `RT_ElencoFermata`.`Latitudine` AS `Latitudine`,
+        `RT_ElencoFermata`.`Longitudine` AS `Longitudine`,
+        `RT_ElencoFermata`.`IsBlackList` AS `IsBlackList`,
+        `RT_ElencoFermata`.`CorsaId` AS `CorsaId`,
+        `RT_Orario`.`GiorniAggiuntivi` AS `GiorniAggiuntivi`,
+        `RT_Orario`.`Orario` AS `Orario`,
+        concat(`RT_ElencoFermata`.`FermataNome`,
+                '(',
+                `RT_Orario`.`Orario`,
+                ')',
+                `RT_ElencoFermata`.`TrattaNome`) AS `FermataOrario`,
+        `RT_ElencoFermata`.`KmInizioTratta` AS `KmInizioTratta`,
+        `RT_Tratta`.`KmTratta` AS `KmTratta`,
+        `RT_Tratta`.`Stato` AS `TrattaStato`
+    from
+        (((`RT_ElencoFermata`
+        join `RT_Orario` ON (((`RT_ElencoFermata`.`FermataId` = `RT_Orario`.`FermataId`)
+            and (`RT_ElencoFermata`.`CorsaId` = `RT_Orario`.`CorsaId`))))
+        join `RT_CorsaTariffa` ON ((`RT_CorsaTariffa`.`FermataPickup` = `RT_ElencoFermata`.`ComuneId`)))
+        join `RT_Tratta` ON ((`RT_ElencoFermata`.`TrattaId` = `RT_Tratta`.`TrattaId`)))       
+        
+/*************************************************************************/
+CREATE TABLE `RT_PrenotazioneTitoloInterscambio` (
+  `PrenotazioneTitoloInterscambioId` INT(11) NOT NULL AUTO_INCREMENT,
+  `PrenotazioneTitoloId` INT(11) NULL,
+  `ComuneId` INT(11) NULL,
+  `Ordine` INT(4) NULL,
+  `TipoViaggio` VARCHAR(45) NULL,
+  `Comune` VARCHAR(45) NULL,
+  `Orario` VARCHAR(45) NULL,
+  `GiorniAggiuntivi` INT(1) NULL,
+  PRIMARY KEY (`PrenotazioneTitoloInterscambioId`));
+  
+ /***************************************************************************/
+ALTER TABLE `RT_PrenotazioneTitolo` 
+ADD COLUMN `ImportoVenduto` DECIMAL(10,2) NULL AFTER `GestoreIdRef`;
+
+UPDATE RT_PrenotazioneTitolo SET ImportoVenduto = ImportoTitolo WHERE PrenotazioneTitoloId >= 1
+
+/********************************************************************************/
+ 
+ CREATE TABLE `RT_LineaTariffa` LIKE `RT_CorsaTariffa`;
+ ALTER TABLE `RT_LineaTariffa` 
+CHANGE COLUMN `CorsaTariffaId` `LineaTariffaId` BIGINT(11) NOT NULL AUTO_INCREMENT ,
+CHANGE COLUMN `CorsaId` `LineaId` INT(4) NULL ;
+ALTER TABLE `RT_LineaTariffa` 
+DROP COLUMN `ListinoId`,
+DROP COLUMN `TipologiaBigliettoId`;
+
+CREATE TABLE `RT_ListinoTipo` (
+  `ListinoTipoId` INT(4) NOT NULL AUTO_INCREMENT,
+  `BigliettoId` INT(11) NULL,
+  `Variazione` DECIMAL(10,2) NULL,
+  `DataIns` DATETIME NULL,
+  `OpeIns` INT(10) NULL,
+  `SedeIns` INT(10) NULL,
+  `IpIns` VARCHAR(16) NULL,
+  `DataAgg` DATETIME NULL,
+  `SedeAgg` INT(10) NULL,
+  `IpAgg` VARCHAR(16) NULL,
+  `Stato` INT(1) NULL,
+  `Cancella` INT(1) NULL,
+  `UpdateCount` INT(10) NULL,
+  `OdcIdRef` INT(10) NULL,
+  `GestoreIdRef` INT(10) NULL,
+  PRIMARY KEY (`ListinoTipoId`));
+
+
+/**************************************************************************/
+ALTER TABLE `RT_Tratta` 
+ADD COLUMN `TipologiaBusDefaultId` INT(11) NULL DEFAULT NULL AFTER `GestoreIdRef`;
+ 
+ CREATE TABLE `RT_CorsaPaxTratta` (
+  `CorsaPaxTrattaId` INT(10) NOT NULL AUTO_INCREMENT,
+  `CorsaId` INT(10) NULL DEFAULT NULL,
+  `DataPartenza` DATE NULL,
+  `TrattaId` INT(11) NULL,
+  `NumeroPax` DECIMAL(3,0) NULL,
+  `DataIns` DATETIME NULL,
+  `OpeIns` INT(10) NULL,
+  `SedeIns` INT(10) NULL,
+  `IpIns` VARCHAR(16) NULL,
+  `DataAgg` DATETIME NULL,
+  `OpeAgg` INT(10) NULL,
+  `IpAgg` VARCHAR(16) NULL,
+  `Stato` INT(1) NULL DEFAULT 1,
+  `Cancella` INT(1) NULL DEFAULT 0,
+  `UpdateCount` INT(10) NULL,
+  `OdcIdRef` INT(10) NULL,
+  `GestoreIdRef` INT(10) NULL,
+  PRIMARY KEY (`CorsaPaxTrattaId`));
+  
+  INSERT INTO `RT_PagamentoTipo` (`PagamentoTipo`, `SupplementoFisso`, `SupplementoPercentuale`, `TempoScadenza`, `MsgSMSStato`, `MsgEmailStato`, `GestorePrimario`, `VisualizzaInRimborso`, `EtichettaRimborso`, `EmettiCoupon`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Stato`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('Telecash', '0', '0', '0', '0', '0', '1', '0', 'Telecash', '0', '2019-05-14 14:55:41', '3', '1', '127.0.0.1', '1', '0', '1', '1');
+  
+  

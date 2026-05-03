@@ -1,0 +1,125 @@
+CREATE TABLE RT_RimborsoRegola 
+(
+  `RimborsoRegolaId` INT NOT NULL AUTO_INCREMENT,
+  `NomeRegola` VARCHAR(100) NULL,
+  `GiorniPrima` INT NULL DEFAULT 0,
+  `OrePrima` INT NULL DEFAULT 0,
+  `TipoPrenotazione` VARCHAR(2) NULL DEFAULT 'IN',
+  `Stato` INT NULL DEFAULT 1,
+  `DataIns` DATETIME NULL DEFAULT NULL,
+  `OpeIns` INT(10) NULL DEFAULT NULL,
+  `SedeIns` INT(10) NULL DEFAULT NULL,
+  `IpIns` VARCHAR(16) NULL DEFAULT NULL,
+  `DataAgg` DATETIME NULL DEFAULT NULL,
+  `OpeAgg` INT(10) NULL DEFAULT NULL,
+  `SedeAgg` INT(10) NULL DEFAULT NULL,
+  `IpAgg` VARCHAR(16) NULL DEFAULT NULL,
+  `Cancella` INT(1) NULL DEFAULT 0,
+  `UpdateCount` INT(10) NULL DEFAULT NULL,
+  `OdcIdRef` VARCHAR(10) NULL DEFAULT NULL,
+  `GestoreIdRef` VARCHAR(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`RimborsoRegolaId`));
+
+
+CREATE TABLE RT_RimborsoPenale 
+(
+  `RimborsoPenaleId` INT NOT NULL AUTO_INCREMENT, 
+  `RimborsoRegolaId` INT NULL ,
+  `Penale` INT NULL DEFAULT 0 ,
+  `Percentuale` INT(5) NULL DEFAULT '0' ,
+  `Fisso` INT(5) NULL DEFAULT 0 , 
+  `LineaId` INT(5) NULL DEFAULT NULL ,
+  PRIMARY KEY (`RimborsoPenaleId`));
+  
+INSERT INTO `AppModulo` 
+  	(`AppModuloId`, `AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) 
+  	VALUES 
+  	('43', 'Regole Rimborso', '4', '70', 'rt_regole', 'regole.php?do=edit&amp;RimborsoRegolaId=0', '1', '0', '0', '1', '0', '0');
+
+INSERT INTO `RT_RimborsoRegola` (`RimborsoRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('1', 'fino a 7 gg', '7', '0', 'IN', '1', '2015-07-21 07:05:58', '3', '1', '127.0.0.1', '2015-07-21 15:32:28', '3', '1', '127.0.0.1', '0', '1', '1');
+INSERT INTO `RT_RimborsoRegola` (`RimborsoRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('2', 'fino a 3 gg', '3', '0', 'IN', '1', '2015-07-21 13:41:55', '3', '1', '127.0.0.1', '2015-07-21 15:33:01', '3', '1', '127.0.0.1', '0', '1', '1');
+INSERT INTO `RT_RimborsoRegola` (`RimborsoRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('3', 'fino a 24 ore prima della partenza', '1', '0', 'IN', '1', '2015-07-21 15:33:43', '3', '1', '127.0.0.1', '0', '1', '1');
+INSERT INTO `RT_RimborsoRegola` (`RimborsoRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Cancella`, `OdcIdRef`, `GestoreIdRef`) VALUES ('4', 'fino all\'ora della partenza', '0', '0', 'IN', '1', '2015-07-21 15:34:39', '3', '1', '127.0.0.1', '2015-07-21 15:35:35', '3', '1', '127.0.0.1', '0', '1', '1');
+
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('1', '1', '0', '10', '1');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('2', '2', '30', '0', '1');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('3', '3', '50', '0', '1');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('4', '4', '50', '0', '1');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('5', '1', '0', '10', '2');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('6', '2', '30', '0', '2');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('7', '3', '50', '0', '2');
+INSERT INTO `RT_RimborsoPenale` (`RimborsoPenaleId`, `RimborsoRegolaId`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('8', '4', '50', '0', '2');
+
+
+
+CREATE TABLE RT_ModificaRegola 
+(
+  `ModificaRegolaId` INT NOT NULL AUTO_INCREMENT,
+  `NomeRegola` VARCHAR(100) NULL,
+  `GiorniPrima` INT NULL DEFAULT 0,
+  `OrePrima` INT NULL DEFAULT 0,
+  `TipoPrenotazione` VARCHAR(2) NULL DEFAULT 'IN',
+  `TipoModifica` VARCHAR(2) NULL,
+  `Stato` INT NULL DEFAULT 1,
+  `DataIns` DATETIME NULL DEFAULT NULL,
+  `OpeIns` INT(10) NULL DEFAULT NULL,
+  `SedeIns` INT(10) NULL DEFAULT NULL,
+  `IpIns` VARCHAR(16) NULL DEFAULT NULL,
+  `DataAgg` DATETIME NULL DEFAULT NULL,
+  `OpeAgg` INT(10) NULL DEFAULT NULL,
+  `SedeAgg` INT(10) NULL DEFAULT NULL,
+  `IpAgg` VARCHAR(16) NULL DEFAULT NULL,
+  `Cancella` INT(1) NULL DEFAULT 0,
+  `UpdateCount` INT(10) NULL DEFAULT NULL,
+  `OdcIdRef` VARCHAR(10) NULL DEFAULT NULL,
+  `GestoreIdRef` VARCHAR(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`ModificaRegolaId`));
+
+
+CREATE TABLE RT_ModificaPenale 
+(
+  `ModificaPenaleId` INT NOT NULL AUTO_INCREMENT, 
+  `ModificaRegolaId` INT NULL ,
+  `Penale` INT NULL DEFAULT 0 ,
+  `Percentuale` INT(5) NULL DEFAULT '0' ,
+  `Fisso` INT(5) NULL DEFAULT 0 , 
+  `LineaId` INT(5) NULL DEFAULT NULL ,
+  PRIMARY KEY (`ModificaPenaleId`));
+  
+INSERT INTO `AppModulo` 
+  	(`AppModuloId`, `AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) 
+  	VALUES 
+  	('44', 'Regole Modifica', '4', '71', 'rt_regole', 'regole_modifica.php?do=edit&amp;ModificaRegolaId=0', '1', '0', '0', '1', '0', '0');
+
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '6', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '5', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '4', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '3', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '2', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '1', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES (NULL, '1', '44', '7', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+
+INSERT INTO `RT_ModificaRegola` (`ModificaRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `TipoModifica`) VALUES ('1', 'Modifica Nominativo entro 24 ore', '1', '0', 'IN', '1', '2015-07-22 20:41:05', '3', '1', '127.0.0.1', '2015-07-22 21:02:36', '3', '1', '127.0.0.1', '0', '1', '1', 'N');
+INSERT INTO `RT_ModificaRegola` (`ModificaRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `TipoModifica`) VALUES ('2', 'Modifica Data entro 24 ore', '1', '0', 'IN', '1', '2015-07-22 21:02:19', '3', '1', '127.0.0.1', '2015-07-22 21:05:31', '3', '1', '127.0.0.1', '0', '1', '1', 'D');
+INSERT INTO `RT_ModificaRegola` (`ModificaRegolaId`, `NomeRegola`, `GiorniPrima`, `OrePrima`, `TipoPrenotazione`, `Stato`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `Cancella`, `OdcIdRef`, `GestoreIdRef`, `TipoModifica`) VALUES ('3', 'Modifica Itinerario entro 24 ore', '1', '0', 'IN', '1', '2015-07-22 21:03:01', '3', '1', '127.0.0.1', '0', '1', '1', 'I');
+
+INSERT INTO `RT_ModificaPenale` (`ModificaPenaleId`, `ModificaRegolaId`, `Penale`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('1', '2', '0', '0', '0', '1');
+INSERT INTO `RT_ModificaPenale` (`ModificaPenaleId`, `ModificaRegolaId`, `Penale`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('2', '1', '0', '0', '0', '1');
+INSERT INTO `RT_ModificaPenale` (`ModificaPenaleId`, `ModificaRegolaId`, `Penale`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('3', '3', '0', '0', '0', '1');
+INSERT INTO `RT_ModificaPenale` (`ModificaPenaleId`, `ModificaRegolaId`, `Penale`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('4', '2', '0', '0', '0', '2');
+INSERT INTO `RT_ModificaPenale` (`ModificaPenaleId`, `ModificaRegolaId`, `Penale`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('5', '1', '0', '0', '0', '2');
+INSERT INTO `RT_ModificaPenale` (`ModificaPenaleId`, `ModificaRegolaId`, `Penale`, `Percentuale`, `Fisso`, `LineaId`) VALUES ('6', '3', '0', '0', '0', '2');
+
+
+ALTER TABLE `RT_Linea` 
+ADD COLUMN `TempoMaxAnnullamento` INT(5) NULL DEFAULT 0 AFTER `GestoreGruppoId`,
+ADD COLUMN `TempoMaxModifica` INT(5) NULL DEFAULT 0 AFTER `TempoMaxAnnullamento`;
+
+UPDATE `RT_Linea` SET `TempoMaxAnnullamento`='24', `TempoMaxModifica`='6' WHERE `LineaId`='2';
+UPDATE `RT_Linea` SET `TempoMaxAnnullamento`='24', `TempoMaxModifica`='6' WHERE `LineaId`='1';
+
+ALTER TABLE RT_Prenotazione
+ADD COLUMN `Penale` DECIMAL(10,2) NULL DEFAULT 0 AFTER `GestoreIdRef`;
+
+
+  

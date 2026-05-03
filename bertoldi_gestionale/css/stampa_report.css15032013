@@ -1,0 +1,227 @@
+body {
+    font-family: Arial;
+}
+
+.brain_formModifica h2{
+    font-size: 25px;
+    font-family: Arial;
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+/* proprieta' definite per il foglio navette */
+#gestoreElencoAule .rowIntestazione td {
+    font-weight: bold;
+    font-family: Arial;
+    color: #666;
+    border-bottom: solid 1px #ccc;
+    font-size: 16px;
+}
+
+#gestoreElencoAule tr {
+    font-size: 14px;
+}
+
+#gestoreElencoAule td {
+    padding:6px;
+    border-bottom: solid 1px #ccc;
+}
+
+#gestoreElencoAule .presa {
+    position: relative;
+    margin-top: -50px;
+    border-bottom: solid 1px #ccc;
+    font-weight: bold;
+}
+
+#gestoreElencoAule .campo_grassetto {
+    font-weight: bold;
+}
+
+/* proprieta' definite per il foglio navette */
+#gestoreElencoAule2 .rowIntestazione {
+    background: #FFF;
+}
+#gestoreElencoAule2 .rowIntestazione td {
+    font-weight: bold;
+    font-family: Arial;
+    color: #666;
+    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+}
+
+#gestoreElencoAule2 .gruppo_persone {
+    background: #FFF;
+    text-align: center;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+}
+#gestoreElencoAule2 .gruppo_persone td{
+    font-weight: bold;
+}
+
+#gestoreElencoAule2 td {
+    padding:6px;
+    font-size: 12px;
+    border-bottom: solid 1px #ccc;
+}
+
+h2.intestazione_carico {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+}
+
+h2.intestazione_corsa {
+    font-size: 16px;
+    margin-top: 0px;
+    margin-top: 6px;
+}
+
+td.passeggeri_prezzo {
+    font-weight: bold;
+    padding: 6px;
+    color: #666;
+}
+
+td.passeggeri_prezzo_2 {
+    text-align: center;
+    font-weight: bold;
+    padding: 6px;
+    color: #000;
+    font-size: 14px;
+}
+
+.intestazione_tabella {
+}
+
+.blocco {
+    margin-bottom: 30px;
+}
+
+/* Tipo stampa */
+.container_tabella_1 {
+    page-break-after:auto;
+}
+
+.container_tabella_always_2_1 {
+    page-break-after:always;
+	height:250px;
+}
+.container_tabella_always_1 {
+    page-break-after:always;
+}
+
+/* tabella posti */
+#stampa_disposizione_posti .cella_posto{
+    border: 1px solid #eee;
+    padding: 2px 0px 0 0 !important;
+    margin: 0px !important;
+    height: 30px !important;
+}
+#stampa_disposizione_posto td{    
+}
+#stampa_disposizione_posti ul {
+    padding:0px;
+    margin: 0px;
+    min-height: 30px;
+}
+#stampa_disposizione_posti li{
+    list-style-type: none;
+    text-align: center;
+    font-size: 13px;
+    margin: 0px !important;
+    padding: 5px 0 0 0 !important;
+}
+.femmina {
+    border-left: 5px solid #ffd4ea !important;
+}
+.maschio {
+    border-left: 5px solid #d4e1ff !important;
+}
+.nd{
+    border-left: 5px solid #eee !important;
+}
+.pass_assegnati{
+    background: #FFF !important;
+    border-bottom: solid 1px #eee;
+}
+.note_uff{
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 0px;
+}
+.note_ufficio {
+    background:#eee;
+    width: 20cm;
+    height: 100px;
+    border: 1px solid #ccc;
+}
+.intestazione_corsa {
+    font-size: 15px !important;
+}
+.intestazione_corsa span {
+    font-size: 13px !important;
+    font-weight: normal;
+    font-style: italic;
+}
+.intestazione_info {
+    width: 100%;
+}
+.intestazione_info thead {
+    font-size: 8px;
+    font-weight: bold;
+}
+.intestazione_info tbody td{
+    border: 1px solid #666;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+.blocco_passeggero_container{    
+    padding-top:60px;    
+}
+.blocco_passeggero {
+    font-family: "Times New Roman";
+    text-align: center;
+    margin: 0cm 0 0 0;
+    padding: 0px !important;
+    height: 7.1cm !important;
+    width: 8.6cm;
+    margin-bottom:10px;
+    border:1px solid #FFF;
+}
+.blocco_passeggero .numero {
+    font-size: 50px;
+    border: solid 1px #000;
+    width: 150px;
+    margin: 30px auto 0px;
+    font-weight: bold;
+    padding: 1px;
+    line-height:50px;
+    /*letter-spacing: 0.8cm;*/
+    border-radius: 60px;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+}
+.blocco_passeggero .nome_persona {
+    font-size: 50px;
+    /*letter-spacing: 0.8cm;*/
+    height: 2.5cm;
+    font-weight: bold;
+    margin-bottom: 2px !important;
+    line-height: 46px;
+}
+.blocco_passeggero .posto {
+    font-size: 20px;
+    /*letter-spacing: 0.3cm;*/
+    margin: 0px 0 0 0;
+}
+
+.navetta_info_grande {
+    font-size: 16px;
+}

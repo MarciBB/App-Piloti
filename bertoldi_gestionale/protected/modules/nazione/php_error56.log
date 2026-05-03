@@ -1,0 +1,2 @@
+[04-Jul-2023 19:22:03 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/nazione/nazione_processing.php on line 32
+[04-Jul-2023 19:23:01 UTC] PHP Deprecated:  mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/bertoldiboats/public_html/protected/modules/nazione/nazione_processing.php on line 32

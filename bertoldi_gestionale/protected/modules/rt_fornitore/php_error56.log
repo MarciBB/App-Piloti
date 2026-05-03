@@ -1,0 +1,47 @@
+[27-May-2024 10:09:43 UTC] PHP Notice:  Undefined index: categoria in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 103
+[27-May-2024 10:10:31 UTC] PHP Notice:  Undefined index: categoria in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 103
+[27-May-2024 10:32:02 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:32:02 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:32:02 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Form.php on line 115
+[27-May-2024 10:32:02 UTC] PHP Notice:  Undefined index: FornitoreCategoria in /home/bertoldiboats/public_html/protected/classes/class.Form.php on line 116
+[27-May-2024 10:32:02 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Form.php on line 115
+[27-May-2024 10:32:02 UTC] PHP Notice:  Undefined index: FornitoreCategoria in /home/bertoldiboats/public_html/protected/classes/class.Form.php on line 116
+[27-May-2024 10:32:34 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:32:34 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:33:48 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:33:48 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:33:57 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:33:57 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:36:01 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:36:01 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Notice:  Undefined index: FornitoreCategoriaId in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 63
+[27-May-2024 10:37:04 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:37:04 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:38:20 UTC] PHP Warning:  include_once(autisti_validator.php): failed to open stream: No such file or directory in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:38:20 UTC] PHP Warning:  include_once(): Failed opening 'autisti_validator.php' for inclusion (include_path='.:/opt/remi/php56/root/usr/share/pear:/opt/remi/php56/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore.php on line 159
+[27-May-2024 10:50:19 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/bertoldiboats/public_html/protected/modules/rt_fornitore/fornitore_action.php on line 81
+[27-May-2024 10:59:27 UTC] PHP Fatal error:  Call to a member function query_first() on null in /home/bertoldiboats/public_html/protected/classes/class.Fornitore.php on line 73

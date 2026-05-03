@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "Bertoldi Boats API",
+    "_postman_id": "b7c0c3f0-9d7a-47a0-94c9-8b4b6df0a001",
+    "description": "Collezione Postman per gli endpoint esposti da /api_json/api.php. Imposta le variabili baseUrl e token prima di eseguire le richieste.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://YOUR_DOMAIN" },
+    { "key": "token", "value": "YOUR_TOKEN" },
+    { "key": "lineaId", "value": "12" },
+    { "key": "dataPartenza", "value": "2026-04-01" },
+    { "key": "comunePartenzaId", "value": "1" },
+    { "key": "comuneDestinazioneId", "value": "2" },
+    { "key": "reservationId", "value": "789" },
+    { "key": "bookingCode", "value": "ABC123" }
+  ],
+  "item": [
+    {
+      "name": "Status",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api_json/api.php?handler=status&token={{token}}"
+      }
+    },
+    {
+      "name": "Experiences (GET)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api_json/api.php?handler=experiences&token={{token}}&tipoTour=0"
+      }
+    },
+    {
+      "name": "Experience (GET)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api_json/api.php?handler=experience/{{lineaId}}&token={{token}}"
+      }
+    },
+    {
+      "name": "Experience Prices (GET)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api_json/api.php?handler=experiencePrices&lineaId={{lineaId}}&dataPartenza={{dataPartenza}}&token={{token}}"
+      }
+    },
+    {
+      "name": "Experience Ports (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{baseUrl}}/api_json/api.php?handler=experiencePorts&token={{token}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"lineaId\": {{lineaId}}\n}"
+        }
+      }
+    },
+    {
+      "name": "Available Rides (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{baseUrl}}/api_json/api.php?handler=availableRides&token={{token}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"comunePartenzaId\": {{comunePartenzaId}},\n  \"comuneDestinazioneId\": {{comuneDestinazioneId}},\n  \"dataPartenza\": \"{{dataPartenza}}\",\n  \"lineaId\": {{lineaId}},\n  \"biglietti\": {\n    \"17\": 2,\n    \"18\": 1\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Reservation (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{baseUrl}}/api_json/api.php?handler=reservation&token={{token}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"departureDate\": \"{{dataPartenza}}\",\n  \"departureRide\": 345,\n  \"returnDate\": null,\n  \"returnRide\": null,\n  \"departureStationCode\": {{comunePartenzaId}},\n  \"arrivalStationCode\": {{comuneDestinazioneId}},\n  \"passengers\": [\n    { \"Nome\": \"Mario\", \"Cognome\": \"Rossi\", \"TipologiaBiglietto\": \"Adulto\", \"TipologiaBigliettoId\": 17 }\n  ],\n  \"phoneNumber\": \"+390123456789\",\n  \"email\": \"mario.rossi@example.com\",\n  \"customerName\": \"Mario Rossi\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Reservation Delete (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api_json/api.php?handler=reservation/{{reservationId}}&token={{token}}"
+      }
+    },
+    {
+      "name": "Booking (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{baseUrl}}/api_json/api.php?handler=booking&token={{token}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reservationId\": {{reservationId}}\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Booking (GET)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api_json/api.php?handler=booking/{{bookingCode}}&token={{token}}"
+      }
+    },
+    {
+      "name": "Booking Delete (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api_json/api.php?handler=booking/{{bookingCode}}&token={{token}}&force=true"
+      }
+    },
+    {
+      "name": "Get Bookings (GET)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api_json/api.php?handler=getBookings&token={{token}}&offset=0&limit=50"
+      }
+    }
+  ]
+}

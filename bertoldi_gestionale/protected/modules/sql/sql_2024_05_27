@@ -1,0 +1,131 @@
+CREATE TABLE IF NOT EXISTS `RT_Fornitori` (
+  `FornitoreId` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(255) NOT NULL,
+  `Categoria` varchar(255) DEFAULT NULL,
+  `DataIns` datetime DEFAULT NULL,
+  `OpeIns` int(10) DEFAULT NULL,
+  `SedeIns` int(10) DEFAULT NULL,
+  `IpIns` varchar(16) DEFAULT NULL,
+  `DataAgg` datetime DEFAULT NULL,
+  `OpeAgg` int(10) DEFAULT NULL,
+  `SedeAgg` int(10) DEFAULT NULL,
+  `IpAgg` varchar(16) DEFAULT NULL,
+  `Stato` int(1) NOT NULL DEFAULT '1',
+  `Cancella` int(1) NOT NULL DEFAULT '0',
+  `UpdateCount` int(10) DEFAULT NULL,
+  `OdcIdRef` int(10) DEFAULT NULL,
+  `GestoreIdRef` int(10) DEFAULT NULL,
+  PRIMARY KEY (`FornitoreId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+INSERT INTO `AppModulo` (`AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) VALUES ('Fornitori', '4', '150', 'rt_fornitore', 'fornitore.php', '1', '0', '0', '1', '0', '0');
+
+
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '1', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '2', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '3', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '4', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '5', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '6', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `OpeIns`, `SedeIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`, `GestoreIdRef`, `OdcIdRef`) VALUES ('', '1', '55', '7', '1', '', '', '', '', '', '', '', '', '1', '0', '', '');
+
+CREATE TABLE IF NOT EXISTS `RT_FornitoriCategorie` (
+  `FornitoriCategoriaId` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(255) NOT NULL,
+  PRIMARY KEY (`FornitoriCategoriaId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+
+INSERT INTO `RT_FornitoriCategorie` (`FornitoriCategoriaId`, `Nome`) VALUES
+(1, '- Senza Categoria -'),
+(2, 'Acquisto nuovo'),
+(3, 'Banca'),
+(4, 'Burocrazia'),
+(5, 'Cantiere'),
+(6, 'Cibo e bevande'),
+(7, 'Contabilità'),
+(8, 'Elettricista'),
+(9, 'Fabbro'),
+(10, 'Formazione e sicurezza'),
+(11, 'Fotografia e video'),
+(12, 'Gasolio'),
+(13, 'Gestione'),
+(14, 'Grafica'),
+(15, 'Legali'),
+(16, 'Logistica'),
+(17, 'Marketing'),
+(18, 'Meccanico'),
+(19, 'Provvigioni'),
+(20, 'Pubblicità'),
+(21, 'Sito'),
+(22, 'Tappezziere'),
+(23, 'Tasse'),
+(24, 'Ufficio'),
+(25, 'Altro');
+
+
+CREATE TABLE IF NOT EXISTS `RT_Spese` (
+`SpesaId` int( 11 ) NOT NULL AUTO_INCREMENT ,
+`Data` date DEFAULT NULL ,
+`Descrizione` varchar( 255 ) NOT NULL ,
+`Costo` double( 10, 2 ) NOT NULL ,
+`TipoSpesa` int( 1 ) DEFAULT NULL ,
+`FornitoreId` int( 10 ) DEFAULT NULL ,
+`CategoriaId` int( 10 ) DEFAULT NULL ,
+`DestinazioneId` int( 10 ) DEFAULT NULL ,
+`MetodoPagamentoId` int( 10 ) DEFAULT NULL ,
+`Pagato` int( 1 ) DEFAULT NULL ,
+`DataIns` datetime DEFAULT NULL ,
+`OpeIns` int( 10 ) DEFAULT NULL ,
+`SedeIns` int( 10 ) DEFAULT NULL ,
+`IpIns` varchar( 16 ) DEFAULT NULL ,
+`DataAgg` datetime DEFAULT NULL ,
+`OpeAgg` int( 10 ) DEFAULT NULL ,
+`SedeAgg` int( 10 ) DEFAULT NULL ,
+`IpAgg` varchar( 16 ) DEFAULT NULL ,
+`Stato` int( 1 ) NOT NULL DEFAULT '1',
+`Cancella` int( 1 ) NOT NULL DEFAULT '0',
+`UpdateCount` int( 10 ) DEFAULT NULL ,
+`OdcIdRef` int( 10 ) DEFAULT NULL ,
+`GestoreIdRef` int( 10 ) DEFAULT NULL ,
+PRIMARY KEY ( `SpesaId` )
+) ENGINE = MYISAM DEFAULT CHARSET = latin1 AUTO_INCREMENT =1
+
+
+CREATE TABLE IF NOT EXISTS `RT_SpeseDestinazione` (
+  `SpeseDestinazioneId` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(255) NOT NULL,
+  PRIMARY KEY (`SpeseDestinazioneId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+
+INSERT INTO `RT_SpeseDestinazione` (`SpeseDestinazioneId`, `Nome`) VALUES
+(1, '- Senza Destinazione -'),
+(2, 'Azienda'),
+(3, 'Become'),
+(4, 'Beluga'),
+(5, 'Candido'),
+(6, 'Columbus'),
+(7, 'Eternity'),
+(8, 'Ghibli'),
+(9, 'L''Aurora'),
+(10, 'Libera'),
+(11, 'Magia'),
+(12, 'Motoscafini'),
+(13, 'Repower'),
+(14, 'Virgilio');
+
+
+CREATE TABLE IF NOT EXISTS `RT_SpesePagamento` (
+  `SpesePagamentoId` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(255) NOT NULL,
+  PRIMARY KEY (`SpesePagamentoId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+INSERT INTO `RT_SpesePagamento` (`SpesePagamentoId`, `Nome`) VALUES
+(1, '- Senza Metodo Pagamento -'),
+(2, 'Assegno'),
+(3, 'Bonifico'),
+(4, 'Contante'),
+(5, 'Contante Extra');

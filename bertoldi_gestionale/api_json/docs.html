@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Documentation</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.5; margin: 20px; color: #222; }
+    h1 { margin-top: 0; }
+    h2 { margin-top: 32px; border-bottom: 2px solid #eee; padding-bottom: 6px; }
+    h3 { margin-top: 20px; color: #333; }
+    code, pre { background: #f7f7f7; border: 1px solid #e5e5e5; border-radius: 4px; }
+    pre { padding: 12px; overflow-x: auto; }
+    .endpoint { padding: 12px; border: 1px solid #e5e5e5; border-radius: 6px; background: #fafafa; margin: 18px 0; }
+    .method { display: inline-block; min-width: 66px; font-weight: bold; color: #fff; text-align: center; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
+    .get { background: #1b7fbd; }
+    .post { background: #2f9d3a; }
+    .delete { background: #c83e3a; }
+    .note { background: #fff8e1; border: 1px solid #ffe082; padding: 8px; border-radius: 6px; }
+    .path { font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: #444; }
+    .small { color: #666; font-size: 90%; }
+    ul { margin: 8px 0 8px 18px; }
+    li { margin: 2px 0; }
+  </style>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <h1>API REST – Documentazione</h1>
+  <p class="small">Tutte le API sono esposte dal router <span class="path">/api_json/api.php</span> e richiedono il parametro query <span class="path">token</span> per l’autenticazione, ad esempio <span class="path">/api_json/api.php?handler=status&amp;token=YOUR_TOKEN</span>.</p>
+  <p class="small">Scarica la collezione Postman: <a href="bertoldi_api_postman_collection.json" download>bertoldi_api_postman_collection.json</a>. Imposta le variabili <span class="path">baseUrl</span> e <span class="path">token</span> prima di eseguire le richieste.</p>
+  <p class="small">Specifica OpenAPI (importabile in Scrubby): <a href="openapi.json" download>openapi.json</a>.</p>
+
+  <h2>Autenticazione</h2>
+  <div class="endpoint">
+    <p>Ogni chiamata deve includere <span class="path">token</span> come parametro query. Il token è fornito agli operatori autorizzati all’uso dell’API ed è verificato contro la tabella <span class="path">ApiToken</span>. Per alcuni endpoint (es. <span class="path">getBookings</span>) è richiesto che l’utente appartenga al <span class="path">GestoreId = 1</span>. Per ulteriori informazioni o per richiedere un token, rivolgersi a Bertoldi Boats.</p>
+  </div>
+
+  <h2>Status</h2>
+  <div class="endpoint">
+    <div><span class="method get">GET</span> <span class="path">/api_json/api.php?handler=status&amp;token={token}</span></div>
+    <h3>Descrizione</h3>
+    <p>Verifica la raggiungibilità del servizio e restituisce versione e stato.</p>
+    <h3>Risposta</h3>
+    <pre>{
+  "versione": "1.1.0",
+  "status": "OK"
+}</pre>
+  </div>
+
+  <h2>Experiences (lista)</h2>
+  <div class="endpoint">
+    <div><span class="method get">GET</span> <span class="path">/api_json/api.php?handler=experiences&amp;token={token}[&amp;tipoTour=0|1]</span></div>
+    <h3>Descrizione</h3>
+    <p>Restituisce l’elenco delle esperienze commercializzate. Il parametro opzionale <span class="path">tipoTour</span> filtra per <em>0: Gruppo</em> o <em>1: Privato</em>.</p>
+    <h3>Risposta</h3>
+    <pre>[
+  {
+    "LineaId": 12,
+    "LineaNome": "Mini-Crociera Arcipelago",
+    "TipoTour": "Tour di gruppo"
+  }
+]</pre>
+  </div>
+
+  <h2>Experience (dettaglio)</h2>
+  <div class="endpoint">
+    <div><span class="method get">GET</span> <span class="path">/api_json/api.php?handler=experience/{lineaId}&amp;token={token}</span></div>
+    <h3>Descrizione</h3>
+    <p>Dettaglio di una singola esperienza/linea.</p>
+    <h3>Risposta</h3>
+    <pre>{
+  "LineaId": 12,
+  "PercorsoNome": "Arcipelago Tour",
+  "LineaNome": "Mini-Crociera Arcipelago",
+  "TipoTour": "Tour di gruppo",
+  "Porto": "Olbia",
+  "Descrizione": "Itinerario giornaliero con soste...",
+  "Link": "https://example.com/mini-crociera",
+  "AndataRitorno": 1
+}</pre>
+    <p class="small">Il campo <span class="path">AndataRitorno</span> indica se per la linea sono disponibili corse di ritorno: 0 assente, 1 presente.</p>
+  </div>
+
+  <h2>Experience Prices</h2>
+  <div class="endpoint">
+    <div><span class="method get">GET</span> <span class="path">/api_json/api.php?handler=experiencePrices&amp;lineaId={id}&amp;dataPartenza=YYYY-MM-DD&amp;token={token}</span></div>
+    <h3>Descrizione</h3>
+    <p>Elenca le tipologie di biglietto disponibili per una data esperienza e data.</p>
+    <h3>Risposta</h3>
+    <pre>[
+  { "TipologiaBigliettoId": 17, "Nome": "Adulto", "Descrizione": "Passeggero adulto" },
+  { "TipologiaBigliettoId": 18, "Nome": "Bambino", "Descrizione": "Passeggero 4-12 anni" }
+]</pre>
+  </div>
+
+  <h2>Experience Ports</h2>
+  <div class="endpoint">
+    <div><span class="method post">POST</span> <span class="path">/api_json/api.php?handler=experiencePorts&amp;token={token}</span></div>
+    <h3>Body (JSON)</h3>
+    <pre>{
+  "lineaId": 12
+}</pre>
+    <h3>Descrizione</h3>
+    <p>Restituisce i porti/porti di arrivo abilitati alla vendita web per la linea.</p>
+    <h3>Risposta</h3>
+    <pre>{
+  "portiPartenza": [
+    { "FermataId": 101, "FermataNome": "Olbia Porto", "Comune": "Olbia", "ComuneId": 1, "Orario": "08:30:00", "GiorniAggiuntivi": 0, "TrattaId": 55 }
+  ],
+  "portiArrivo": [
+    { "FermataId": 202, "FermataNome": "La Maddalena", "Comune": "La Maddalena", "ComuneId": 2, "Orario": "10:00:00", "GiorniAggiuntivi": 0, "TrattaId": 60 }
+  ]
+}</pre>
+  </div>
+
+  <h2>Available Rides</h2>
+  <div class="endpoint">
+    <div><span class="method post">POST</span> <span class="path">/api_json/api.php?handler=availableRides&amp;token={token}</span></div>
+    <h3>Body (JSON)</h3>
+    <pre>{
+  "comunePartenzaId": 1,
+  "comuneDestinazioneId": 2,
+  "dataPartenza": "2026-04-01",
+  "lineaId": 12,
+  "biglietti": {
+    "17": 2,
+    "18": 1
+  }
+}</pre>
+    <div class="note small">Per i tour privati, il sistema ricava il numero di passeggeri dai biglietti (es. “fino a 6 pax”); per i tour di gruppo somma le quantità.</div>
+    <h3>Risposta</h3>
+    <pre>{
+  "currency": "EUR",
+  "dataPartenza": "2026-04-01",
+  "postiTotaliRichiesti": 3,
+  "rides": [
+    {
+      "CorsaId": 345,
+      "CorsaNome": "CORSA-345",
+      "LineaNome": "Mini-Crociera Arcipelago",
+      "DataPartenza": "2026-04-01",
+      "DataPartenzaFormattata": "01/04/2026",
+      "OrarioPartenza": "08:30",
+      "OrarioArrivo": "17:30",
+      "Durata": "09:00",
+      "PostiDisponibili": 25,
+      "PostiOccupati": 10,
+      "PrezzoTotale": 120.0,
+      "PrezzoTotaleInCents": 12000,
+      "PickupId": "1_101",
+      "Pickup": "Olbia Porto",
+      "DropoffId": "2_202",
+      "Dropoff": "La Maddalena",
+      "DaConfermare": false
+    }
+  ],
+  "ridesReturn": [
+    {
+      "CorsaId": 678,
+      "CorsaNome": "CORSA-678",
+      "LineaNome": "Mini-Crociera Arcipelago (Ritorno)",
+      "DataPartenza": "2026-04-01",
+      "DataPartenzaFormattata": "01/04/2026",
+      "OrarioPartenza": "18:00",
+      "OrarioArrivo": "19:30",
+      "Durata": "01:30",
+      "PostiDisponibili": 25,
+      "PostiOccupati": 5,
+      "PrezzoTotale": 60.0,
+      "PrezzoTotaleInCents": 6000,
+      "PickupId": "2_202",
+      "Pickup": "La Maddalena",
+      "DropoffId": "1_101",
+      "Dropoff": "Olbia Porto",
+      "DaConfermare": false
+    }
+  ]
+}</pre>
+    <p class="small">Per le linee con corse di tipo <strong>andata/ritorno</strong> (AndataRitorno=1), la risposta include <span class="path">ridesReturn</span> con le corse di ritorno calcolate invertendo i comuni di partenza e arrivo.</p>
+  </div>
+
+  <h2>Reservation</h2>
+  <div class="endpoint">
+    <div><span class="method post">POST</span> <span class="path">/api_json/api.php?handler=reservation&amp;token={token}</span></div>
+    <h3>Body (JSON)</h3>
+    <pre>{
+  "departureDate": "2026-04-01",
+  "departureRide": 345,
+  "returnDate": null,
+  "returnRide": null,
+  "departureStationCode": 1,
+  "arrivalStationCode": 2,
+  "passengers": [
+    { "Nome": "Mario", "Cognome": "Rossi", "TipologiaBiglietto": "Adulto", "TipologiaBigliettoId": 17 }
+  ],
+  "phoneNumber": "+390123456789",
+  "email": "mario.rossi@example.com",
+  "customerName": "Mario Rossi"
+}</pre>
+    <h3>Descrizione</h3>
+    <p>Crea una prenotazione per la/e corsa/e indicata/e con i passeggeri forniti. Per linee con <strong>andata/ritorno</strong> è possibile prenotare anche il ritorno impostando <span class="path">returnDate</span> e <span class="path">returnRide</span> usando una <span class="path">CorsaId</span> tra quelle restituite in <span class="path">ridesReturn</span> di <span class="path">availableRides</span>.</p>
+    <h3>Risposta</h3>
+    <pre>{
+  "status": "ok",
+  "PrenotazioneId": 789
+}</pre>
+    <div class="note small">In caso di esito positivo, usare l’endpoint <span class="path">booking</span> per confermare/emissione titoli e ottenere i ticket.</div>
+    <h3>Cancellazione</h3>
+    <div><span class="method delete">DELETE</span> <span class="path">/api_json/api.php?handler=reservation/{prenotazioneId}&amp;token={token}</span></div>
+  </div>
+
+  <h2>Booking</h2>
+  <div class="endpoint">
+    <div><span class="method post">POST</span> <span class="path">/api_json/api.php?handler=booking&amp;token={token}</span></div>
+    <h3>Body (JSON)</h3>
+    <pre>{
+  "reservationId": 789
+}</pre>
+    <h3>Descrizione</h3>
+    <p>Conferma una prenotazione in stato idoneo, registra il pagamento, emette i ticket e restituisce i dettagli per i passeggeri.</p>
+    <h3>Risposta</h3>
+    <pre>{
+  "currency": "EUR",
+  "pnr": "ABC123",
+  "bookingId": "ABC123",
+  "status": "confirmed",
+  "totalPriceInCents": 12000,
+  "refundableAmountInCents": 0,
+  "customer": "Mario Rossi",
+  "customerEmail": "mario.rossi@example.com",
+  "customerPhone": "+390123456789",
+  "tickets": [
+    {
+      "passengers": [
+        { "passengerType": "Adulto", "firstName": "Mario", "lastName": "Rossi" }
+      ],
+      "ticketPriceInCents": 12000,
+      "ticketNumber": "TCK123",
+      "ticketUrl": "https://dominio/ticket.php?code=XXXX",
+      "outboundSegments": [
+        {
+          "departureDateTime": "2026-04-01T08:30:00+01:00",
+          "arrivalDateTime": "2026-04-01T17:30:00+01:00",
+          "departureStationCode": 1,
+          "arrivalStationCode": 2,
+          "typeExperience": "Arcipelago Tour",
+          "experience": "Mini-Crociera Arcipelago"
+        }
+      ],
+      "inboundSegments": []
+    }
+  ]
+}</pre>
+    <h3>Get Booking</h3>
+    <div><span class="method get">GET</span> <span class="path">/api_json/api.php?handler=booking/{codicePrenotazione}&amp;token={token}</span></div>
+    <p>Restituisce la stessa struttura di <span class="path">booking</span> dopo la conferma, includendo segmenti con <span class="path">typeExperience</span> e <span class="path">experience</span> e i dettagli ticket.</p>
+    <h3>Cancellazione</h3>
+    <div><span class="method delete">DELETE</span> <span class="path">/api_json/api.php?handler=booking/{codicePrenotazione}&amp;token={token}[&amp;force=true]</span></div>
+    <p>Se <span class="path">force=true</span> ed entro la finestra temporale consentita, annulla e restituisce l’importo rimborsato in centesimi.</p>
+  </div>
+
+  <h2>Get Bookings</h2>
+  <div class="endpoint">
+    <div><span class="method get">GET</span> <span class="path">/api_json/api.php?handler=getBookings&amp;token={token}[&amp;offset=n&amp;limit=n]</span></div>
+    <h3>Autorizzazione</h3>
+    <p>Richiede che il token appartenga ad un operatore con <span class="path">GestoreId = 1</span>; in caso contrario restituisce <span class="path">HTTP 403</span> e messaggio “Permessi non validi.”</p>
+    <h3>Descrizione</h3>
+    <p>Elenco delle prenotazioni con principali metadati (stato, linea, orari, importi, metodo pagamento, azienda emittente, ecc.). Supporta paginazione tramite <span class="path">offset</span> e <span class="path">limit</span>.</p>
+    <h3>Risposta</h3>
+    <pre>[
+  {
+    "PrenotazioneId": 789,
+    "PrenotazioneCodice": "ABC123",
+    "PrenotazioneStato": "Confermata",
+    "Agenzia": "Agenzia Demo",
+    "DataCreazione": "01/04/2026 12:34:56",
+    "UtenteCreatore": "operatore1",
+    "LineaNome": "Mini-Crociera Arcipelago",
+    "CorsaDataPartenza": "01/04/2026",
+    "CorsaOrarioPartenza": "08:30",
+    "ComuneSalita": "Olbia",
+    "ComuneDiscesa": "La Maddalena",
+    "TipoTour": "Gruppo",
+    "TotalePostiPrenotati": 3,
+    "TotalePrenotazione": 120.00,
+    "Imbarcazione": "Motonave XYZ",
+    "Provvigioni": 0,
+    "Imponibile": 114.29,
+    "IVA": 5.71,
+    "PercentualeIVA": "5%",
+    "MetodoPagamento": "Carta",
+    "AziendaEmittente": "Società Demo"
+  }
+]</pre>
+  </div>
+
+  <h2>Note e convenzioni</h2>
+  <ul>
+    <li>Date accettate: <span class="path">YYYY-MM-DD</span> o <span class="path">DD/MM/YYYY</span> dove previsto.</li>
+    <li>Prezzi in centesimi nei campi <span class="path">...InCents</span>.</li>
+    <li>I segmenti viaggio includono <span class="path">typeExperience</span> (nome del <em>Percorso</em>) e <span class="path">experience</span> (nome della <em>Linea</em>).</li>
+  </ul>
+</body>
+</html>

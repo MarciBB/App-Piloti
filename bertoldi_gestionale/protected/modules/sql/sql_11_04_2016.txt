@@ -1,0 +1,10 @@
+ALTER TABLE `RT_Coupon` 
+ADD COLUMN `Valore` DECIMAL(10,2) NULL AFTER `GestoreIdRef`;
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE RT_Coupon SET Valore = 0 where MaxUtilizzi = Utilizzi
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE RT_Coupon SET Valore = Importo where MaxUtilizzi > Utilizzi

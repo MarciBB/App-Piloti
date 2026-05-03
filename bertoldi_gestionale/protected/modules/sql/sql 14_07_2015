@@ -1,0 +1,5 @@
+ALTER TABLE `RT_Linea` 
+ADD COLUMN `GestoreGruppoId` INT(4) NULL DEFAULT NULL AFTER `LineaRitorno`;
+
+UPDATE `RT_Linea` SET `GestoreGruppoId`='1' WHERE `LineaId`='1';
+UPDATE `RT_Linea` SET `GestoreGruppoId`='2' WHERE `LineaId`='2';

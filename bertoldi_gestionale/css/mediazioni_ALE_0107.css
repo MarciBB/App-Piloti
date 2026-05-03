@@ -1,0 +1,853 @@
+/* Mediazioni css */
+
+
+.colorePI {background:#f5f8d9}
+.coloreCP {background:#f8ecd9}
+.coloreBlu {background:#266A96; color:#ffffff;}
+
+div.mediazione_soggetto {
+    clear: both;
+    float: left;
+    margin-bottom: 28px;
+    width: 97%;
+    padding: 12px;
+    -moz-border-radius: 8px;
+    /*background: #F5F5F5;*/
+}
+
+	div.mediazione_soggetto div.titolo_soggetto {
+		/*background: #6699CC;*/
+		/*padding: 5px 9px;*/
+		width: 98%;
+		float: left;
+                border-bottom: 1px solid #29537E;
+                margin-bottom: 12px;
+	}
+	.titolo_disponibilita h3{
+		color: #FFFFFF!important;
+		font-size: 16px!important;
+		font-weight: bold!important;
+		width:95%!important;
+		float:left;
+	}
+		div.mediazione_soggetto div.titolo_soggetto h3{
+			float: left;
+			color: #666;
+			font-size: 16px;
+			font-weight: normal;
+			width: 80%;
+			padding: 5px 0 5px 25px;
+			background-image: url(/images/iconset/anagrafica_small.png);
+			background-repeat: no-repeat;
+			background-position: left 3px;
+		}
+div.incontro h3{
+	background-image: url(/images/icona_incontro.png)!important;
+	background-repeat: no-repeat;
+	padding-left:30px!important;
+	background-position: left 0px!important;
+}
+
+div.mediazione_soggetto div.titolo_soggetto div.del_soggetto{
+    float: right;
+    width: 10%;
+    text-align: right;
+}
+div.brain_campoFormSel div.del_soggetto{
+    float: right;
+}
+div.brain_boxTabellaSel div.del_soggetto{
+    float: right;
+}
+
+
+.wizart{
+    margin:0;
+    padding: 0;
+}
+
+	.wizart h2{
+		color: #89caef;
+		font-family: Arial;
+		font-size: 18px;
+		font-weight: normal;
+		padding-bottom: 15px;
+	}
+		.wizart h2 span.brain_colorh2{
+			color: #335682;
+		}
+
+
+.wizart .brain_campoForm{
+    width: 98%;
+    padding: 12px;
+    /*background: red;*/
+    background: none;
+    border-bottom: 1px solid #CCC;
+    
+}
+
+.wizart .mediazione_soggetto .brain_campoForm h4 {
+    color: #29537E;
+}
+
+
+.wizart .brain_boxInternoForm {background:none;border: none}
+
+.wizart .mediazione_soggetto .brain_campoForm{
+    width: 99%;
+	padding: 0 0 10px;
+    /*border: 1px dashed;*/
+}
+
+.wizart .brain_campoForm .brain_campoFleft{
+    float: left;
+    padding: 5px 11px 5px 5px;
+    width: 48%;
+}
+	.wizart .brain_campoForm .brain_campoFleft .brain_campoForm{
+		border-bottom:0px;
+	}
+		.wizart .brain_campoForm .brain_campoFleft .brain_campoForm label{
+			width:auto;
+		}
+		.wizart .brain_campoForm .brain_campoFleft .brain_campoForm input, .wizart .brain_campoForm .brain_campoFleft .brain_campoForm select{
+			width:55%;
+			float:left;
+			clear:both;
+			margin-top:6px;
+		}
+			.wizart .brain_campoForm .brain_campoFleft .brain_campoForm input.search{
+				float:left;
+				width:30px!important;
+				height:30px;
+				cursor:pointer;
+				margin-top:0px;
+				clear:none!important;
+			}
+.wizart .brain_campoForm .brain_campoFright{
+    /*border-left: 1px solid;*/
+    float: left;
+    padding: 5px 5px 5px 10px;
+    width: 45%;
+}
+.wizart .brain_campoForm  input, .wizart .brain_campoForm select {
+    float: left;
+    padding: 3px;
+    /*width: 50%;*/
+}
+.wizart .brain_campoForm label{
+    float: left;
+    width: 30%;
+    /*padding-top: 18px;*/
+	padding-top:6px;
+}
+.brain_dialogbox .wizart .brain_campoForm label{
+    margin-right: 20px;
+    padding-top: 5px !important;
+    width: auto !important;
+}
+
+.brain_campoFleft, .wizart .brain_campoForm .brain_campoFleft{
+    float: left;
+    padding: 0;
+    width: 50%;
+
+}
+#elencoincontri .brain_campoFleft{
+    width: 62%;
+}
+.wizart .brain_campoForm .brain_campoFleft .brain_campoForm{
+    border-bottom: 0 none;
+    border: 1px dashed #ccc;
+    width: 300px;
+    height: auto;
+    -moz-border-radius: 15px;
+    min-height: 100px;
+    margin-top: 6px;
+}
+.wizart .brain_campoForm .brain_campoFleft .brain_campoFormSel, span.boxBlue{
+    border-bottom: 0 none;
+    border: none;
+    /*width: 310px;
+    height: auto;*/
+	float:left;
+    clear: both;
+    -moz-border-radius: 15px;
+    background-color:#416A94;
+    padding:10px;
+}
+span.boxBlue{
+    clear: none !important;
+    color: #FFFFFF;
+    float: left;
+    -moz-border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+.MediazioneAccettazione {
+    background: url("/images/orologio.png") no-repeat scroll 7px 11px #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 15px 15px 15px 15px;
+    clear: both;
+    float: left;
+    margin-top: 20px;
+    padding: 10px 10px 10px 35px;
+}
+p.MediazioneIntestazioneSoggetto{
+    color:#FFF;
+    font-size:15px;
+    padding: 0px;
+}
+.wizart .brain_campoForm .brain_campoFleft .brain_campoFormSel p, .brain_boxTabellaSel p{
+    color:#FFF;
+	padding-bottom:10px!important;
+}
+.wizart .brain_campoForm .brain_campoFleft .brain_campoFormSel a{
+    color:#00CCFF;
+}
+
+.wizart .brain_campoForm .brain_campoFleft .brain_campoForm label{
+    width:auto;
+}
+.wizart .brain_campoForm .brain_campoFleft .brain_campoForm input, .wizart .brain_campoForm .brain_campoFleft .brain_campoForm select{
+    width:71%;
+    float:left;
+    clear:both;
+    margin-top:6px;
+}
+
+.wizart .brain_campoForm .brain_campoFleft{
+    width: 46%;
+}
+.wizart .brain_campoForm .brain_campoFright, .brain_campoFright{
+   border-left: 1px solid #CCCCCC;
+   float: right;
+   padding: 0 0 0 20px;
+   width: 47%;
+}
+#elencoincontri  .brain_campoFright{
+   width: 35%;
+}
+.brain_campoFright{
+	border-left:0px;
+}
+.wizart .brain_campoForm  input, .wizart .brain_campoForm select {
+    float: left;
+    padding: 3px;
+    /*width: 50%;*/
+}
+.wizart .brain_campoForm  input[type=checkbox] {
+    float: left;
+    margin-top:6px;
+}
+
+.brain_campoForm br{
+	display:none;
+}
+.brain_dialogbox .wizart .brain_campoForm  input, .brain_dialogbox .wizart .brain_campoForm select {
+    width: auto;
+}
+
+.wizart .brain_rowMediaForm {
+    padding: 20px;
+    width: 95%;
+    /*background: red;*/
+}
+
+.agg_soggetto_elenco {
+    clear: both;
+    float: left;
+    /*border: 2px dashed;*/
+    width: 97%;
+    padding: 12px 0 12px 8px;
+}
+.brain_normal{
+	width:auto!important;
+	float:left;
+	border-bottom:0px!important;
+	clear:both!important;
+}
+.brain_normal select, .brain_normal input, .brain_normal label{
+	width:auto!important;
+}
+.brain_normal label{
+	padding-top:5px!important;
+	width:88px!important;
+}
+.brain_normal a.search{
+	margin-left:87px;
+	margin-top:0px;
+}
+.brain_automatico{
+	-moz-border-radius: 5px;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D6D6D6;
+    float: right;
+    /*margin-right: 50px;*/
+    margin-top: 4px;
+}
+.brain_automatico a{
+	background: url("/images/rotella.png") no-repeat scroll 9px center transparent;
+    color: #004080;
+    float: left;
+    padding: 14px 16px 14px 39px;
+}
+.brain_campiform{
+	width:25%;
+	float:left;
+}
+.campiformBig{
+	width:100%;
+}
+.brain_campiform label{
+	clear: both;
+    color: #29537E;
+    float: left;
+    font-size: 12px;
+    font-style: italic;
+    padding-bottom: 6px;
+}
+.brain_campiform span{
+	clear: both;
+    color: #000000;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+	.brain_campiform span.cognome{
+		text-transform:uppercase;
+	}
+.brain_campiform input{
+	clear: both;
+        float: left;
+	margin-bottom:20px;
+	/*width:92%;*/
+}
+.brain_campiform input[type="radio"]{
+	float: left;
+    margin: 0 0 20px;
+    width: auto !important;
+}
+.campiformBig input{
+	width:50%;
+}
+.campiformBig select{
+	clear: both;
+    float: left;
+    margin-bottom: 20px;
+    width: 27%;
+}
+label.labelRadio{
+	clear: none;
+    color: #333333;
+    float: left;
+    font-style: normal;
+    padding-left: 5px;
+    padding-top: 1px;
+}
+span.brain_datiAggiuntivi{
+	float:left;
+	color:#999999;
+	padding-right:20px;
+	padding-top:8px;
+}	
+input.brain_selezionaMediatore{
+	background: url("/images/selezionaMediatore.png") no-repeat scroll left top transparent;
+    border: 0 none;
+    float: left;
+    height: 26px;
+    margin-left: 5px;
+    text-indent: -9999px;
+    width: 36px !important;
+}
+span.operatore_attivo{
+    font-size: 14px;
+    font-style: italic;
+	padding-left:23px;
+	padding-bottom:1px;
+	background:url('/images/operatore_attivo.png') center left no-repeat;
+	margin-bottom:10px;
+	float:left;
+	width:100%;
+	height:19px;
+}
+span.operatore_disattivo{
+    font-size: 14px;
+    font-style: italic;
+	padding-left:23px;
+	padding-bottom:1px;
+	background:url('/images/operatore_disattivo.png') center left no-repeat;
+	margin-bottom:10px;
+	float:left;
+	width:100%;
+	height:19px;
+}
+span.campoOk{
+	background: url("/images/okPassword.png") no-repeat scroll left bottom transparent;
+    color: #006600;
+    float: left;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+    padding: 20px 0 3px 25px;
+}
+span.corrsipondenza{
+	clear: none;
+    color: #999999;
+    float: left !important;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+    padding-left: 15px;
+    padding-top: 3px;
+}
+.brain_colLeft{
+	float:left;
+	width:30%;
+}
+.brain_colRight{
+	float:left;
+	width:70%;
+}
+	.wizart h3, .brain_colLeft h3, .brain_colRight h3{
+		color: #999999;
+		font-size: 16px;
+		font-weight: normal;
+	}
+	.brain_colLeft label{
+		float: left;
+		line-height: 14px;
+		padding: 2px 0 20px 5px;
+	}
+	.brain_colLeft .brain_add{
+		float: left;
+		margin-left: 20px;
+		margin-top: 15px;
+	}
+	.brain_colRight .boxContenitoreTabella{
+		float: left;
+		overflow:scroll;
+		width:98%;
+		border:1px solid #828790;
+		height:430px;
+	}
+.boxStatistiche{
+	float:left;
+	width:97%;
+	padding:10px;
+	background:#EFF6FC;
+	border:1px solid #EAF3FB;
+}	
+	.boxStatistiche span{
+		float: left;
+		padding-bottom: 10px;
+		width: 100%;
+	}	
+span.attesa{
+	background: url("/images/orologio.png") no-repeat scroll left center transparent;
+    float: right !important;
+    height: 26px;
+    padding-bottom: 0 !important;
+    padding-top: 19px !important;
+    width: 24px;
+}
+.MediazioneSoggettoPatrocinio{
+	float:left;
+	width:100%;
+}	
+	.MediazioneSoggettoPatrocinio label{
+		color: #FFFFFF;
+		float: left;
+		padding-top: 6px !important;
+		width: 90% !important;
+		padding-left:5px;
+	}	
+	.MediazioneSoggettoPatrocinio input[type="checkbox"]{
+		clear: none;
+		float: left;
+		margin: 0;
+		width: auto !important;
+	}	
+	.MediazioneAccettazione p{
+		font-size:13px;
+		font-weight:bold;
+	}
+	.MediazioneAccettazione label{
+		float: left;
+		padding-bottom: 0 !important;
+		padding-left: 5px;
+		padding-top: 0px !important;
+		width: 88% !important;
+		font-weight:normal;
+	}
+	.MediazioneAccettazione input[type="radio"]{
+		clear: both !important;
+		float: left;
+		margin: 0 0 8px;
+		width: auto !important;
+	}	
+.MediazioneSoggettoPreferenza label, .MediazioneSoggettoEstType label{
+	color: #FFFFFF !important;
+    padding-bottom: 6px;
+    padding-top: 15px !important;
+    width: 90% !important;
+}		
+.MediazioneSoggettoPreferenza label span, .MediazioneSoggettoEstType label span{
+	color:#ffffff!important;
+}	
+.incontrodiMediazione{
+	float:left;
+	width:100%;
+}
+	.incontrodiMediazione label{
+		clear: both;
+		float: left;
+		padding-right: 30px;
+		padding-top: 12px;
+		width: 12%;
+	}
+	
+	
+	/*PAGAMENTI DIALOG*/
+	.brain_rowAll{
+		width:100%;
+		float:left;
+		padding-top:25px;
+		padding-bottom:25px;
+		border-bottom:1px solid #cccccc;
+		font-size:13px;
+	}
+		.brain_rowAll span{
+			float:left;
+		}
+		.totale label{
+			float:left;
+			width:60%;
+			font-size:13px;
+			padding-left:5px;
+		}
+		.totale input[type="checkbox"]{
+			clear: none;
+			float: left;
+			margin: 0;
+			width: auto !important;
+			margin-bottom:20px!important;
+		}
+		span.risultato{
+			float:left;
+			width:35%;
+			text-align:right;
+		}
+		.brain_rowLeft{
+			width:60%;
+			float:left;
+		}
+		.brain_rowRight{
+			width:40%;
+			float:left;
+		}
+		.brain_campoFormSmall{
+			width:38%;
+			float:left;
+			padding-bottom:15px;
+		}
+			.brain_campoFormSmall label{
+				float:left;
+				width:auto;
+				padding-right:15px;
+			}
+			.brain_campoFormSmall input{
+				float:left;
+				width:auto;
+			}
+
+		.brain_campoFormBig{
+			width:100%;
+			float:left;
+			padding-bottom:15px;
+		}
+			.brain_campoFormBig textarea{
+				float:left;
+				width:90%;
+				height:100px;
+			}
+			.brain_campoFormBig label{
+				float:left;
+				width:auto;
+				padding-right:15px;
+			}
+			.brain_campoFormBig input{
+				margin-right:15px;
+			}
+			.brain_campoFormBig span{
+				padding-left:0px;
+				font-size:13px;
+			}
+			.brain_campoFormBig span strong.bigEuro{
+				font-size:16px;
+				padding-right:20px;
+			}
+		.rowFormSmall{
+			float:left;
+			width:50%;
+		}
+		.rowFormBig{
+			float:left;
+			width:100%;
+		}
+			.brain_riepilogo{
+				background:#F7F7F7;
+				width:50%;
+				float:right;
+				padding:15px;
+				border:1px solid #cccccc;
+			}
+			span.brain_alignLeft{
+				float:left;
+				width:60%;
+				font-weight:bold;
+				padding-bottom:10px;
+				font-size:13px;
+			}
+			span.brain_alignRight{
+				float:left;
+				font-weight:bold;
+				font-size:13px;
+				padding-bottom:10px;
+				width:40%;
+				text-align:right;
+			}
+			span.spanRed{
+				color:#FF0000;
+			}
+			table#pagamentiTabella, table#pagamentiTabella tr, table#pagamentiTabella th, table#pagamentiTabella td{
+				border:1px solid #D6D6D6!important;
+				text-align:left;
+				font-weight:normal;
+			}
+
+			table#pagamentiTabella tr, table#pagamentiTabella th, table#pagamentiTabella td{
+				border:1px solid #D6D6D6!important;
+				padding:10px;
+			}
+
+			tr.rowIntestazione{
+				background:#E9E9E9;
+			}
+			tr.rowBianca{
+				background:#ffffff;
+			}
+			tr.rowGrigiachiara{
+				background:#f5f5f5;
+			}
+span.patrocinioSi{
+	float:left;
+	color:#ffffff;
+}			
+span.noModifica{
+	padding-top:6px;
+	float:left;
+}
+span.incompilazione,span.inapprovazione,span.inconferma,span.aruolo,span.conclusa,span.archiviata,span.inattesa, span.ritirata{
+	font-size:11px;
+	font-style:italic;
+	padding-left:23px;
+	float:left;
+}
+span.incompilazione{
+	background:url('/images/incompilazione.png') center left no-repeat;
+}
+span.inapprovazione{
+	background:url('/images/thumb_up.png') center left no-repeat;
+}
+span.inconferma{
+	background:url('/images/inconferma.png') center left no-repeat;
+}
+span.aruolo{
+	background:url('/images/aruolo.png') center left no-repeat;
+}
+span.conclusa{
+	background:url('/images/conclusa.png') center left no-repeat;
+}
+span.archiviata{
+	background:url('/images/archiviata.png') center left no-repeat;
+}
+span.inattesa{
+	background:url('/images/inattesa.png') center left no-repeat;
+}
+span.ritirata{
+	background:url('/images/ritirata.png') center left no-repeat;
+        color: #990000;
+}
+/*table.display td {*/
+/*    line-height: 18px !important;*/
+/*}*/
+
+
+.wizart .brain_campoForm input.valore_mediazione {
+    padding-left: 20px;
+    background: #FFF url('/images/euro.png') no-repeat scroll 0 3px;
+    font-weight: bold;
+}
+
+div.SeparatoreOrizzontale {
+    clear: both;
+    float: left;
+    width: 99%;
+    margin: 20px 0;
+}
+
+div.aggiungi_incasso {
+    clear: both;
+    float: left;
+    width: 60%;
+    margin: 0;
+}
+
+div.totale_incasso {
+    float: right;
+    width: 30%;
+    margin: 0;
+    font-weight: bold;
+}
+
+div.saldo_parte {
+    clear:both;
+    float:left;
+    margin:0;
+    width: 98%;
+    /*background: #d9eef8;*/
+    color: #29537E;
+    padding: 10px;
+    -moz-border-radius: 8px;
+}
+
+h3.parte{
+    color: #29537E;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    float: left;
+    width: 45%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+div.saldo {
+    float: right;
+    font-size: 16px;
+    text-align: right;
+    text-decoration: none;
+    font-weight: normal;
+    width: 24%;
+    padding: 4px;
+    border: 1px solid #29537E;
+    -moz-border-radius: 4px;
+    background: #FFF;
+    /*padding: 10px 0px;*/
+    /*margin-bottom: 10px;*/
+}
+
+.wizart .brain_campoForm .radio_group label{
+    width: auto;
+    padding: 3px;
+    margin-right: 25px;
+}
+
+.wizart .brain_campoForm .radio_group .brain_esitomediazione1 {
+    background: transparent url(/images/thumb_up.gif) no-repeat scroll 0 0;
+    padding-left: 24px;
+}
+
+.wizart .brain_campoForm .radio_group .brain_esitomediazione2 {
+    background: transparent url(/images/thumb_down.gif) no-repeat scroll 0 0;
+    padding-left: 24px;
+}
+
+.wizart .brain_campoForm .radio_group .brain_esitomediazione3 {
+    background: transparent url(/images/mediazione_rinviata.png) no-repeat scroll 0 0;
+    padding-left: 24px;
+}
+
+.wizart .wysiwyg {
+    clear: both;
+    width: 96%;
+    border: 1px solid #CCC;
+    margin: 12px 0;
+    float: left;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.MediazioneEsitoModello {
+    clear: both;
+    width: 76%;
+    margin: 20px auto;
+    padding: 12px;
+}
+
+.MediazioneEsitoModelloDownload {
+    background: #416A94;
+    border: none;
+    -moz-border-radius: 4px;
+    color: #FFF;
+    padding: 10px;
+}
+.MediazioneEsitoModelloDownload a{ color: #FFF}
+
+/*DISPONIBILITA*/
+
+.coloreBlu span,
+.coloreBlu label,
+.coloreBlu p{
+	color:#ffffff
+	}
+.coloreBlu label{
+	width:auto!important;
+	padding-right:15px;
+	}
+.coloreBlu input,
+.coloreBlu select{
+	margin-right:15px;
+	}
+.coloreBlu .brain_campoForm{
+	border-bottom: 0 none !important;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+	}
+span.titoloCampi{
+	color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    padding-right: 15px;
+    padding-top: 6px;
+    text-align: right;
+    width: 15%;
+}
+.multiSelectLeft{
+	width:30%;
+	float:left;
+}
+.multiSelectCenter{
+	float: left;
+    padding-left: 20px;
+    padding-right: 15px;
+    width: 5%;
+}
+.multiSelectRight{
+	width:30%;
+	float:left;
+}
+.multiSelectLeft select,
+.multiSelectRight select{
+	height: 131px !important;
+    width: 100% !important;
+	float:left;
+}
+.multiSelectCenter input{
+	height: 27px !important;
+    padding: 0 !important;
+    width: 30px !important;
+}

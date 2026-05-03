@@ -1,0 +1,42 @@
+USE `csreisen`;
+CREATE 
+     OR REPLACE ALGORITHM = UNDEFINED 
+    DEFINER = `dbadmin`@`%` 
+    SQL SECURITY DEFINER
+VIEW `RT_PrenotazioneListaTitoli` AS
+    select 
+        `RT_PrenotazioneNumero`.`PrenotazioneNumeroId` AS `PrenotazioneNumeroId`,
+        `RT_PrenotazioneTitolo`.`Codice` AS `Codice`,
+        `RT_PrenotazioneTitolo`.`Anno` AS `Anno`,
+        `RT_PrenotazioneTitolo`.`Progressivo` AS `Progressivo`,
+        (case
+            when (`RT_PrenotazioneTitolo`.`TipoTitolo` = 'X') then 'E'
+            else `RT_PrenotazioneTitolo`.`TipoTitolo`
+        end) AS `TipoTitolo`,
+        `RT_Prenotazione`.`CodicePrenotazione` AS `CodicePrenotazione`,
+        `RT_Prenotazione`.`ClienteNome` AS `ClienteNome`,
+        `RT_AppPrenotazioneStato`.`PrenotazioneStato` AS `PrenotazioneStato`,
+        date_format(`RT_PrenotazioneTitolo`.`DataIns`,
+                _utf8'%d/%m/%Y %H:%i:%s') AS `DataIns`,
+		(case
+            when (`RT_PrenotazioneTitolo`.`TipoTitolo` = 'X') then 'EXTRA'
+            else `RT_Prenotazionedettaglio`.`TipologiaBiglietto`
+        end) AS `TipologiaBiglietto`,
+        `RT_PrenotazioneTitolo`.`ImportoTitolo` AS `ImportoTitolo`,
+        `RT_PrenotazioneNumero`.`OdcIdRef` AS `OdcIdRef`,
+        `RT_PrenotazioneNumero`.`GestoreIdRef` AS `GestoreIdRef`,
+        `Operatore`.`Username` AS `Username`,
+        `Gestore`.`RagioneSociale` AS `RagioneSociale`,
+        `RT_Prenotazionedettaglio`.`CorsaInizioItinerario` AS `CorsaId`,
+        `RT_PrenotazioneTitolo`.`PrenotazioneTitoloId` AS `PrenotazioneTitoloId`,
+        `RT_PrenotazioneNumero`.`PrenotazioneId` AS `PrenotazioneId`
+    from
+        ((((((`RT_PrenotazioneNumero`
+        join `RT_PrenotazioneTitolo` ON ((`RT_PrenotazioneNumero`.`PrenotazioneNumeroId` = `RT_PrenotazioneTitolo`.`PrenotazioneNumeroId`)))
+        join `RT_Prenotazione` ON ((`RT_PrenotazioneTitolo`.`PrenotazioneId` = `RT_Prenotazione`.`PrenotazioneId`)))
+        join `RT_AppPrenotazioneStato` ON ((`RT_Prenotazione`.`PrenotazioneStato` = `RT_AppPrenotazioneStato`.`PrenotazioneStatoId`)))
+        join `RT_Prenotazionedettaglio` ON ((`RT_PrenotazioneNumero`.`PrenotazioneNumeroId` = `RT_Prenotazionedettaglio`.`PrenotazioneNumero`)))
+        join `Operatore` ON ((`RT_Prenotazione`.`OpeIns` = `Operatore`.`OperatoreId`)))
+        join `Gestore` ON ((`Operatore`.`GestoreId` = `Gestore`.`GestoreId`)))
+    group by `RT_PrenotazioneNumero`.`PrenotazioneNumeroId` , `RT_PrenotazioneTitolo`.`PrenotazioneTitoloId`
+    order by `RT_PrenotazioneTitolo`.`DataIns` desc;

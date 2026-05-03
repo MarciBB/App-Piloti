@@ -1,0 +1,241 @@
+#products {
+    width: 45%px !important;
+    margin-right: 10px !important;
+}
+#products1 {
+    width: 45% !important;
+}
+h3.ui-accordion-header {
+    padding: 0px;
+}
+td.cell_0 {
+    width: 20px;
+    text-align: left;
+}
+td.cell_1 {
+    width: 120px;
+    text-align: left;
+}
+td.cell_2 {
+    width: 150px;
+    text-align: left;
+}
+
+div.titoli_di_viaggio {
+    background: #eee;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 20px 20px 30px 20px;
+    width: 45%;
+    box-shadow: 2px 2px 2px #aaa;
+    -moz-box-shadow: 2px 2px 2px #aaa;
+    -webkit-box-shadow: 2px 2px 2px #aaa;
+}
+
+div.titoli_di_viaggio li {
+    margin-bottom: 10px;
+    font-size:15px;
+}
+
+div.titoli_di_viaggio ul {
+    margin-bottom: 25px !important;
+    margin-left:3px;
+}
+
+div.titoli_di_viaggio a {
+    background: #d9eef8;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 2px #aaa;
+    -moz-box-shadow: 0px 0px 2px #aaa;
+    -webkit-box-shadow: 0px 0px 2px #aaa;
+    color: #222;
+}
+div.titoli_di_viaggio a:hover {
+    background: #99caef;
+    color: #EEE;
+}
+div.titoli_di_viaggio a:active {
+    background: #99caef;
+    color: #FFF;
+}
+span.numero_titoli {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e7baa;
+}
+/* Search inputs */
+#input_filtro_cell_0 {
+    width: 25px;
+}
+#input_filtro_cell_1 {
+    width: 115px;
+}
+#input_filtro_cell_2 {
+    width: 145px;
+}
+#input_filtro_cell_3 {
+    width: 90px;
+}
+#filtro_0 {
+    margin-right: 2px;
+}
+#filtro_1 {
+    margin-right: 23px !important;
+}
+#filtro_2 {
+    margin-right: 110px !important;
+}
+#filtro_3 {
+    margin-right: 0px;
+}
+/* */
+li {
+    cursor: pointer;
+}
+li td{
+    vertical-align: middle;
+}
+li td p{
+    padding: 0px;
+}
+/* Posti */
+.femmina {
+    background: #ffd4ea;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin:3px !important;
+}
+.nd{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin:3px !important;
+}
+.maschio {
+    background: #d4e1ff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin:3px !important;
+}
+.classe_posti {
+    min-width: 150px;
+    background: #f5f5f5 !important;
+    padding: 0px !important;
+    min-height: 30px !important;
+}
+.cella_posto {
+    padding: 6px !important;
+}
+/* */
+.brain_aggiungi {
+    cursor: pointer;
+}
+.icona_rimuovi {
+    cursor: pointer;
+    float: right;
+    margin-left: 8px;
+}
+.icona_stampa {
+    cursor: pointer;
+    float: right;    
+    margin-left: 8px;
+    color: #FFF !important;
+}
+.icona_stampa:hover {
+    color: #ccc !important;
+}
+.header_con_icone {
+    padding:8px;
+    background: #5d98d7 !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #5d98d7 0%, #426b97 100%)  !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5d98d7), color-stop(100%,#426b97)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #5d98d7 0%,#426b97 100%) !important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #5d98d7 0%,#426b97 100%) !important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #5d98d7 0%,#426b97 100%) !important; /* IE10+ */
+    background: linear-gradient(to bottom,  #5d98d7 0%,#426b97 100% !important); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d98d7', endColorstr='#426b97',GradientType=0 ) !important; /* IE6-9 */
+}
+.numero_clienti_da_definire{
+    float: right;
+    padding: 8px 15px 0 0;
+    color: #000;
+    font-weight: bold;
+}
+.pullman_header {
+    font-size: 14px;
+}
+/* tabelle */
+tr.dragme td{
+	vertical-align: middle;
+	line-height: 18px !important;
+	border: 1px solid rgba(0,0,0,0) !important;
+}
+tr.dragme td p {
+	padding: 0px;	
+}
+tr.even {
+    background: #f9f9f9;
+    cursor: pointer;
+}
+tr.odd {
+    background: #ffffff;
+    cursor: pointer;
+}
+.grouped {
+    background: #bee1ff !important;
+}
+/* */
+#elenco_clienti {
+    padding: 10px;
+}
+table.gallery td {
+    padding: 5px 0;
+}
+div#SelTratta1_length {
+    width: 70% !important;
+    margin-bottom: 10px;
+}
+/**/
+a.tasti_sel {
+    text-decoration: none;
+    background: #bee1ff;
+    padding: 5px;
+    margin: 5px !important;
+    border-radius: 3px;
+    font-weight: bold;
+}
+a.tasti_sel:hover {
+    color: #FFF;
+    background: #83c6ff;
+}
+/* Accordion posti bus */
+.accordion_header {
+    background: #eee;
+    padding: 10px 30px;
+    font-size: 18px;
+    width: 847px;
+}
+.accordion_content {
+    width: 850px;
+}
+/* */
+.inp_nav {
+    width: 100px;
+    height:15px;
+    margin: 8px 10px 0 0 !important;
+}
+.lab_nav {
+    float: left;
+    margin:8px 5px 0 0;
+}
+.but_nav {
+    margin:7px 0 0 0;
+}

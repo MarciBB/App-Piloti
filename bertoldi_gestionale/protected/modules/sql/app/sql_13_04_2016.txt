@@ -1,0 +1,14 @@
+INSERT INTO `AppModulo` 
+(`AppModuloId`, `AppModulo`, `AppMenuId`, `ModuloOrdinamento`, `AppNomeCartella`, `AppNomePagina`, `Stato`, `Cancella`, `Riservato`, `DefaultAdmin`, `DefaultSegreteria`, `DefaultMediatore`) 
+VALUES 
+('47', 'Fogli di Viaggio', '4', '104', 'rt_foglioviaggio', 'foglioviaggio.php', '1', '0', '0', '1', '0', '0');
+
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '6', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '5', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '4', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '3', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '2', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '1', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+INSERT INTO `RuoloPermesso` (`RuoloPermessoId`, `RuoloId`, `AppModuloId`, `AppModuloFunzioneId`, `AppPermessoId`, `DataIns`, `IpIns`, `DataAgg`, `OpeAgg`, `SedeAgg`, `IpAgg`, `Stato`, `Cancella`) VALUES ('', '1', '47', '7', '1', '0000-00-00 00:00:00', '', '2012-12-06 13:32:46', '1', '1', '217.133.62.65', '1', '0');
+
+

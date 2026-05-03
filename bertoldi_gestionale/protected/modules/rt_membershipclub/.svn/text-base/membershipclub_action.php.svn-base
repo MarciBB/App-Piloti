@@ -1,0 +1,258 @@
+<?php
+$basepath=$_SERVER['DOCUMENT_ROOT'];
+include_once($basepath."/main_include.php");
+$config=new Config();
+$run=$config->load(); 
+$modulespath_=Config::$modulespath;
+$classespath_=Config::$classespath;
+$errors=new Errors();
+include_once($classespath_."class.Form.php");
+include_once($classespath_."class.MembershipClub.php");
+
+include_once($classespath_."class.NotificaAutomaticaMessaggiInvio.php");
+
+$ModuloId=32;
+
+
+
+global $membership_wizard;
+$membership_wizard=null;
+
+if(isset($_SESSION['MEMBERSHIP_WIZARD'])) {
+$membership_wizard=unserialize($_SESSION['MEMBERSHIP_WIZARD']);
+}
+
+
+
+
+
+function create()
+{
+global $user,$db;
+/*
+$db= new Database();
+$db->connect();*/
+$storico=new StoricoOperazioni();
+$storico->conn=$db;
+
+$dt=new DT();
+
+
+ // prelevo i dati del form ed aggiorno tutte le proprietà dell'oggetto
+
+$data=$_POST['Member'];
+$data['CognomeRagioneSociale']=ucfirst($data['CognomeRagioneSociale']);
+$data['Nome']=ucfirst($data['Nome']);
+$data['PartitaIva']=strtoupper($data['PartitaIva']);
+$data['CodiceFiscale']=strtoupper($data['CodiceFiscale']);
+
+$data['MembershipClubCode'] = time();
+$data['PasswordWeb'] =  md5(createRandomPassword());
+$data['Validazione'] = 1;
+
+$data=$storico->operazioni_insert($data,$user);
+
+print_r($data);
+
+$lastidA=$db->insert("RT_MembershipClub", $data);
+if ($lastidA!=false)
+{
+    $membership_wizard=new MembershipClub($lastidA);
+    $membership_wizard->conn=$db;
+    $membership_wizard->inizializzaDatiGenerali();
+    $_SESSION['MEMBERSHIP_WIZARD']=serialize($membership_wizard);
+    $membership_wizard->conn=$db;
+   // $membership_wizard->SendMailActivationToPromoter($user);
+    
+    //invio email per la password
+    //generazione del codice
+    $length = 10;
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+    	$randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    $randomString;
+    
+    echo $randomString;
+    
+    $date = date("Y-m-d H:i:s");
+    $sql = "UPDATE RT_MembershipClub Set RecuperoCodice = '$randomString', RecuperoData = '$date' WHERE Email = '".$data['Email']."'";
+    $row = $db->query($sql);
+    $sql = "SELECT * FROM RT_MembershipClub WHERE Email = '".$data['Email']."'";
+    $profilo = $db->query_first($sql);
+    
+    /**invio email**/
+    $invioEmail = new NotificaAutomaticaMessaggiInvio();
+    $Oggetto = "Cipolla group - Attiva Password Account";
+    $url = Config::$UrlDominio.'/modifica-password.php?action=recupero&email='.$profilo['Email'].'&codiceRecupero='.$profilo['RecuperoCodice'];
+    $Messaggio = "E' stato creato il tuo nuovo account associato a questa email, &egrave; possibile procedere con la creazione della tua password tramite questo link:
+    <br><br><a href='$url'>Crea la tua password</a>";
+    $Destinatari = $profilo['Email'];
+    $invioEmail->InvioEmailSemplice($Messaggio,$Oggetto,$Destinatari,1);
+    
+echo("ok");    
+}
+else
+echo("no");
+$db->close();
+exit();   
+  
+}
+
+function checkEmail(){
+	global $db;
+	$email = $_POST['email'];
+	$sql = "SELECT * FROM RT_MembershipClub WHERE Email = '$email'";
+	$row = $db->fetch_array($sql);
+	if(count($row) == 0){
+		echo json_encode(array('result'=>true));
+	} else {
+		echo json_encode(array('result'=>false));
+	}
+}
+
+
+function update()
+{
+global $user,$membership_wizard,$db;
+
+
+$storico=new StoricoOperazioni();
+$storico->conn=$db;
+$dt=new DT();
+
+
+$Id=$membership_wizard->Id;
+
+$step_corrente=$_POST['step_corrente'];
+$data=$_POST['Member'];
+   
+   
+$data['CognomeRagioneSociale']=ucfirst($data['CognomeRagioneSociale']);
+$data['Nome']=ucfirst($data['Nome']);
+$data['PartitaIva']=strtoupper($data['PartitaIva']);
+$data['CodiceFiscale']=strtoupper($data['CodiceFiscale']);
+
+$data=$storico->operazioni_update($data,$user);
+$result=$db->update("RT_MembershipClub", $data, "MembershipClubId=".$Id);
+
+
+if ($result)
+{
+       
+    echo("ok");
+    exit();
+    
+}
+else
+echo("no");
+$db->close();
+exit();   
+  
+}
+
+function createRandomPassword() {
+    $chars = "abcdefghijkmnopqrstuvwxyz0123456789";
+    srand((double)microtime()*1000000);
+    $i = 0;
+    $pass = '' ;
+    while ($i <= 10) {
+        $num = rand() % 33;
+        $tmp = substr($chars, $num, 1);
+        $pass = $pass . $tmp;
+        $i++;
+    }
+    return $pass;
+}
+
+
+
+// Usage
+
+if(is_object($user)) {
+    
+$db= new Database();
+$db->connect();
+$user->conn=$db;
+$permessi=$user->get_permessi_modulo($ModuloId);
+if (sizeof($permessi)>0)
+{   
+	
+	
+		if (!empty($_POST))
+		{
+			switch($_POST['action']) {
+                            
+				case "checkEmail":
+				
+					$FunzioneId=2;
+					$permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+					if (sizeof($permesso))
+						checkEmail();
+					else
+						Errors::$ErrorePermessiModuloFunzione;
+				
+					break;
+                            
+
+				case "create":
+                                 
+                                 $FunzioneId=2;
+                                 $permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+                                  if (sizeof($permesso))
+                                   create();   
+                                  else
+                                    Errors::$ErrorePermessiModuloFunzione;
+                                  
+                                  break;
+                                  
+                                case "update":
+                                 
+                                 $FunzioneId=4;
+                                 $permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+                                  if (sizeof($permesso))
+                                   update();   
+                                  else
+                                    echo("no");
+                                  
+                                  break;
+                                  
+                                  case "cambia_stato_promoter":
+                               
+				 $FunzioneId=4;
+                                 $permesso=$user->ControllModuloFunzionePermesso($ModuloId,$FunzioneId);
+                                        if (sizeof($permesso))
+                                           cambia_stato_promoter();    
+                                        else
+                                            echo("no");
+                                
+					// verifica i permessi per l'azione e il modulo specificato ed eseguo le operazioni 					
+				break;
+                                  
+                                
+                                
+                                
+                                		
+				
+                                
+                }
+              }
+              if(isset($_REQUEST['do'])){
+                 
+              
+              }
+	} // end verifica permessi
+	else {
+           echo("no");
+            
+        }
+
+}
+
+// se l'utente non è loggato
+else {
+header("Location: /logout.php");
+}
+?>
